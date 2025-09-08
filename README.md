@@ -37,6 +37,16 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 ## 📋 Backlog do Produto 
 
+| Rank | Prioridade | User Story | Estimativa | Sprint
+| :---------: | :---------: | :---------: | :---------: | :---------: |
+| 🎗  1 | Alta | Como secretário do planejamento, quero interagir com gráficos intuitivos, com títulos e legendas condizentes, a fim de facilitar a compreensão das informações. | 5 | 1 |
+| 🎗  2 | Alta | Como secretário do planejamento, quero visualizar os principais gráficos na página inicial, para eu esteja a par de informações importantes da cidade logo de início. | 3 | 1 |
+| 🎗  3 | Alta | Como secretário do planejamento, quero filtrar os gráficos com múltiplos filtros simultaneamente, para obter resultados mais precisos e específicos. | 8 | 1 |
+| 🎗  4 | Alta | Como secretário do planejamento, quero visualizar as quantidades e/ou percentuais totais dos gráficos, para que, ao filtrar, possa haver uma distinção entre o total e o número obtido da filtragem| 5 | 2 |
+| 🎗  5 | Alta | Como secretário do planejamento, quero interagir com mapas, navegando e aplicando zoom para melhor visualização. | 5 | 2 |
+| 🎗  6 | Média | Como secretário do planejamento, quero pesquisar gráficos por nome, para que possa encontrá-los sem muita navegação. | 8 | 3 |
+| 🎗  7 | Média | Como secretário do planejamento, quero controlar a exibição dos gráficos a partir de filtros, como Tema e Tipo, para restringir minhas análises. | 8 | 3 |
+
 ---
 
 ## 📅 Cronograma das Sprints
@@ -69,3 +79,4 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 | <img src="https://avatars.githubusercontent.com/u/225857087?v=4" width=50px alt="Foto da Kathelyn"/> | *Kathelyn Cauane* | Desenvolvedor | <a href="https://github.com/KathelynZanin"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://avatars.githubusercontent.com/u/225857870?v=4" width=50px alt="Foto do Matheus"> | *Matheus Bueno* | Desenvolvedor | <a href="https://github.com/Matheusxfc"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
 | <img src="https://avatars.githubusercontent.com/u/189993239?v=4" width=50px  alt="Foto do Marcio"> | *Marcio Gustavo* | Desenvolvedor | <a href="https://github.com/Marcio-gustavoI"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> | 
+
