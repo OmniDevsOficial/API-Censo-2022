@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos do cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    background-color: #0080FF;
+}
+
+/* Estilos do menu */
+ul.menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+ul.menu li {
+    margin: 5px;
+}
+
+ul.menu li:not(:first-child) {
+    padding-left: 10px; /* Corrigido de 10x para 10px */
+}
+
+/* Estilos de navegação */
+nav {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/* Estilos de cabeçalhos e parágrafos */
+h2, p {
+    margin: 40px;
+    text-align: center; 
+}
+
+/* Estilos gerais de listas */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+ul li {
+    float: left;
+}
+
+/* Estilos de links em listas */
+ul li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* Efeito hover em links */
+ul li a:hover {
+    background-color: rgba(216, 216, 226, 0.397);
+}
+
+/* Estilos do cabeçalho principal */
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
