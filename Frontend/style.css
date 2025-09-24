@@ -74,3 +74,35 @@ h1 {
     justify-content: center;
     margin-top: 20px;
 }
+.sumario{
+    display: flex;
+    flex-direction:column; /*deixa h1 em cima e os links embaixo*/
+    margin: auto;
+    max-width: 1200px;
+    padding-left: 20px;
+    gap:10px; /*espaço entre os elementos dentro */
+    border: 2px solid rgb(2, 6, 6);
+    border-radius: 10px;
+}
+.sumario nav{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+.sumario nav a{
+    display: inline-block;
+    width: fit-content;
+    padding: 6px 10px;
+    font-weight: bold;  /*diz se o texto será 'fino' ou 'grosso', como se mexesse no negrito */
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    background: transparent;
+    transition: background-color 0.5s ease, transform 0.15s ease;
+}
+.sumario nav a:hover{
+    background-color: lightblue;
+    transform: translateX(3px);
+    text-decoration: underline;
+}
