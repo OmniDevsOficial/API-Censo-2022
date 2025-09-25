@@ -39,14 +39,18 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 | Rank | Prioridade | User Story | Estimativa | Sprint
 | :---------: | :---------: | :---------: | :---------: | :---------: |
-| 🎗  1 | Alta | Como secretário do planejamento, quero interagir com gráficos intuitivos, com títulos e legendas condizentes, a fim de facilitar a compreensão das informações. | 5 | 1 |
-| 🎗  2 | Alta | Como secretário do planejamento, quero visualizar os principais gráficos na página inicial, para eu esteja a par de informações importantes da cidade logo de início. | 3 | 1 |
-| 🎗  3 | Alta | Como secretário do planejamento, quero filtrar os gráficos com múltiplos filtros simultaneamente, para obter resultados mais precisos e específicos. | 8 | 1 |
-| 🎗  4 | Alta | Como secretário do planejamento, quero visualizar as quantidades e/ou percentuais totais dos gráficos, para que, ao filtrar, possa haver uma distinção entre o total e o número obtido da filtragem| 5 | 2 |
-| 🎗  5 | Alta | Como secretário do planejamento, quero interagir com mapas, navegando e aplicando zoom para melhor visualização. | 5 | 2 |
-| 🎗  6 | Média | Como secretário do planejamento, quero pesquisar gráficos por nome, para que possa encontrá-los sem muita navegação. | 8 | 3 |
-| 🎗  7 | Média | Como secretário do planejamento, quero controlar a exibição dos gráficos a partir de filtros, como Tema e Tipo, para restringir minhas análises. | 8 | 3 |
-
+| 🎗  1 | Alta | Como secretário do planejamento, quero visualizar os principais gráficos na página inicial, para eu esteja a par de informações importantes da cidade logo de início. | 5 | 1 |
+| 🎗  2 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Densidade Populacional por Região, de modo que eu possa compreender a distribuição da população por área. | 3 | 1 |
+| 🎗  3 | Alta | Como secretário do planejamento, quero visualizar um gráfico de População total por bairro e/ou Zona, para poder identificar as áreas mais populosas. | 3 | 1 |
+| 🎗  4 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Crescimento Populacional por Região no decorrer dos últimos censos (2000, 2010 e 2022), para compreender a evolução quantitativa da população.| 3 | 1 |
+| 🎗  5 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Pirâmide Etária por Ano, de modo a compreender como a cidade está mudando sua estrutura social. | 3 | 1 |
+| 🎗  6 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Grupos Etários por Região, para, por exemplo, destacar as regiões que demandam mais recursos para os idosos. | 3 | 2 |
+| 🎗  7 | Alta | Como secretário do planejamento, quero visualizar os gráficos em paineis dinâmicos onde posso filtrar os gráficos com um ou mais filtros, para obter resultados mais precisos e específicos. | 8 | 2 |
+| 🎗  8 | Média | Como secretário do planejamento, quero visualizar as quantidades e/ou percentuais totais dos gráficos, para que, ao filtrar, possa haver uma distinção entre o total e o número obtido da filtragem. | 5 | 2 |
+| 🎗  9 | Média | Como secretário do planejamento, quero visualizar um mapa de densidade demográfica da cidade para compreender a distribuição das pessoas pelo município. | 5 | 2 |
+| 🎗  10 | Baixa | Como secretário do planejamento, quero visualizar e interagir com  um mapa geral da cidade onde posso adicionar ou retirar camadas de filtragem, para visualizar as informações de uma perspectiva mais dinâmica. | 13 | 3 |
+| 🎗  11 | Baixa | Como secretário do planejamento, quero pesquisar gráficos por nome, para que possa encontrá-los sem muita navegação. | 8 | 3 |
+| 🎗  12 | Baixa | Como secretário do planejamento, quero controlar a exibição dos gráficos a partir de filtros, como Tema e Tipo, para restringir minhas análises. | 8 | 3 |
 ---
 
 ## 📅 Cronograma das Sprints
