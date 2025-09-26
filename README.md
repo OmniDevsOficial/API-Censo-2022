@@ -1,17 +1,29 @@
-# OmniDevs 🧿
+# OmniDevs
 
 ## API – Análise do Censo 2022 em São José dos Campos
+
+<p align="center">
+| <a href ="#-descrição-do-desafio"> Desafio</a>  |
+  <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução</a>  |   
+  <a href ="#-backlog-do-produto"> Backlog do Produto</a>  |
+  <a href ="#-cronograma-das-sprints"> Cronograma de Sprints</a>  |
+  <a href ="#-tecnologias-utilizadas">Tecnologias</a> |
+  <a href ="#-documentação">Documentação</a>  | 
+  <a href ="#-conheça-a-equipe-talentosa-por-trás-do-projeto"> Equipe </a> |
+</p>
+    
+---
 
 ## 📌 Status do Projeto
 | Item                  | Situação/Link |
 |-----------------------|---------------|
-| 🚧 Projeto            | Em andamento  |
-| 📑 Testes             | Em andamento  |
-| 📂 Documentação       | Em andamento  |
+| 🚧 Projeto            | 🔛 Em andamento  |
+| 📑 Testes             | 🔛 Em andamento  |
+| 📂 Documentação       | 🔛 Em andamento  |
 
 ---
 
-## 🚀 Descrição do Desafio 
+## 🚀 <a id="Descrição do Desafio"></a> 
 
 A introdução do desafio começa com o município de São José dos Campos (SJC) que recebeu uma grande quantidade de dados do último censo, mas enfrenta dificuldades em transformá-los em informações úteis para a tomada de decisões. A pressão de vereadores, moradores e da imprensa exige respostas rápidas para questões como:
 
@@ -55,11 +67,11 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 ## 📅 Cronograma das Sprints
 
-| Sprint | Período |
-| :---------: | :---------: |
-| 🎗 Sprint 1 | 08/09 - 28/09 |
-| 🎗 Sprint 2 | 06/10 - 26/10 |
-| 🎗 Sprint 3 | 03/11 - 23/11 |
+| Sprint | Período | Status | Documentação | Vídeo
+| :---------: | :---------: | :---------: | :---------: | :---------: |
+| 🧣 Sprint 1 | 08/09 - 28/09 | 🔛 Em andamento | <a href=""> Docs 1 Sprint</a> | <a href="">Vídeo 1 Sprint</a>
+| 🧣 Sprint 2 | 06/10 - 26/10 | 🚩 Não iniciado | <a href=""> Docs 2 Sprint</a> | <a href="">Vídeo 2 Sprint</a>
+| 🧣 Sprint 3 | 03/11 - 23/11 | 🚩 Não iniciado | <a href=""> Docs 3 Sprint</a> | <a href="">Vídeo 3 Sprint</a>
 
 ---
 
@@ -71,7 +83,17 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 ---
 
-## 🎓 Conheça a equipe talentosa por trás do projeto:
+## Documentação
+
+- Checklist DoR e DoD
+- Sprint 1 - DoR e DoD
+- Sprint 2 - DoR e DoD
+- Sprint 3 - DoR e DoD
+- Estratégia de Branch
+- Manual do Usuário
+- Manual de Instalação
+
+## 🎓 Conheça a equipe talentosa por trás do projeto
 
 | Foto | Nome | Função | Github | Linkedin |
 | :---------: | :---------: | :---------------------: | :-----------------: | :-------: |
@@ -83,4 +105,3 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 | <img src="https://avatars.githubusercontent.com/u/225857087?v=4" width=50px alt="Foto da Kathelyn"/> | *Kathelyn Cauane* | Desenvolvedor | <a href="https://github.com/KathelynZanin"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://avatars.githubusercontent.com/u/225857870?v=4" width=50px alt="Foto do Matheus"> | *Matheus Bueno* | Desenvolvedor | <a href="https://github.com/Matheusxfc"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
 | <img src="https://avatars.githubusercontent.com/u/189993239?v=4" width=50px  alt="Foto do Marcio"> | *Marcio Gustavo* | Desenvolvedor | <a href="https://github.com/Marcio-gustavoI"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> | 
-
