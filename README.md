@@ -70,29 +70,29 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 | Sprint | Período | Status | Documentação | Vídeo
 | :---------: | :---------: | :---------: | :---------: | :---------: |
-| 🧣 Sprint 1 | 08/09 - 28/09 | 🔛 Em andamento | <a href=""> Docs 1 Sprint</a> | <a href="">Vídeo 1 Sprint</a>
-| 🧣 Sprint 2 | 06/10 - 26/10 | 🚩 Não iniciado | <a href=""> Docs 2 Sprint</a> | <a href="">Vídeo 2 Sprint</a>
-| 🧣 Sprint 3 | 03/11 - 23/11 | 🚩 Não iniciado | <a href=""> Docs 3 Sprint</a> | <a href="">Vídeo 3 Sprint</a>
+| 🧣 Sprint 1 | 08/09 - 28/09 | 🔛 Em andamento | <a href=""> Docs 1 Sprint </a> | <a href=""> Vídeo 1 Sprint </a>
+| 🧣 Sprint 2 | 06/10 - 26/10 | 🚩 Não iniciado | <a href=""> Docs 2 Sprint </a> | <a href=""> Vídeo 2 Sprint </a>
+| 🧣 Sprint 3 | 03/11 - 23/11 | 🚩 Não iniciado | <a href=""> Docs 3 Sprint </a> | <a href=""> Vídeo 3 Sprint </a>
 
 ---
 
 ## 💻 Tecnologias Utilizadas
 
 <div text-align="left">
-    <img src="https://skillicons.dev/icons?i=html,css,bootstrap,tailwind,py,flask,mysql,github,git,figma"/>
+    <img src="https://skillicons.dev/icons?i=html,css,bootstrap,py,flask,mysql,github,git,figma"/>
 </div>
 
 ---
 
-## Documentação
+## 📁 Documentação
 
-- Checklist DoR e DoD
-- Sprint 1 - DoR e DoD
-- Sprint 2 - DoR e DoD
-- Sprint 3 - DoR e DoD
-- Estratégia de Branch
-- Manual do Usuário
-- Manual de Instalação
+- <a href="">Checklist DoR e DoD</a>
+- <a href="">Sprint 1 - DoR e DoD</a>
+- <a href="">Sprint 2 - DoR e DoD</a>
+- <a href="">Sprint 3 - DoR e DoD</a>
+- <a href="">Estratégia de Branch</a>
+- <a href="">Manual do Usuário</a>
+- <a href="">Manual de Instalação</a>
 
 ---
 
@@ -108,4 +108,5 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 | <img src="https://avatars.githubusercontent.com/u/225857087?v=4" width=50px alt="Foto da Kathelyn"/> | *Kathelyn Cauane* | Desenvolvedor | <a href="https://github.com/KathelynZanin"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://avatars.githubusercontent.com/u/225857870?v=4" width=50px alt="Foto do Matheus"> | *Matheus Bueno* | Desenvolvedor | <a href="https://github.com/Matheusxfc"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
 | <img src="https://avatars.githubusercontent.com/u/189993239?v=4" width=50px  alt="Foto do Marcio"> | *Marcio Gustavo* | Desenvolvedor | <a href="https://github.com/Marcio-gustavoI"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> | 
+
 
