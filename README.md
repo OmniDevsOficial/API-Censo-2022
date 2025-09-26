@@ -3,12 +3,12 @@
 ## API – Análise do Censo 2022 em São José dos Campos
 
 <p align="center">
-| <a href ="#-descrição-do-desafio"> Desafio</a>  |
-  <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução</a>  |   
-  <a href ="#-backlog-do-produto"> Backlog do Produto</a>  |
-  <a href ="#-cronograma-das-sprints"> Cronograma de Sprints</a>  |
-  <a href ="#-tecnologias-utilizadas">Tecnologias</a> |
-  <a href ="#-documentação">Documentação</a>  | 
+| <a href ="#-descrição-do-desafio"> Desafio </a>  |
+  <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução </a>  |   
+  <a href ="#-backlog-do-produto"> Backlog do Produto </a>  |
+  <a href ="#-cronograma-das-sprints"> Cronograma de Sprints </a>  |
+  <a href ="#-tecnologias-utilizadas"> Tecnologias </a> |
+  <a href ="#-documentação"> Documentação </a>  | 
   <a href ="#-conheça-a-equipe-talentosa-por-trás-do-projeto"> Equipe </a> |
 </p>
     
@@ -23,7 +23,7 @@
 
 ---
 
-## 🚀 <a id="Descrição do Desafio"></a> 
+## 🚀 Descrição do Desafio
 
 A introdução do desafio começa com o município de São José dos Campos (SJC) que recebeu uma grande quantidade de dados do último censo, mas enfrenta dificuldades em transformá-los em informações úteis para a tomada de decisões. A pressão de vereadores, moradores e da imprensa exige respostas rápidas para questões como:
 
@@ -63,6 +63,7 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 | 🎗  10 | Baixa | Como secretário do planejamento, quero visualizar e interagir com  um mapa geral da cidade onde posso adicionar ou retirar camadas de filtragem, para visualizar as informações de uma perspectiva mais dinâmica. | 13 | 3 |
 | 🎗  11 | Baixa | Como secretário do planejamento, quero pesquisar gráficos por nome, para que possa encontrá-los sem muita navegação. | 8 | 3 |
 | 🎗  12 | Baixa | Como secretário do planejamento, quero controlar a exibição dos gráficos a partir de filtros, como Tema e Tipo, para restringir minhas análises. | 8 | 3 |
+
 ---
 
 ## 📅 Cronograma das Sprints
@@ -93,6 +94,8 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 - Manual do Usuário
 - Manual de Instalação
 
+---
+
 ## 🎓 Conheça a equipe talentosa por trás do projeto
 
 | Foto | Nome | Função | Github | Linkedin |
@@ -105,3 +108,4 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 | <img src="https://avatars.githubusercontent.com/u/225857087?v=4" width=50px alt="Foto da Kathelyn"/> | *Kathelyn Cauane* | Desenvolvedor | <a href="https://github.com/KathelynZanin"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://avatars.githubusercontent.com/u/225857870?v=4" width=50px alt="Foto do Matheus"> | *Matheus Bueno* | Desenvolvedor | <a href="https://github.com/Matheusxfc"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
 | <img src="https://avatars.githubusercontent.com/u/189993239?v=4" width=50px  alt="Foto do Marcio"> | *Marcio Gustavo* | Desenvolvedor | <a href="https://github.com/Marcio-gustavoI"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> | 
+
