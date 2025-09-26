@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Adicionado para facilitar o cálculo de largura/altura dos elementos */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos do cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    background-color: #0080FF;
+}
+
+/* Estilos do menu */
+ul.menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+ul.menu li {
+    margin: 5px;
+}
+
+ul.menu li:not(:first-child) {
+    padding-left: 10px;
+    /* Corrigido de 10x para 10px */
+}
+
+/* Estilos de navegação */
+nav {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/* Estilos de cabeçalhos e parágrafos */
+h2,
+p {
+    margin: 40px;
+    text-align: center;
+}
+
+/* Estilos gerais de listas */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+ul li {
+    float: left;
+}
+
+/* Estilos de links em listas */
+ul li a {
+    display: block;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* Efeito hover em links */
+ul li a:hover {
+    background-color: rgba(216, 216, 226, 0.397);
+}
+
+/* Estilos do cabeçalho principal */
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.sumario {
+    display: flex;
+    flex-direction: column;
+    /*deixa h1 em cima e os links embaixo*/
+    margin: auto;
+    max-width: 1200px;
+    padding-left: 20px;
+    gap: 10px;
+    /*espaço entre os elementos dentro */
+    border: 2px solid rgb(2, 6, 6);
+    border-radius: 10px;
+}
+
+.sumario nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+
+.sumario nav a {
+    display: inline-block;
+    width: fit-content;
+    padding: 6px 10px;
+    font-weight: bold;
+    /*diz se o texto será 'fino' ou 'grosso', como se mexesse no negrito */
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    background: transparent;
+    transition: background-color 0.5s ease, transform 0.15s ease;
+}
+
+.sumario nav a:hover {
+    background-color: lightblue;
+    transform: translateX(3px);
+    text-decoration: underline;
+}
+
+h2,
+p {
+    margin: 40px;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
+    padding-left: 100px;
+    gap: 30px;
+}
+
+
+h4 {
+    margin-top: 28px;
+    font-weight: normal;
+    max-width: 75ch;
+
+}
+
+.button {
+  background-color: #0080FF; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.texto-e-botao-container {
+    flex-direction: column;
+}
+
+#myChart {
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+}
+
+#myChart2 {
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+}
+
+#myChart3 {
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+}
+
+#myChart4 {
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between; /* A chave é usar space-between */
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0080FF;
+    color: white;
+}
+
+/* 1. Criamos o item "fantasma" à esquerda */
+footer::before {
+    content: ''; /* O pseudo-elemento precisa disso para existir */
+    width: 32px; /* IMPORTANTE: Dê a ele a MESMA LARGURA do seu ícone do GitHub */
+}
+
+/* 2. Garantimos que o ícone do GitHub tenha a largura definida */
+footer img {
+    width: 32px;
+    height: auto;
+    display: block; /* Ajuda a evitar espaços extras inesperados */
+}
