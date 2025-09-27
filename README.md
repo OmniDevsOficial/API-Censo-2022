@@ -4,9 +4,11 @@
 
 <p align="center">
 | <a href ="#-descrição-do-desafio"> Desafio </a>  |
-  <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução </a>  |   
+  <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução </a>  |  
+  <a href ="Link-do-Youtube"> Link do Youtube </a> 
   <a href ="#-backlog-do-produto"> Backlog do Produto </a>  |
   <a href ="#-cronograma-das-sprints"> Cronograma de Sprints </a>  |
+  <a href ="#-Cronograma-de-Evolução-do-Projeto"> Cronograma de Evolução do Projeto </a>  |
   <a href ="#-tecnologias-utilizadas"> Tecnologias </a> |
   <a href ="#-documentação"> Documentação </a>  | 
   <a href ="#-conheça-a-equipe-talentosa-por-trás-do-projeto"> Equipe </a> |
@@ -47,6 +49,11 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 ---
 
+## 🎥 Link do Youtube
+<a href="https://www.youtube.com/@OmniDevs-Oficial"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a> 
+
+---
+
 ## 📋 Backlog do Produto 
 
 | Rank | Prioridade | User Story | Estimativa | Sprint
@@ -73,6 +80,14 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 | 🧣 Sprint 1 | 08/09 - 28/09 | 🔛 Em andamento | <a href=""> Docs 1 Sprint </a> | <a href=""> Vídeo 1 Sprint </a>
 | 🧣 Sprint 2 | 06/10 - 26/10 | 🚩 Não iniciado | <a href=""> Docs 2 Sprint </a> | <a href=""> Vídeo 2 Sprint </a>
 | 🧣 Sprint 3 | 03/11 - 23/11 | 🚩 Não iniciado | <a href=""> Docs 3 Sprint </a> | <a href=""> Vídeo 3 Sprint </a>
+
+---
+
+## 📅 Cronograma de Evolução do Projeto
+
+<div text-align="left">
+    <img src="https://i.imgur.com/OpkEnk5.png" alt="Imagem do Cronograma de Evolução"/>
+</div>
 
 ---
 
