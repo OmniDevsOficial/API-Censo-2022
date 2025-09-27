@@ -46,227 +46,58 @@
 
         <section id="TaxaEscolaridade">
             <div class="flex-container">
-            <h2>Taxa de escolaridade de 6 a 14 anos de idade</h2>
-                <div class="flex-container-content">
-                    <canvas id="myChart"></canvas>
+                <h2>Distribuição da população por bairros e regiões de São José dos Campos</h2>
+                <img src="img/grafico1.png">
 
-                    <script>
-                        const xValues = ['2018', '2019', '2020', '2021', '2022', '2023', '2024'];
-                        const yValues = [96.5, 97.2, 97.8, 98.1, 98.5, 98.7, 99.0];
-
-                        new Chart(id = "myChart", {
-                            type: "line", // Tipo do gráfico
-                            data: {
-                                labels: xValues, // Rótulos do eixo X
-                                datasets: [{
-                                    label: "Taxa de Escolaridade (%)", // Adicionei um rótulo para a legenda
-                                    fill: false,
-                                    lineTension: 0.2, // Deixei a linha um pouco mais suave
-                                    backgroundColor: "rgba(0,0,255,1.0)",
-                                    borderColor: "rgba(0,0,255,0.5)",
-                                    data: yValues // Dados do eixo Y
-                                }]
-                            },
-                            options: {
-                                legend: { display: true }, // Mudei para true para exibir a legenda
-                                scales: {
-                                    yAxes: [{
-                                        ticks: { min: 95, max: 100 } // Ajustei a escala para os dados de escolaridade
-                                    }],
-                                    xAxes: [{
-                                        scaleLabel: {
-                                            display: true,
-                                            labelString: 'Ano'
-                                        }
-                                    }]
-                                }
-                            }
-                        });
-                    </script>
-                    <div class="texto-e-botao-container">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tempore porro rerum corrupti
-                            dolores
-                            sit cupiditate eveniet? Delectus, beatae, perspiciatis dignissimos modi molestiae temporibus
-                            tempore,
-                            minima laboriosam nostrum aut rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Molestias
-                            tempore porro rerum corrupti dolores sit cupiditate eveniet? Delectus, beatae, perspiciatis
-                            dignissimos
-                            modi molestiae temporibus tempore, minima laboriosam nostrum aut rerum!git
-                        </p>
-                        <button class="button">Ver mais</button><!--Botão-->
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-        <section id="CrescimentoEconomico">
-            <div class="flex-container">
-            <h2 class="grafico-titulo">Crescimento da Economia do Município</h2>
-                <div class="flex-container-content">
-                    <canvas id="myChart2"></canvas>
-
-                    <script>
-                        const xValues2 = ['2018', '2019', '2020', '2021', '2022', '2023', '2024'];
-                        const yValues2 = [96.5, 97.2, 97.8, 98.1, 98.5, 98.7, 99.0];
-
-                        new Chart("myChart2", {
-                            type: "line", // Tipo do gráfico
-                            data: {
-                                labels: xValues2, // Rótulos do eixo X
-                                datasets: [{
-                                    label: "Crecimento ecônomico (%)", // Adicionei um rótulo para a legenda
-                                    fill: false,
-                                    lineTension: 0.2, // Deixei a linha um pouco mais suave
-                                    backgroundColor: "rgba(0,0,255,1.0)",
-                                    borderColor: "rgba(0,0,255,0.5)",
-                                    data: yValues2 // Dados do eixo Y
-                                }]
-                            },
-                            options: {
-                                legend: { display: true }, // Mudei para true para exibir a legenda
-                                scales: {
-                                    yAxes: [{
-                                        ticks: { min: 95, max: 100 } // Ajustei a escala para os dados de escolaridade
-                                    }],
-                                    xAxes: [{
-                                        scaleLabel: {
-                                            display: true,
-                                            labelString: 'Ano'
-                                        }
-                                    }]
-                                }
-                            }
-                        });
-                    </script>
-                    <div class="texto-e-botao-container">
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tempore porro rerum corrupti
-                            dolores
-                            sit cupiditate eveniet? Delectus, beatae, perspiciatis dignissimos modi molestiae temporibus
-                            tempore,
-                            minima laboriosam nostrum aut rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Molestias
-                            tempore porro rerum corrupti dolores sit cupiditate eveniet? Delectus, beatae, perspiciatis
-                            dignissimos
-                            modi molestiae temporibus tempore, minima laboriosam nostrum aut rerum!
-                        </p>
-                        <button class="button">Ver mais</button><!--Botão-->
-                    </div>
+                <div class="texto-e-botao-container">
+                    <p>O gráfico ilustra a população total por bairros e regiões de São José dos Campos, permitindo uma
+                        comparação visual da distribuição de habitantes pela cidade.
+                    </p>
+                    <button class="button">Ver mais</button><!--Botão-->
                 </div>
             </div>
         </section>
 
-        <section id="TaxaNatalidade">
+
+        <section id="TaxaEscolaridade">
             <div class="flex-container">
-            <h2 class="grafico-titulo">Taxa de Natalidade</h2>
-                <div class="flex-container-content">
-                    <canvas id="myChart3"></canvas>
+                <h2>Dristribuição da População nos Bairros da Região Leste</h2>
+                <img src="img/grafico2.png">
 
-                    <script>
-                        const xValues3 = ['2018', '2019', '2020', '2021', '2022', '2023', '2024'];
-                        const yValues3 = [96.5, 97.2, 97.8, 98.1, 98.5, 98.7, 99.0];
-
-                        new Chart("myChart3", {
-                            type: "line", // Tipo do gráfico
-                            data: {
-                                labels: xValues3, // Rótulos do eixo X
-                                datasets: [{
-                                    label: "Taxa natalidade (%)", // Adicionei um rótulo para a legenda
-                                    fill: false,
-                                    lineTension: 0.2, // Deixei a linha um pouco mais suave
-                                    backgroundColor: "rgba(0,0,255,1.0)",
-                                    borderColor: "rgba(0,0,255,0.5)",
-                                    data: yValues3 // Dados do eixo Y
-                                }]
-                            },
-                            options: {
-                                legend: { display: true }, // Mudei para true para exibir a legenda
-                                scales: {
-                                    yAxes: [{
-                                        ticks: { min: 95, max: 100 } // Ajustei a escala para os dados de escolaridade
-                                    }],
-                                    xAxes: [{
-                                        scaleLabel: {
-                                            display: true,
-                                            labelString: 'Ano'
-                                        }
-                                    }]
-                                }
-                            }
-                        });
-                    </script>
-                    <div class="texto-e-botao-container">
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tempore porro rerum corrupti
-                            dolores
-                            sit cupiditate eveniet? Delectus, beatae, perspiciatis dignissimos modi molestiae temporibus
-                            tempore,
-                            minima laboriosam nostrum aut rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Molestias
-                            tempore porro rerum corrupti dolores sit cupiditate eveniet? Delectus, beatae, perspiciatis
-                            dignissimos
-                            modi molestiae temporibus tempore, minima laboriosam nostrum aut rerum!
-                        </p>
-                        <button class="button">Ver mais</button>
-                    </div>
+                <div class="texto-e-botao-container">
+                    <p>O gráfico ilustra a população dos diversos bairros da Região Leste, permitindo uma comparação
+                        focada na demografia desta área.
+                    </p>
+                    <button class="button">Ver mais</button><!--Botão-->
                 </div>
             </div>
         </section>
 
-        <section id="FaixaEtaria">
+
+        <section id="TaxaEscolaridade">
             <div class="flex-container">
-            <h2 class="grafico-titulo">Faixa Etária</h2>
-                <div class="flex-container-content">
-                    <canvas id="myChart4"></canvas>
+                <h2>Distribuição da população em regiões de São José dos Campos</h2>
+                <img src="img/grafico1.png">
 
-                    <script>
-                        const xValues4 = ['2018', '2019', '2020', '2021', '2022', '2023', '2024'];
-                        const yValues4 = [96.5, 97.2, 97.8, 98.1, 98.5, 98.7, 99.0];
+                <div class="texto-e-botao-container">
+                    <p>O gráfico ilustra a população total por bairros e regiões de São José dos Campos, permitindo uma
+                        comparação visual da distribuição de habitantes pela cidade.
+                    </p>
+                    <button class="button">Ver mais</button><!--Botão-->
+                </div>
+            </div>
+        </section>
 
-                        new Chart("myChart4", {
-                            type: "line", // Tipo do gráfico
-                            data: {
-                                labels: xValues4, // Rótulos do eixo X
-                                datasets: [{
-                                    label: "Faixa etária (%)", // Adicionei um rótulo para a legenda
-                                    fill: false,
-                                    lineTension: 0.2, // Deixei a linha um pouco mais suave
-                                    backgroundColor: "rgba(0,0,255,1.0)",
-                                    borderColor: "rgba(0,0,255,0.5)",
-                                    data: yValues4 // Dados do eixo Y
-                                }]
-                            },
-                            options: {
-                                legend: { display: true }, // Mudei para true para exibir a legenda
-                                scales: {
-                                    yAxes: [{
-                                        ticks: { min: 95, max: 100 } // Ajustei a escala para os dados de escolaridade
-                                    }],
-                                    xAxes: [{
-                                        scaleLabel: {
-                                            display: true,
-                                            labelString: 'Ano'
-                                        }
-                                    }]
-                                }
-                            }
-                        });
-                    </script>
-                    <div class="texto-e-botao-container">
+        <section id="TaxaEscolaridade">
+            <div class="flex-container">
+                <h2>Dristribuição da População nos Bairros da Região Leste</h2>
+                <img src="img/grafico2.png">
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tempore porro rerum corrupti
-                            dolores
-                            sit cupiditate eveniet? Delectus, beatae, perspiciatis dignissimos modi molestiae temporibus
-                            tempore,
-                            minima laboriosam nostrum aut rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Molestias
-                            tempore porro rerum corrupti dolores sit cupiditate eveniet? Delectus, beatae, perspiciatis
-                            dignissimos
-                            modi molestiae temporibus tempore, minima laboriosam nostrum aut rerum!
-                        </p>
-                        <button class="button">Ver mais</button>
-                    </div>
+                <div class="texto-e-botao-container">
+                    <p>O gráfico ilustra a população dos diversos bairros da Região Leste, permitindo uma comparação
+                        focada na demografia desta área.
+                    </p>
+                    <button class="button">Ver mais</button><!--Botão-->
                 </div>
             </div>
         </section>
