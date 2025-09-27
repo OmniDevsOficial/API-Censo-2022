@@ -166,8 +166,8 @@ p {
 .button {
   background-color: #0080FF; /* azul */
   color: white;
-  padding: 6px 14px; /* botao menor*/
-  font-size: 14px; /*texto menor */
+  padding: 12px 28px; /* botao menor*/
+  font-size: 20px; /*texto menor */
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -176,15 +176,6 @@ p {
 
 .texto-e-botao-container {
     flex-direction: column;
-}
-
-#myChart,
-#myChart2,
-#myChart3,
-#myChart4{
-    flex: 2;
-    max-width: 600px;
-    height: 250px;
 }
 
 .texto-e-botao-container{
