@@ -99,6 +99,30 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 ---
 
+## Estrutura do Projeto
+```
+│
+├── 📁 Backend/
+│   ├── 📁 database
+│   └── PlanejaSJC.ipynb
+│
+├── 📁 Frontend/
+│   ├── 📁 img/
+│   ├── BaseLayout.html
+│   ├── Index.html
+│   ├── Mapa.html
+│   ├── Sobre.html
+│   └── style.css
+│
+├── 📁 Docs/
+│   ├── 📁 Sprint_1/
+│   ├── 📁 Sprint_2/
+│   └── 📁 Sprint_3/
+└── README.md
+```
+
+---
+
 ## 📁 Documentação
 
 - <a href="">Checklist DoR e DoD</a>
