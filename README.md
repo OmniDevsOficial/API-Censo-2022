@@ -79,7 +79,7 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 ## 📅 Cronograma de Evolução do Projeto
 
 <div text-align="left">
-    <img src=https://drive.google.com/file/d/13ZeXOdASgDkH6hYjYQmGzYkicEHxyRKM/view/>
+    <img src="https://drive.google.com/file/d/13ZeXOdASgDkH6hYjYQmGzYkicEHxyRKM/view/">
 </div>
 ---
 
