@@ -48,6 +48,11 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 ---
 
+## 🎥 Link do Youtube
+<a href="https://www.youtube.com/@OmniDevs-api">Omni Devs Channel</a>
+
+---
+
 ## 📋 Backlog do Produto 
 
 | Rank | Prioridade | User Story | Estimativa | Sprint
