@@ -4,7 +4,8 @@
 
 <p align="center">
 | <a href ="#-descrição-do-desafio"> Desafio </a>  |
-  <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução </a>  |   
+  <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução </a>  |  
+  <a href ="Link-do-Youtube"> Link do Youtube </a> 
   <a href ="#-backlog-do-produto"> Backlog do Produto </a>  |
   <a href ="#-cronograma-das-sprints"> Cronograma de Sprints </a>  |
   <a href ="#-Cronograma-de-Evolução-do-Projeto"> Cronograma de Evolução do Projeto </a>  |
@@ -49,7 +50,7 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 ---
 
 ## 🎥 Link do Youtube
-<a href="https://www.youtube.com/@OmniDevs-api">Omni Devs Channel</a>
+<a href="https://www.youtube.com/@OmniDevs-api"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a> 
 
 ---
 
