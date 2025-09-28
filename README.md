@@ -5,11 +5,13 @@
 <p align="center">
 | <a href ="#-descrição-do-desafio"> Desafio </a>  |
   <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução </a>  |  
-  <a href ="#-Link da Playlist dos Vídeos das Sprints"> Link da Playlist do Youtube </a> |
+  <a href ="Link-do-Youtube"> Link do Youtube </a> 
   <a href ="#-backlog-do-produto"> Backlog do Produto </a>  |
   <a href ="#-cronograma-das-sprints"> Cronograma de Sprints </a>  |
   <a href ="#-Cronograma-de-Evolução-do-Projeto"> Cronograma de Evolução do Projeto </a>  |
   <a href ="#-tecnologias-utilizadas"> Tecnologias </a> |
+  <a href ="#-estrutura-do-projeto"> Estrutura do Projeto </a> |
+  <a href ="#-como-executar-o-projeto"> Como Executar o Projeto </a> |
   <a href ="#-documentação"> Documentação </a>  | 
   <a href ="#-conheça-a-equipe-talentosa-por-trás-do-projeto"> Equipe </a> |
 </p>
@@ -72,16 +74,13 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 | Sprint | Período | Status | Documentação | Vídeo
 | :---------: | :---------: | :---------: | :---------: | :---------: |
-| 🧣 Sprint 1 | 08/09 - 28/09 | 🔛 Em andamento | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-1/"> Docs 1ª Sprint </a> | <a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"> Vídeo 1 Sprint </a>
-| 🧣 Sprint 2 | 06/10 - 26/10 | 🚩 Não iniciado | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-2/"> Docs 2ª Sprint </a> | <a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"> Vídeo 2 Sprint </a>
-| 🧣 Sprint 3 | 03/11 - 23/11 | 🚩 Não iniciado | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-3/"> Docs 3ª Sprint </a> | <a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"> Vídeo 3 Sprint </a>
-
-## 🎥 Link da Playlist dos Vídeos das Sprints
-<a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a> 
+| 🧣 Sprint 1 | 08/09 - 28/09 | 🔛 Em andamento | <a href=""> Docs 1 Sprint </a> | <a href="https://www.youtube.com/@OmniDevs-Oficial"> Vídeo 1 Sprint </a>
+| 🧣 Sprint 2 | 06/10 - 26/10 | 🚩 Não iniciado | <a href=""> Docs 2 Sprint </a> | <a href=""> Vídeo 2 Sprint </a>
+| 🧣 Sprint 3 | 03/11 - 23/11 | 🚩 Não iniciado | <a href=""> Docs 3 Sprint </a> | <a href=""> Vídeo 3 Sprint </a>
 
 ---
 
-## 📅 Cronograma de Evolução do Projeto
+## 📊 Cronograma de Evolução do Projeto
 
 <div text-align="left">
     <img src="https://i.imgur.com/OpkEnk5.png" alt="Imagem do Cronograma de Evolução"/>
@@ -92,12 +91,12 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 ## 💻 Tecnologias Utilizadas
 
 <div text-align="left">
-    <img src="https://skillicons.dev/icons?i=html,css,bootstrap,py,github,git,figma"/>
+    <img src="https://skillicons.dev/icons?i=html,css,bootstrap,py,flask,mysql,github,git,figma"/>
 </div>
 
 ---
 
-## Estrutura do Projeto
+## ⛩ Estrutura do Projeto
 ```
 │
 ├── 📁 Backend/
@@ -113,23 +112,71 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 │   └── style.css
 │
 ├── 📁 Docs/
-│   ├── 📁 Sprint-1/
-│   ├── 📁 Sprint-2/
-│   └── 📁 Sprint-3/
+│   ├── 📁 Sprint_1/
+│   ├── 📁 Sprint_2/
+│   └── 📁 Sprint_3/
 └── README.md
 ```
 
 ---
 
-## 📁 Documentação
+## 📜 Como Executar o Projeto 
 
-- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/">Checklist DoR e DoD</a>
-- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-1/">Sprint 1 - DoR e DoD</a>
-- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-2/">Sprint 2 - DoR e DoD</a>
-- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-3/">Sprint 3 - DoR e DoD</a>
-- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Estratégia-De-Branch.pdf">Estratégia de Branch</a>
-- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/">Manual do Usuário</a>
-- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/">Manual de Instalação</a>
+### Pré-requisitos
+
+- **Python** (Recomendado Versão 3.13.7 ou superior)
+- **Git**
+
+<!-- Instalações e parte introdutória do projeto -->
+### 1. Clonar o Repositório Principal:
+```
+# Baixa o código do projeto que está no GitHub para sua máquina
+git clone https://github.com/OmniDevsOficial/API-Censo-2022.git
+
+# Entra na pasta do projeto que foi clonada
+cd API-Censo-2022
+```
+
+<!-- Primeira parte do Front-End -->
+### 2. Configuração do Front-End:
+```
+# Adentra na pasta responsável pelo Front-End
+cd Frontend
+
+# inicia o Front-End localmente em sua máquina
+start index.html
+```
+
+<!-- Configura o Back-End -->
+### 3. Configuração do Back-End:
+```
+# Copie e cole em seu navegador o site onde está hospedado o projeto
+https://colab.research.google.com/github/OmniDevsOficial/API-Censo-2022/blob/main/Backend/PlanejaSJC.ipynb
+```
+
+<!-- Configura o Back-End -->
+### 4. Clone o repositório do Colab:
+```
+- Vá em "ARQUIVO" no canto superior esquerdo
+- Clique em "Salvar uma cópia no Drive"
+
+** Caso não abra o arquivo automáticamente após salvar uma cópia
+- Clique em "ARQUIVO" novamente
+- Abrir notebook
+- Localize o arquivo e clique nele
+```
+
+---
+
+## 🗂 Documentação
+
+- <a href="">Checklist DoR e DoD</a>
+- <a href="">Sprint 1 - DoR e DoD</a>
+- <a href="">Sprint 2 - DoR e DoD</a>
+- <a href="">Sprint 3 - DoR e DoD</a>
+- <a href="">Estratégia de Branch</a>
+- <a href="">Manual do Usuário</a>
+- <a href="">Manual de Instalação</a>
 
 ---
 
@@ -143,7 +190,5 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 | <img src="https://avatars.githubusercontent.com/u/168497458?v=4" width=50px alt="Foto do Henrique"/> | *Henrique Moreira* | Desenvolvedor | <a href="https://github.com/DeveloperCorsair"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/henriquemm/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
 | <img src="https://avatars.githubusercontent.com/u/226374648?v=4" width=50px  alt="Foto da Jaqueline"> | *Jaqueline Moreira* | Desenvolvedor | <a href="https://github.com/Jayyliix15"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://avatars.githubusercontent.com/u/225857087?v=4" width=50px alt="Foto da Kathelyn"/> | *Kathelyn Cauane* | Desenvolvedor | <a href="https://github.com/KathelynZanin"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
-| <img src="https://avatars.githubusercontent.com/u/225857870?v=4" width=50px alt="Foto do Matheus"> | *Matheus Bueno* | Desenvolvedor | <a href="https://github.com/Matheusxfc"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
 | <img src="https://avatars.githubusercontent.com/u/189993239?v=4" width=50px  alt="Foto do Marcio"> | *Marcio Gustavo* | Desenvolvedor | <a href="https://github.com/Marcio-gustavoI"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> | 
-
-
+| <img src="https://avatars.githubusercontent.com/u/225857870?v=4" width=50px alt="Foto do Matheus"> | *Matheus Bueno* | Desenvolvedor | <a href="https://github.com/Matheusxfc"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
