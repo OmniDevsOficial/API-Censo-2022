@@ -3,7 +3,6 @@
 ## API – Análise do Censo 2022 em São José dos Campos
 
 <p align="center">
-| <a href ="#-descrição-do-desafio"> Desafio </a>  |
   <a href ="#-Objetivo-do-MVP"> Objetivo </a>  |
   <a href ="#-Funcionalidades-do-MVP"> Funcionalidades do MVP </a>  |
   <a href ="#-Demonstração"> Demonstração </a>  |
@@ -47,7 +46,6 @@ O MVP entregue nesta fase tem como objetivo validar a proposta inicial do projet
 ## 🎨 Demonstração
 
 <div align="center"> <img src="./img/header.jpg" width="600px" alt="Demonstração do MVP"/> </div>
-<div align="center"> <img src="./img/main.jpg" width="600px" alt="Demonstração do MVP"/> </div>
 <div align="center"> <img src="./img/footer.jpg" width="600px" alt="Demonstração do MVP"/> </div>
 
 ---
