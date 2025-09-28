@@ -5,7 +5,7 @@
 <p align="center">
 | <a href ="#-descrição-do-desafio"> Desafio </a>  |
   <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução </a>  |  
-  <a href ="Link-do-Youtube"> Link do Youtube </a> 
+  <a href ="#-link-da-playlist-dos-vídeos-das-sprints"> Link da Playlist do Youtube </a> |
   <a href ="#-backlog-do-produto"> Backlog do Produto </a>  |
   <a href ="#-cronograma-das-sprints"> Cronograma de Sprints </a>  |
   <a href ="#-Cronograma-de-Evolução-do-Projeto"> Cronograma de Evolução do Projeto </a>  |
@@ -74,9 +74,12 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 | Sprint | Período | Status | Documentação | Vídeo
 | :---------: | :---------: | :---------: | :---------: | :---------: |
-| 🧣 Sprint 1 | 08/09 - 28/09 | 🔛 Em andamento | <a href=""> Docs 1 Sprint </a> | <a href="https://www.youtube.com/@OmniDevs-Oficial"> Vídeo 1 Sprint </a>
-| 🧣 Sprint 2 | 06/10 - 26/10 | 🚩 Não iniciado | <a href=""> Docs 2 Sprint </a> | <a href=""> Vídeo 2 Sprint </a>
-| 🧣 Sprint 3 | 03/11 - 23/11 | 🚩 Não iniciado | <a href=""> Docs 3 Sprint </a> | <a href=""> Vídeo 3 Sprint </a>
+| 🧣 Sprint 1 | 08/09 - 28/09 | 🔛 Em andamento | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-1/"> Docs 1ª Sprint </a> | <a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"> Vídeo 1 Sprint </a>
+| 🧣 Sprint 2 | 06/10 - 26/10 | 🚩 Não iniciado | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-2/"> Docs 2ª Sprint </a> | <a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"> Vídeo 2 Sprint </a>
+| 🧣 Sprint 3 | 03/11 - 23/11 | 🚩 Não iniciado | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-3/"> Docs 3ª Sprint </a> | <a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"> Vídeo 3 Sprint </a>
+
+## 🎥 Link da Playlist dos Vídeos das Sprints
+<a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a> 
 
 ---
 
@@ -91,7 +94,7 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 ## 💻 Tecnologias Utilizadas
 
 <div text-align="left">
-    <img src="https://skillicons.dev/icons?i=html,css,bootstrap,py,flask,mysql,github,git,figma"/>
+    <img src="https://skillicons.dev/icons?i=html,css,bootstrap,py,github,git,figma"/>
 </div>
 
 ---
@@ -112,9 +115,9 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 │   └── style.css
 │
 ├── 📁 Docs/
-│   ├── 📁 Sprint_1/
-│   ├── 📁 Sprint_2/
-│   └── 📁 Sprint_3/
+│   ├── 📁 Sprint-1/
+│   ├── 📁 Sprint-2/
+│   └── 📁 Sprint-3/
 └── README.md
 ```
 
@@ -170,13 +173,13 @@ https://colab.research.google.com/github/OmniDevsOficial/API-Censo-2022/blob/mai
 
 ## 🗂 Documentação
 
-- <a href="">Checklist DoR e DoD</a>
-- <a href="">Sprint 1 - DoR e DoD</a>
-- <a href="">Sprint 2 - DoR e DoD</a>
-- <a href="">Sprint 3 - DoR e DoD</a>
-- <a href="">Estratégia de Branch</a>
-- <a href="">Manual do Usuário</a>
-- <a href="">Manual de Instalação</a>
+- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/">Checklist DoR e DoD</a>
+- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-1/">Sprint 1 - DoR e DoD</a>
+- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-2/">Sprint 2 - DoR e DoD</a>
+- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Sprint-3/">Sprint 3 - DoR e DoD</a>
+- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/Estratégia-De-Branch.pdf">Estratégia de Branch</a>
+- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/">Manual do Usuário</a>
+- <a href="https://github.com/OmniDevsOficial/API-Censo-2022/Docs/">Manual de Instalação</a>
 
 ---
 
