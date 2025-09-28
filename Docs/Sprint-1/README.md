@@ -1,7 +1,9 @@
-### Sprint 1
+# Sprint 1
 
 <p align="center">
   <a href ="#-backlog-da-sprint"> Backlog do Sprint </a>  |
+  <a href ="#-Definition-Of-Ready-(DoR)"> DoR </a>  | 
+  <a href ="#-Definition-Of-Done-(DoD)"> DoD </a>  | 
   <a href ="#-cronograma-das-sprints"> Cronograma da Sprint </a>
   <a href ="#-link-do-vídeo"> Link do Vídeo </a>
 </p>
@@ -19,6 +21,20 @@
 | 🎗  5 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Pirâmide Etária por Ano, de modo a compreender como a cidade está mudando sua estrutura social. | 3 | 1 |
 
 ---
+
+## Definition of Ready (DoR)
+- A User Story está descrita de forma clara, usando o formato "Como [persona], quero [ação] para que [objetivo]"
+- Necessidade do Cliente bem compreendida pela Equipe
+- Documentos de Apoio, especificando/guiando o que se espera do resultado final (quando aplicável)
+- Sem dependências bloqueadoras
+
+## Definition of Done (DoD)
+- Funcionalidade Versionada Corretamente
+- Corresponde ao Documento de Apoio Utilizado (quando aplicável)
+- Passou por Testes de Usabilidade
+- Código Revisado por um Colega de Equipe
+- PO validou a entrega como "aceita"
+
 
 ## 📅 Cronograma da Sprint
 
