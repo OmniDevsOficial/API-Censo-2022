@@ -6,14 +6,14 @@
 | <a href ="#-descrição-do-desafio"> Desafio </a>  |
   <a href ="#-o-que-será-necessário-para-resolver-esse-desafio"> Solução </a>  |
   <a href ="#-backlog-do-produto"> Backlog do Produto </a>  |
-  <a href ="#-registros-das-sprints"> Cronograma de Sprints </a>  |
+  <a href ="#-registros-das-sprints"> Registros das Sprints </a>  |
   <a href ="#-link-da-playlist-dos-vídeos-das-sprints"> Link da Playlist do Youtube </a>  |
-  <a href ="#-Cronograma-de-Evolução-do-Projeto"> Cronograma de Evolução do Projeto </a>  |
+  <a href ="#-cronograma-de-evolução-do-projeto"> Cronograma de Evolução do Projeto </a>  |
   <a href ="#-tecnologias-utilizadas"> Tecnologias </a> |
   <a href ="#-estrutura-do-projeto"> Estrutura do Projeto </a> |
   <a href ="#-como-executar-o-projeto"> Como Executar o Projeto </a> |
-  <a href ="#-Definition-Of-Ready-(DoR)"> DoR </a>  | 
-  <a href ="#-Definition-Of-Done-(DoD)"> DoD </a>  | 
+  <a href ="#definition-of-ready-dor"> DoR </a>  | 
+  <a href ="#definition-of-done-dod"> DoD </a>  | 
   <a href ="#-documentação"> Documentação </a>  | 
   <a href ="#-conheça-a-equipe-talentosa-por-trás-do-projeto"> Equipe </a> |
 </p>

@@ -2,9 +2,9 @@
 
 <p align="center">
   <a href ="#-backlog-da-sprint"> Backlog do Sprint </a>  |
-  <a href ="#-Definition-Of-Ready-(DoR)"> DoR </a>  | 
-  <a href ="#-Definition-Of-Done-(DoD)"> DoD </a>  | 
-  <a href ="#-cronograma-das-sprints"> Cronograma da Sprint </a>
+  <a href ="#definition-of-ready-dor"> DoR </a>  | 
+  <a href ="#definition-of-done-dod"> DoD </a>  | 
+  <a href ="#-cronograma-da-sprint"> Cronograma da Sprint </a>
   <a href ="#-link-do-vídeo"> Link do Vídeo </a>
 </p>
 

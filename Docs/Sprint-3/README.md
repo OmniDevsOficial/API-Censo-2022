@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href ="#-backlog-da-sprint"> Backlog do Sprint </a>  |
-  <a href ="#-cronograma-das-sprints"> Cronograma da Sprint </a>
+  <a href ="#-cronograma-da-sprint"> Cronograma da Sprint </a>
   <a href ="#-link-do-vídeo"> Link do Vídeo </a>
 </p>
 
