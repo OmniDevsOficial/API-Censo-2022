@@ -7,6 +7,9 @@
 
 body {
     font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
 }
 
 /* Estilos do cabeçalho */
@@ -45,7 +48,7 @@ nav {
 /* Estilos de cabeçalhos e parágrafos */
 h2,
 p {
-    margin: 40px;
+    margin: 50px;
     text-align: center;
 }
 
@@ -142,7 +145,10 @@ p {
 .flex-container {
     display: flex;
     /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: row;
     padding: 20px;
     max-width: 1200px;
     margin:30px auto;
@@ -153,7 +159,7 @@ p {
 }
 
 .flex-container:hover{
-    border-color: lightblue;
+    border-color: rgb(59, 147, 179);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
@@ -172,6 +178,33 @@ p {
   border-radius: 12px;
   cursor: pointer;
   margin: 10px auto; /*centraliza horizontalmente*/
+  width: 200px; /*largura fixa*/
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #0056b3; /* azul mais escuro */
+}
+.button span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .texto-e-botao-container {
@@ -224,3 +257,10 @@ footer img {
     height: auto;
     display: block; /* Ajuda a evitar espaços extras inesperados */
 }
+
+img {
+    max-width: 100%; /* Faz a imagem responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-right: 20px; /* Espaço entre a imagem e o texto */
+}
+
