@@ -120,7 +120,7 @@ h1 {
     gap: 10px;
     font-size: 15px;
     /*espaço entre os elementos dentro */
-    border: 2px solid rgb(2, 6, 6);
+    border: 1px solid rgb(87, 87, 87);
     border-radius: 10px;
 }
 
@@ -205,7 +205,7 @@ section {
     cursor: pointer;
     margin: 5px auto;
     /*centraliza horizontalmente*/
-    width: 150px;
+    width: 160px;
     /*largura fixa*/
     transition: background-color 0.3s ease;
 }
