@@ -4,21 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Planeja SJC</title>
     <link rel="stylesheet" href="style.css"> <!-- Linkamento da estilazação CSS -->
+    <link rel="icon" type="image/png" href="./img/brasao_64x64.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
 </head>
 
 <body>
     <header>
-        <img src="img/logo.png">
-        <nav>
+        <a href="./Index.html">
+            <img id="logo" src="img/logo.png" alt="logo">
+        </a>
+
+        <!-- <nav>
             <ul class="menu">
-                <li><a href="./Index.html">Home</a></li>
                 <li><a href="#Mapa.html">Mapa</a></li>
             </ul>
-        </nav>
+        </nav> -->
     </header>
     <main>
         <!-- Principal -->
@@ -50,7 +52,8 @@
                 <img src="img1.png"
                     alt="Gráfico de barras mostrando a distribuição da população por bairros e regiões de São José dos Campos">
                 <div class="texto-e-botao-container">
-                    <p>A imagem apresentada ilustra a distribuição da população por bairros e regiões de São José dos Campos, oferecendo uma visão clara e detalhada sobre a demografia local.
+                    <p>A imagem apresentada ilustra a distribuição da população por bairros e regiões de São José dos
+                        Campos, oferecendo uma visão clara e detalhada sobre a demografia local.
                     </p>
                     <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
                 </div>
@@ -63,12 +66,12 @@
                 <img src="img2.png"
                     alt="Gráfico de barras mostrando a distribuição da população nos bairros da Região Leste">
                 <div class="texto-e-botao-container">
-                    <p>O gráfico ilustra o crescimento populacional ao longo dos anos, permitindo uma análise das tendências demográficas na área estudada.</p>
-                  <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
+                    <p>O gráfico ilustra o crescimento populacional ao longo dos anos, permitindo uma análise das
+                        tendências demográficas na área estudada.</p>
+                    <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
                 </div>
             </div>
         </section>
-
 
         <section id="PirâmideEtária">
             <h2>Pirâmide Etária</h2>
@@ -76,32 +79,32 @@
                 <img src="img3.png"
                     alt="Gráfico de barras mostrando a pirâmide etária da população de São José dos Campos">
                 <div class="texto-e-botao-container">
-                    <p>O gráfico ilustra a pirâmide etária da população de São José dos Campos, permitindo uma análise das
+                    <p>O gráfico ilustra a pirâmide etária da população de São José dos Campos, permitindo uma análise
+                        das
                         características demográficas da cidade.
                     </p>
                     <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
                 </div>
             </div>
-
-
         </section>
-        <div class="separador">
+
+        <section id="separador">
             <h2>Densidade Populacional</h2>
-        <section id="DensidadePopulacional">
-            <div class="flex-container">
-                <img src="img4.png"
-                    alt="Gráfico de barras mostrando a distribuição da densidade populacional">
-                <div class="texto-e-botao-container">
-                    <p>O gráfico ilustra a distribuição da densidade populacional, permitindo uma análise das áreas com maior e menor concentração de habitantes.
-                    </p>
-                    <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
+            <section id="DensidadePopulacional">
+                <div class="flex-container">
+                    <img src="img4.png" alt="Gráfico de barras mostrando a distribuição da densidade populacional">
+                    <div class="texto-e-botao-container">
+                        <p>O gráfico ilustra a distribuição da densidade populacional, permitindo uma análise das áreas
+                            com maior e menor concentração de habitantes.
+                        </p>
+                        <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
+                    </div>
                 </div>
-            </div>
+            </section>
         </section>
-        </div>
     </main>
     <footer>
-        <h3>Todos direitos reservados &copy;</h3>
+        <h3>© 2025 Omnidevs, Todos os direitos reservados &copy;</h3>
         <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/branch-sumario" target="_blank">
             <img src="img/github.png" alt="Link para o GitHub do projeto">
         </a>

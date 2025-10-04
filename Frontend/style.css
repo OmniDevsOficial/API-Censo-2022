@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
-    padding: 20px;
+    font-family: 'Montserrat';
 }
 
 /* Estilos do cabeçalho */
@@ -17,8 +19,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 10px;
     background-color: #0080FF;
+}
+
+#logo {
+    padding-left: 1%;
+    width: 70%;
 }
 
 /* Estilos do menu */
@@ -26,10 +32,12 @@ ul.menu {
     list-style-type: none;
     padding: 0;
     display: flex;
+    font-size: 18px;
 }
 
 ul.menu li {
     margin: 5px;
+    margin-right: 30px;
 }
 
 ul.menu li:not(:first-child) {
@@ -70,7 +78,7 @@ ul li a {
     display: block;
     color: #f0f0f0;
     text-align: center;
-    padding: 14px 16px;
+    padding: 6px 4px;
     text-decoration: none;
     border-radius: 8px;
 }
@@ -85,14 +93,21 @@ h1 {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    font-family: 'Montserrat';
 }
-.introducao p{
+
+.introducao {
+    margin-top: 3%;
+}
+
+.introducao p {
     font-size: 1rem;
     font-weight: normal;
     text-align: center;
     line-height: 1;
     max-width: 1200px;
-    margin: 20px auto 30px auto; /*centraliza o bloco*/
+    margin: 20px auto 30px auto;
+    /*centraliza o bloco*/
 }
 
 .sumario {
@@ -105,7 +120,7 @@ h1 {
     gap: 10px;
     font-size: 15px;
     /*espaço entre os elementos dentro */
-    border: 2px solid rgb(2, 6, 6);
+    border: 1px solid rgb(87, 87, 87);
     border-radius: 10px;
 }
 
@@ -142,6 +157,13 @@ p {
     text-align: center;
 }
 
+section {
+    margin: 0px 2% 0px 2%;
+}
+#PopulaçãoTotal, #CrescimentoPopulacional, #PirâmideEtária {
+    border-bottom: 1px solid black;
+}
+
 .flex-container {
     display: flex;
     /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
@@ -151,116 +173,137 @@ p {
     flex-direction: row;
     padding: 20px;
     max-width: 1200px;
-    margin:30px auto;
+    margin: 30px auto;
     border: 5px solid transparent;
     border-radius: 10px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    gap: 20px;
+    gap: 15px;
 }
 
-.flex-container:hover{
+.flex-container:hover {
     border-color: rgb(59, 147, 179);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.flex-container-content{   /*agrupa grafico+texto lado a lado */
+.flex-container-content {
+    /*agrupa grafico+texto lado a lado */
     display: flex;
     gap: 20px;
     align-items: flex-start;
 }
 
 .button {
-  background-color: #0080FF; /* azul */
-  color: white;
-  padding: 12px 28px; /* botao menor*/
-  font-size: 20px; /*texto menor */
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  margin: 10px auto; /*centraliza horizontalmente*/
-  width: 200px; /*largura fixa*/
-  transition: background-color 0.3s ease;
+    background-color: #0080FF;
+    /* azul */
+    color: white;
+    padding: 12px 28px;
+    /* botao menor*/
+    font-size: 18px;
+    /*texto menor */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 5px auto;
+    /*centraliza horizontalmente*/
+    width: 160px;
+    /*largura fixa*/
+    transition: background-color 0.3s ease;
 }
+
 .button:hover {
-    background-color: #0056b3; /* azul mais escuro */
+    background-color: #0056b3;
+    /* azul mais escuro */
 }
+
 .button span {
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
 
 .button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  right: -20px;
-  transition: 0.5s;
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    right: -20px;
+    transition: 0.5s;
 }
 
 .button:hover span {
-  padding-right: 25px;
+    padding-right: 25px;
 }
 
 .button:hover span:after {
-  opacity: 1;
-  right: 0;
+    opacity: 1;
+    right: 0;
 }
 
 .texto-e-botao-container {
     flex-direction: column;
 }
 
-.texto-e-botao-container{
-    flex: 1; /*ocupa mais espaço no flex*/
+.texto-e-botao-container {
+    flex: 1;
+    /*ocupa mais espaço no flex*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-left: 20px;
 }
-.texto-e-botao-container p{
-    flex: 1; /*deixa o texto expandir */
-    font-size: 1rem; /*ajusta o tamanho do texto se precisar */
-    font-weight: bold;
+
+.texto-e-botao-container p {
+    flex: 1;
+    /*deixa o texto expandir */
+    font-size: 1rem;
+    /*ajusta o tamanho do texto se precisar */
     text-align: left;
     line-height: 1.5;
     margin: 0.5em 0;
 }
-@media (max-width:768px){
-    .flex-container{
+
+@media (max-width:768px) {
+    .flex-container {
         flex-direction: column;
         align-items: center;
     }
-    .texto-e-botao-container{
+
+    .texto-e-botao-container {
         width: 100%;
     }
 }
 
 footer {
-    display: flex;
-    justify-content: space-between; /* A chave é usar space-between */
     align-items: center;
-    padding: 15px 30px;
     background-color: #0080FF;
     color: white;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    /* A chave é usar space-between */
+    padding: 1.5%;
 }
 
 /* 1. Criamos o item "fantasma" à esquerda */
 footer::before {
-    content: ''; /* O pseudo-elemento precisa disso para existir */
-    width: 32px; /* IMPORTANTE: Dê a ele a MESMA LARGURA do seu ícone do GitHub */
+    content: '';
+    /* O pseudo-elemento precisa disso para existir */
+    width: 32px;
+    /* IMPORTANTE: Dê a ele a MESMA LARGURA do seu ícone do GitHub */
 }
 
 /* 2. Garantimos que o ícone do GitHub tenha a largura definida */
 footer img {
     width: 32px;
     height: auto;
-    display: block; /* Ajuda a evitar espaços extras inesperados */
+    display: block;
+    /* Ajuda a evitar espaços extras inesperados */
 }
 
 img {
-    max-width: 100%; /* Faz a imagem responsiva */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-right: 20px; /* Espaço entre a imagem e o texto */
+    max-width: 100%;
+    /* Faz a imagem responsiva */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    margin-right: 20px;
+    /* Espaço entre a imagem e o texto */
 }
-
