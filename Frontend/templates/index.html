@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planeja SJC</title>
-    <link rel="stylesheet" href="style.css"> <!-- Linkamento da estilazação CSS -->
-    <link rel="icon" type="image/png" href="./img/brasao_64x64.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <!-- Linkamento da estilazação CSS -->
+    <link rel="icon" type="image/png" href="static/images/brasao_64x64.png">
 </head>
 
 <body>
     <header>
         <a href="./Index.html">
-            <img id="logo" src="img/logo.png" alt="logo">
+            <img id="logo" src="static/images/logo.png" alt="logo">
         </a>
-
-        <!-- <nav>
+        <nav>
             <ul class="menu">
-                <li><a href="#Mapa.html">Mapa</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
             </ul>
-        </nav> -->
+        </nav>
     </header>
     <main>
         <!-- Principal -->
@@ -49,7 +49,7 @@
         <section id="PopulaçãoTotal">
             <h2>População Total</h2>
             <div class="flex-container">
-                <img src="img1.png"
+                <img src="static\images\img1.png"
                     alt="Gráfico de barras mostrando a distribuição da população por bairros e regiões de São José dos Campos">
                 <div class="texto-e-botao-container">
                     <p>A imagem apresentada ilustra a distribuição da população por bairros e regiões de São José dos
@@ -63,7 +63,7 @@
         <section id="CrescimentoPopulacional">
             <h2>Crescimento Populacional</h2>
             <div class="flex-container">
-                <img src="img2.png"
+                <img src="static/images/img2.png"
                     alt="Gráfico de barras mostrando a distribuição da população nos bairros da Região Leste">
                 <div class="texto-e-botao-container">
                     <p>O gráfico ilustra o crescimento populacional ao longo dos anos, permitindo uma análise das
@@ -76,7 +76,7 @@
         <section id="PirâmideEtária">
             <h2>Pirâmide Etária</h2>
             <div class="flex-container">
-                <img src="img3.png"
+                <img src="static/images/img3.png"
                     alt="Gráfico de barras mostrando a pirâmide etária da população de São José dos Campos">
                 <div class="texto-e-botao-container">
                     <p>O gráfico ilustra a pirâmide etária da população de São José dos Campos, permitindo uma análise
@@ -92,7 +92,8 @@
             <h2>Densidade Populacional</h2>
             <section id="DensidadePopulacional">
                 <div class="flex-container">
-                    <img src="img4.png" alt="Gráfico de barras mostrando a distribuição da densidade populacional">
+                    <img src="static/images/img4.png"
+                        alt="Gráfico de barras mostrando a distribuição da densidade populacional">
                     <div class="texto-e-botao-container">
                         <p>O gráfico ilustra a distribuição da densidade populacional, permitindo uma análise das áreas
                             com maior e menor concentração de habitantes.
@@ -106,7 +107,7 @@
     <footer>
         <h3>© 2025 Omnidevs, Todos os direitos reservados &copy;</h3>
         <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/branch-sumario" target="_blank">
-            <img src="img/github.png" alt="Link para o GitHub do projeto">
+            <img src="static/images/github.png" alt="Link para o GitHub do projeto">
         </a>
     </footer>
 </body>
