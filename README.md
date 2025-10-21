@@ -131,11 +131,23 @@ cd API-Censo-2022
 <!-- Primeira parte do Front-End -->
 ### 2. Configuração do Front-End:
 ```
-# Adentra na pasta responsável pelo Front-End
+# Adentre na pasta responsável pelo Front-End
 cd Frontend
 
-# inicia o Front-End localmente em sua máquina
-start index.html
+# inicie o Front-End localmente em sua máquina
+python -m venv venv
+venv\Scripts\activate  # (no Windows)
+source venv/bin/activate # (no Linux ou Mac)
+pip install -r requirements.txt
+
+# Rode o projeto
+flask run
+
+# Assim que o Flask iniciar, irá aparecer a seguinte mensagem:
+Running on http://127.0.0.1:5000
+
+# Copie a url e cole em seu navegador
+http://127.0.0.1:5000
 ```
 
 <!-- Configura o Back-End -->
@@ -183,7 +195,7 @@ https://colab.research.google.com/github/OmniDevsOficial/API-Censo-2022/blob/mai
 
 | Foto | Nome | Função | Github | Linkedin |
 | :---------: | :---------: | :---------------------: | :-----------------: | :-------: |
-| <img src="https://avatars.githubusercontent.com/u/103455871?v=4" width=50px alt="Foto do Yoseph"> | *Yoseph Levi* | Product Owner | <a href="https://github.com/YosephLima"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/leonardo-borges-/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
+| <img src="https://avatars.githubusercontent.com/u/103455871?v=4" width=50px alt="Foto do Yoseph"> | *Yoseph Levi* | Product Owner | <a href="https://github.com/YosephLima"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
 | <img src="https://avatars.githubusercontent.com/u/225857936?v=4" width=50px alt="Foto do Luis"/> | *Luis Guilherme* | Scrum Master | <a href="https://github.com/Mactravish552"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://avatars.githubusercontent.com/u/168978076?v=4" width=50px alt="Foto da Gabriela"> | *Gabriela Santos* | Desenvolvedor | <a href="https://github.com/GabSantt"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> | 
 | <img src="https://avatars.githubusercontent.com/u/168497458?v=4" width=50px alt="Foto do Henrique"/> | *Henrique Moreira* | Desenvolvedor | <a href="https://github.com/DeveloperCorsair"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/henriquemm/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
