@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeja SJC</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/grafico.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <!-- Linkamento da estilazação CSS -->
+    <link rel="icon" type="image/png" href="static/images/brasao_64x64.png">
+</head>
+
+<body>
+    <!-- Header / Navbar -->
+    <header>
+        <a href="{{ url_for('index') }}">
+            <img id="logo" src="static/images/logo.png" alt="logo">
+        </a>
+        <nav>
+            <ul class="menu">
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
+                <li><a href="{{ url_for('grafico') }}">Gráficos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Parte principal da página -->
+    <main style="margin-top: 5%;">
+        <!--First card-->
+        <section class="card-populacao">
+            <section class="sumario">
+                <h1 class="grafico-titulo">Explore Nossos Gráficos</h1>
+                <div class="primeiro-grafico">
+                    <nav>
+                        <a href="#PopulaçãoTotal">Gráfico 1: População Total</a>
+                        <a href="#CrescimentoPopulacional">Gráfico 2: Crescimento Populacional</a>
+                        <a href="#PirâmideEtária">Gráfico 3: Pirâmide Etária</a>
+                        <a href="#DensidadePopulacional">Gráfico 4: Densidade Populacional</a>
+                    </nav>
+                    <div>
+                        <table class="lista-grafico">
+                            <tr>
+                                <th colspan="3">Ranking por região</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Morumbi</td>
+                                <td>62.190 habitantes</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Campo dos Alemães</td>
+                                <td>56.500 habitantes</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Novo Horizonte</td>
+                                <td>47.193 habitantes</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Alto da Ponte</td>
+                                <td>40.563 habitantes</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Vila Industrial</td>
+                                <td>39.506 habitantes</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Putim/Setville</td>
+                                <td>38.895 habitantes</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Parque Industrial</td>
+                                <td>38.549 habitantes</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="card-populacao">
+            <!--First card-->
+            <section class="sumario">
+                <h1 class="grafico-titulo"> Explore Nossos Gráficos </h1>
+                <nav>
+                    <a href="#PopulaçãoTotal"> Gráfico 1: População Total </a>
+                    <a href="#CrescimentoPopulacional"> Gráfico 2: Crescimento Populacional </a>
+                    <a href="#PirâmideEtária"> Gráfico 3: Pirâmide Etária </a>
+                    <a href="#DensidadePopulacional"> Gráfico 4: Densidade Populacional </a>
+                </nav>
+            </section>
+        </section>
+
+
+        <!-- Card footer -->
+        <section id="separador">
+            <h2>Densidade Populacional</h2>
+            <section id="DensidadePopulacional">
+                <div class="flex-container">
+                    <img src="static/images/img4.png"
+                        alt="Gráfico de barras mostrando a distribuição da densidade populacional">
+                    <div class="texto-e-botao-container">
+                        <p>O gráfico ilustra a distribuição da densidade populacional, permitindo uma análise das áreas
+                            com maior e menor concentração de habitantes.
+                        </p>
+                        <button class="button" style="vertical-align:middle"><span>Ver mais</span></button><!--Botão-->
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <h3>© 2025 Omnidevs, Todos os direitos reservados &copy;</h3>
+        <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/branch-sumario" target="_blank">
+            <img src="static/images/github.png" alt="Link para o GitHub do projeto">
+        </a>
+    </footer>
+
+</body>
+
+</html>

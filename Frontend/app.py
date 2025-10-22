@@ -15,6 +15,10 @@ def mapa():
 def sobre():
     return render_template('sobre.html')
 
+@app.route('/grafico')
+def grafico():
+    return render_template('grafico.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
