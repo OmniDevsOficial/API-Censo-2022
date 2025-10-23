@@ -1,11 +1,15 @@
 * {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* Falta estilizar */
-/* header {
-    background-color: #183883;
-} */
+body {
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
 
 ul li {
     font-size: 1rem;
@@ -14,152 +18,221 @@ ul li {
 .titulo h2 {
     margin-bottom: 30px;
     color: #183883;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
-/* Estilização do dropdown de filtros */
 .filtro {
     position: relative;
-    display: inline-block;
-    margin: 20px 0 60px 0;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 60px 0;
 }
 
-/* Botão dropdown */
 .drop {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #C3DFE0;
+    background-color: #dce9f9;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
-    padding: 0.5rem 1.5rem;
-    border-radius: 5px;
-    transition: background 0.2s;
-    min-width: 200px;
-    margin-bottom: 2%;
+    font-size: 1.05rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-width: 240px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 2;
 }
 
 .drop:hover {
-    background-color: #aac9ca;
+    background-color: #c8dbf5;
+    transform: translateY(-2px);
 }
 
-/* Seta dentro do dropdown */
 .seta {
     margin-left: 1rem;
 }
 
-/* menu dropdown - Filtros */
 .dropdown {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    min-width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 240px;
     background-color: #ffffff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    z-index: 999;
+    border-radius: 8px;
+    z-index: 1;
+    overflow: hidden;
+    animation: fadeInDropdown 0.2s ease-in-out;
 }
 
 .dropdown a {
     display: block;
     color: black;
     text-decoration: none;
-    padding: 10px 14px;
+    padding: 12px 18px;
     text-align: left;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 
 .dropdown a:hover {
-    background-color: #f1f1f1;
+    background-color: #f3f6fb;
+    color: #183883;
 }
 
-/* Div pai do dropdown, não mexe diretamente nele */
 .filtro:hover .dropdown {
     display: block;
 }
 
-/* Término do Dropdown */
+@keyframes fadeInDropdown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+main {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 3rem;
+}
+
+.cards-filtros-regiao {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card-populacao-regiao {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 2rem 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-populacao-regiao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sumario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grafico-titulo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #183883;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.sumario nav div,
+.sumario nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    text-align: center;
+}
+
+.sumario nav a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sumario nav a:hover {
+    color: #003d99;
+}
+
+.card-populacao {
+    margin-top: 2.5%;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 2rem;
+}
 
 .primeiro-grafico {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0px 2% 2% 2%;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
+    align-items: start;
 }
 
-a #logo {
-    margin: 10% 0 1% 30%;
-    width: 80%;
+.grafico-simulacao {
+    background: linear-gradient(135deg, #c8dbf5, #9fc2f8);
+    border-radius: 10px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #183883;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Tabela de ranking do gráfico */
 .lista-grafico {
+    display: none;
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 1px solid #ccc;
-    background-color: #fafafa;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
+    border-collapse: collapse;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
 }
 
 .lista-grafico th,
 .lista-grafico td {
-    padding: 8px 12px;
+    padding: 10px 14px;
     text-align: left;
-    background-color: white;
-    border-bottom: 1px solid #eee;
 }
 
 .lista-grafico th {
+    background-color: #183883;
+    color: #fff;
     font-size: 1rem;
-    font-weight: 700;
-    border-bottom: none;
-    border-radius: 8px 8px 0 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.lista-grafico td {
+    border-bottom: 1px solid #eee;
+}
+
+.lista-grafico tr:hover {
+    background-color: #f6f8ff;
 }
 
 .lista-grafico tr:last-child td {
     border-bottom: none;
 }
 
-.grafico-titulo {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
-}
+@media (max-width: 1000px) {
+    .primeiro-grafico {
+        grid-template-columns: 1fr;
+    }
 
-.primeiro-grafico nav {
-    display: flex;
-    justify-content: center;
-}
-
-.primeiro-grafico nav a {
-    text-decoration: none;
-    color: #0077cc;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.primeiro-grafico nav a:hover {
-    color: #004a99;
-}
-
-.cards-filtros-regiao {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Significa que há 3 colunas iguais e a fração de espaço para cada uma é iguail */
-    gap: 20px;
-}
-
-.card-populacao {
-    margin-top: 2.5%;
-}
-
-.card-populacao-regiao {
-    display: inline-block;
+    .grafico-simulacao {
+        height: 300px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -168,17 +241,19 @@ a #logo {
         gap: 15px;
     }
 
+    .drop {
+        font-size: 0.9rem;
+    }
+
+    .grafico-titulo {
+        font-size: 1rem;
+    }
+
     .lista-grafico th,
     .lista-grafico td {
         padding: 6px 8px;
         font-size: 0.85rem;
     }
-}
-
-.sumario nav div a {
-    justify-content: center;
-    text-align: center;
-    width: 100%;
 }
 
 /* Mexer nisso mais tarde para colocar o translate-y */
