@@ -133,7 +133,6 @@ a #logo {
 .primeiro-grafico nav {
     display: flex;
     justify-content: center;
-    margin-bottom: 25px;
 }
 
 .primeiro-grafico nav a {
@@ -174,6 +173,12 @@ a #logo {
         padding: 6px 8px;
         font-size: 0.85rem;
     }
+}
+
+.sumario nav div a {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
 }
 
 /* Mexer nisso mais tarde para colocar o translate-y */
