@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panorama do Censo 2022 - São José dos Campos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            padding: 1.5rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .custom-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('./../static/images/seta.svg');
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.5em 1.5em;
+        }
+        .chart-container {
+            position: relative;
+            height: 500px;
+            width: 100%;
+            background-color: #f9fafb;
+            border-radius: 0.5rem;
+        }
+        .chart-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0.5rem;
+        }
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #6b7280;
+        }
+        footer {
+            align-items: center;
+            background-color: #0080FF;
+            color: white;
+            display: flex;
+            font-size: 100%;
+            font-weight: bold;
+            justify-content: space-between;
+            padding: 1.4%;
+        }
+        /* item "fantasma" à esquerda centralizar o manter o layout do footer */
+        footer::before {
+            content: '';
+            width: 32px;
+        }
+        footer img {
+            width: 32px;
+            height: auto;
+            display: block;
+        }
+        footer a img:hover {
+            transform: scale(1.2);
+            transition: transform 0.3 ease-in-out;
+        }
+        ul li a:hover {
+            background-color: rgba(216, 216, 226, 0.397);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <header style="display: flex; align-items: center; justify-content: space-between; background-color: #0080FF; padding: 0.9% 1% 0.9% 1%;">
+        <a href="{{ url_for('index') }}" style="display: flex; justify-content: center; align-items: center; text-decoration: none;">
+            <img src="{{ url_for('static', filename='images/brasao_64x64.png') }}" alt="Logo Censo 2022" style="height: 2rem; margin-right: 1rem;">
+            <span style="color: white; font-weight: bold; font-size: 1.5rem;">Planeja SJC</span>
+        </a>
+        <!-- Navbar -->
+        <nav style="text-decoration: none; color: #f0f0f0; font-weight: bold; font-size: 25px;">
+            <ul style="list-style-type: none; padding: 0; display: flex; font-size: 18px; margin: 0; overflow: hidden; background-color: transparent;">
+                <li style="margin: 5px; margin-right: 30px; float: left;">
+                    <a href="{{ url_for('index') }}" style="display: block; color: #f0f0f0; text-align: center; padding: 6px 4px; text-decoration: none; border-radius: 8px;">Home</a>
+                </li>
+                <li style="margin: 5px; margin-right: 30px; float: left; padding-left: 10px;">
+                    <a href="#" style="display: block; color: #f0f0f0; text-align: center; padding: 6px 4px; text-decoration: none; border-radius: 8px;">Gráficos</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mx-auto p-4 md:p-8">
+        <section class="mb-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold">Gráficos</h1>
+                <p class="text-lg text-gray-600 mt-2 mx-40">Esta página apresenta um conjunto de gráficos
+                interativos e informativos. Aqui, é possível explorar estatísticas sobre os principais indicadores 
+                de São José dos Campos, principalmente os relacionadas à população. Os gráficos foram desenvolvidos para facilitar 
+                a compreensão dos principais resultados do levantamento do Censo 2022, permitindo identificar tendências, comparações e transformações demográficas ao longo do tempo.</p>
+            </div>
+            <div class="mt-8 max-w-md mx-auto">
+                <label for="region-select" class="block text-sm font-medium text-gray-700 mb-2 text-center">Selecione uma região:</label>
+                <select id="region-select" class="custom-select block w-full px-4 py-3 text-base text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    <option value="sjc">São José dos Campos</option>
+                    <option value="Norte">Região Norte</option>
+                    <option value="Sul">Região Sul</option>
+                    <option value="Leste">Região Leste</option>
+                    <option value="Oeste">Região Oeste</option>
+                    <option value="Centro">Região Centro</option>
+                    <option value="Sudeste">Região Sudeste</option>
+                    <option value="São Francisco Xavier">São Francisco Xavier</option>
+                </select>
+            </div>
+        </section>
+
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="card">
+                <h2 class="text-xl font-bold mb-4 text-center" id="chart1-title">Gráfico 1</h2>
+                <div class="chart-container">
+                    <iframe id="chart1" src=""></iframe>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="text-xl font-bold mb-4 text-center" id="chart2-title">Gráfico 2</h2>
+                <div class="chart-container">
+                    <iframe id="chart2" src=""></iframe>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="text-xl font-bold mb-4 text-center" id="chart3-title">Gráfico 3</h2>
+                <div class="chart-container">
+                    <iframe id="chart3" src=""></iframe>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="text-xl font-bold mb-4 text-center" id="chart4-title">Gráfico 4</h2>
+                <div class="chart-container">
+                    <iframe id="chart4" src=""></iframe>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="text-center mt-12">
+        <h3>© 2025 Omnidevs, Todos os direitos reservados &copy;</h3>
+        <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank">
+            <img src="static/images/github.png" alt="Link para o GitHub do projeto">
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // mapeamento de gráficos por região
+            const regionData = {
+                'sjc': {
+                    name: 'São José dos Campos',
+                    charts: [
+                        { id: 'chart1', title: 'Pirâmide Etária 2010', tipo: 'piramide_2010' },
+                        { id: 'chart3', title: 'População por Região', tipo: 'populacao' },
+                        { id: 'chart2', title: 'Pirâmide Etária 2022', tipo: 'piramide_2022' },
+                        { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' }
+                    ]
+                },
+                'Norte': {
+                    name: 'Região Norte',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Norte', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Norte', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Sul': {
+                    name: 'Região Sul',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Sul', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Sul', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Leste': {
+                    name: 'Região Leste',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Leste', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Leste', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Oeste': {
+                    name: 'Região Oeste',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Oeste', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Oeste', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Centro': {
+                    name: 'Região Centro',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Centro', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Centro', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Sudeste': {
+                    name: 'Região Sudeste',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Sudeste', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Sudeste', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'São Francisco Xavier': {
+                    name: 'São Francisco Xavier',
+                    charts: [
+                        { id: 'chart1', title: 'População - São Francisco Xavier', tipo: 'populacao_bairro' },
+                        { id: 'chart2', title: 'Gráfico 2', tipo: null },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                }
+            };
+
+            // função para atualizar o dashboard com base na região selecionada
+            function updateDashboard(regionKey) {
+                const data = regionData[regionKey];
+                
+                // atualizar cada um dos gráficos
+                data.charts.forEach(chart => {
+                    const iframeElement = document.getElementById(chart.id);
+                    const titleElement = document.getElementById(chart.id + '-title');
+                    // atualizar título com nome do gráfico atual
+                    titleElement.textContent = chart.title;
+                    // limpar iframe antes de atualizar
+                    iframeElement.removeAttribute('src');
+                    iframeElement.removeAttribute('srcdoc');
+                    // atualizar iframe com o gráfico
+                    if (chart.tipo) {
+                        iframeElement.src = `/grafico/${regionKey}/${chart.tipo}`;
+                    } else {
+                        // se não tiver gráfico, mostrar: gráfico não disponível
+                        iframeElement.srcdoc = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; font-family: Inter, sans-serif; color: #666;">Gráfico não disponível</div>';
+                    }
+                });
+            }
+
+            // começar com os dados de SJC
+            updateDashboard('sjc');
+
+            document.getElementById('region-select').addEventListener('change', (event) => {
+                updateDashboard(event.target.value);
+            });
+        });
+    </script>
+
+</body>
+</html>
