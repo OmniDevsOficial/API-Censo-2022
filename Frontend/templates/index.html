@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planeja SJC</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <!-- Linkamento da estilazação CSS -->
     <link rel="icon" type="image/png" href="static/images/brasao_64x64.png">
 </head>
@@ -18,6 +18,7 @@
         <nav>
             <ul class="menu">
                 <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('mapa') }}">Gráfico</a></li>
                 <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
                 <li><a href="{{ url_for('grafico') }}">Gráficos</a></li>
             </ul>
