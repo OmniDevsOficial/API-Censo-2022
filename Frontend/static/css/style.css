@@ -115,8 +115,8 @@ h1 {
     flex-direction: column;
     /*deixa h1 em cima e os links embaixo*/
     margin: auto;
+    margin-bottom: 2.5%;
     max-width: 1200px;
-    padding-left: 20px;
     gap: 10px;
     font-size: 15px;
     /*espaço entre os elementos dentro */
