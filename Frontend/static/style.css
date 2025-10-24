@@ -307,3 +307,27 @@ img {
     margin-right: 20px;
     /* Espaço entre a imagem e o texto */
 }
+<<<<<<< HEAD:Frontend/static/css/style.css
+=======
+.card {
+background-color: white;
+border-radius: 0.75rem;
+box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+padding: 1.5rem;
+transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+        /* Estilo para o select */
+.custom-select {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>');
+background-repeat: no-repeat;
+background-position: right 0.75rem center;
+background-size: 1.5em 1.5em;
+}
+>>>>>>> gabi-graficos:Frontend/static/style.css
