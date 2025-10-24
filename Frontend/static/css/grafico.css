@@ -1,8 +1,13 @@
 * {
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box;
+    font-family: 'Montserrat';
     margin: 0;
     padding: 0;
+}
+
+#logo {
+    margin: 10%;
+    min-width: 90%;
+    margin-left: 30%;
 }
 
 body {
@@ -23,13 +28,16 @@ ul li {
     font-weight: 700;
 }
 
+/* Div pai do dropdown */
 .filtro {
     position: relative;
     display: flex;
     justify-content: center;
+    display: inline-block;
     margin: 30px 0 60px 0;
 }
 
+/* Botão == Elementos dentro do filtro */
 .drop {
     display: flex;
     justify-content: space-between;
@@ -47,15 +55,18 @@ ul li {
     z-index: 2;
 }
 
+/* Animação do botão */
 .drop:hover {
     background-color: #c8dbf5;
     transform: translateY(-2px);
 }
 
+/* Seta (texto) dentro do botão */
 .seta {
     margin-left: 1rem;
 }
 
+/*  Dropdown / Filtros do botão */
 .dropdown {
     display: none;
     position: absolute;
@@ -71,6 +82,7 @@ ul li {
     animation: fadeInDropdown 0.2s ease-in-out;
 }
 
+/* Links dentro do dropdown */
 .dropdown a {
     display: block;
     color: black;
@@ -85,15 +97,18 @@ ul li {
     color: #183883;
 }
 
+/* Coloca o dropdown em vertical */
 .filtro:hover .dropdown {
     display: block;
 }
 
+/* Animação do dropdown */
 @keyframes fadeInDropdown {
     from {
         opacity: 0;
         transform: translate(-50%, -10px);
     }
+
     to {
         opacity: 1;
         transform: translate(-50%, 0);
@@ -106,6 +121,7 @@ main {
     padding: 0 3rem;
 }
 
+/* SEÇÃO CARDS */
 .cards-filtros-regiao {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -113,6 +129,7 @@ main {
     margin-bottom: 40px;
 }
 
+/* Primeiro card */
 .card-populacao-regiao {
     display: inline-block;
     background-color: #fff;
@@ -141,6 +158,7 @@ main {
     text-align: center;
 }
 
+/* Elementos dentro dos cards */
 .sumario nav div,
 .sumario nav {
     display: flex;
@@ -161,6 +179,7 @@ main {
     color: #003d99;
 }
 
+/* Gráficos de acordo com o filtro que o usuário escolher */
 .card-populacao {
     margin-top: 2.5%;
     background-color: #fff;
@@ -169,6 +188,7 @@ main {
     padding: 2.5rem 2rem;
 }
 
+/* Gráfico de exibição */
 .primeiro-grafico {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -176,6 +196,7 @@ main {
     align-items: start;
 }
 
+/* Estilização do gráfico de exibição */
 .grafico-simulacao {
     background: linear-gradient(135deg, #c8dbf5, #9fc2f8);
     border-radius: 10px;
@@ -189,6 +210,8 @@ main {
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
+/* Lista estão Off! */
+/* Por enquanto */
 .lista-grafico {
     display: none;
     width: 100%;
@@ -225,6 +248,7 @@ main {
     border-bottom: none;
 }
 
+/* Responsividade dos cards */
 @media (max-width: 1000px) {
     .primeiro-grafico {
         grid-template-columns: 1fr;
@@ -256,7 +280,7 @@ main {
     }
 }
 
-/* Mexer nisso mais tarde para colocar o translate-y */
-/* footer a img {
-    box-shadow: red;
-} */
+footer a img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3 ease-in-out;
+}
