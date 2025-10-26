@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
     text-align: center;
     margin: 0;
     font-family: 'Montserrat';
@@ -16,10 +16,12 @@ body {
 
 /* Estilos do cabeçalho */
 header {
+    font-family: poppins, sans-serif;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #0080FF;
+    transition: background 0.5  s ease;
 }
 
 #logo {
@@ -48,11 +50,18 @@ ul.menu li:not(:first-child) {
 /* Estilos de navegação */
 nav {
     text-decoration: none;
-    color: #f0f0f0;
+    color: #ffffff;
     font-weight: bold;
     font-size: 25px;
 }
 
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Poppins';
+    rotate: 15px;
+}
 /* Estilos de cabeçalhos e parágrafos */
 h2,
 p {
@@ -69,6 +78,45 @@ ul {
     background-color: transparent;
 }
 
+li {
+    margin: 5px;
+    margin-right: 30px;
+    position: relative;
+}
+
+a {
+    display: block;
+     color: #ffffff;
+     text-align: center;
+     padding: 6px 4px;
+     text-decoration: none;
+     border-radius: 8px;
+     position: relative;
+     transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+ }
+
+ a::after {
+    content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        border-radius: 5px;
+        height: 3px;
+        background-color: rgb(255, 115, 0);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+ }
+
+a:hover {
+            color: #fff; /* Muda a cor do texto ao passar o mouse */
+            transform: translateY(-2px); /* Levanta o botão levemente */
+        }
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
 ul li {
     float: left;
 }
@@ -76,17 +124,13 @@ ul li {
 /* Estilos de links em listas */
 ul li a {
     display: block;
-    color: #f0f0f0;
+    color: #ff0000;
     text-align: center;
     padding: 6px 4px;
     text-decoration: none;
     border-radius: 8px;
 }
 
-/* Efeito hover em links */
-ul li a:hover {
-    background-color: rgba(216, 216, 226, 0.397);
-}
 
 /* Estilos do cabeçalho principal */
 h1 {
@@ -98,6 +142,7 @@ h1 {
 
 .introducao {
     margin-top: 3%;
+    margin-bottom: 40px; /* Aumenta a margem inferior para separar do sumário */
 }
 
 .introducao p {
@@ -110,45 +155,43 @@ h1 {
     /*centraliza o bloco*/
 }
 
-.sumario {
-    display: flex;
-    flex-direction: column;
-    /*deixa h1 em cima e os links embaixo*/
-    margin: auto;
-    margin-bottom: 2.5%;
-    max-width: 1200px;
-    gap: 10px;
-    font-size: 15px;
-    /*espaço entre os elementos dentro */
-    border: 1px solid rgb(87, 87, 87);
-    border-radius: 10px;
+  .sumario {
+display: flex;
+flex-direction: column;
+margin: auto;
+margin-bottom: 2.5%;
+max-width: 1200px;
+gap: 10px;
+font-size: 15px;
+border: 1px solid rgb(87, 87, 87);
+border-radius: 10px;
 }
 
 .sumario nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-bottom: 10px;
-    font-size: 20px;
+display: flex;
+flex-direction: column;
+gap: 8px;
+padding-bottom: 10px;
+font-size: 20px;
 }
 
 .sumario nav a {
-    display: inline-block;
-    width: fit-content;
-    padding: 6px 10px;
-    font-weight: bold;
-    /*diz se o texto será 'fino' ou 'grosso', como se mexesse no negrito */
-    color: black;
-    text-decoration: none;
-    border-radius: 6px;
-    background: transparent;
-    transition: background-color 0.5s ease, transform 0.15s ease;
+display: inline-block;
+width: fit-content;
+padding: 6px 10px;
+font-weight: bold;
+/*diz se o texto será 'fino' ou 'grosso', como se mexesse no negrito */
+color: rgb(0, 0, 0);
+text-decoration: none;
+border-radius: 6px;
+background: transparent;
+transition: background-color 0.5s ease, transform 0.15s ease;
 }
 
 .sumario nav a:hover {
-    background-color: lightblue;
-    transform: translateX(3px);
-    text-decoration: underline;
+background-color: lightblue;
+transform: translateX(3px);
+text-decoration: underline;
 }
 
 h2,
@@ -272,41 +315,8 @@ section {
     }
 }
 
-footer {
-    align-items: center;
-    background-color: #0080FF;
-    color: white;
-    display: flex;
-    font-size: 14px;
-    justify-content: space-between;
-    /* A chave é usar space-between */
-    padding: 1.5%;
-}
 
-/* 1. Criamos o item "fantasma" à esquerda */
-footer::before {
-    content: '';
-    /* O pseudo-elemento precisa disso para existir */
-    width: 32px;
-    /* IMPORTANTE: Dê a ele a MESMA LARGURA do seu ícone do GitHub */
-}
 
-/* 2. Garantimos que o ícone do GitHub tenha a largura definida */
-footer img {
-    width: 32px;
-    height: auto;
-    display: block;
-    /* Ajuda a evitar espaços extras inesperados */
-}
-
-img {
-    max-width: 100%;
-    /* Faz a imagem responsiva */
-    height: auto;
-    /* Mantém a proporção da imagem */
-    margin-right: 20px;
-    /* Espaço entre a imagem e o texto */
-}
 .card {
 background-color: white;
 border-radius: 0.75rem;
@@ -327,4 +337,73 @@ background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w
 background-repeat: no-repeat;
 background-position: right 0.75rem center;
 background-size: 1.5em 1.5em;
+}
+
+.btn-round {
+        border-radius: 50px; 
+    }
+
+.modal-content {
+        border-radius: 1rem; 
+     }
+
+     footer {
+            align-items: center;
+            background-color: #0080FF;
+            color: white;
+            display: flex;
+            font-size: 100%;
+            font-weight: bold;
+            justify-content: space-between;
+            padding: 1.4%;
+        }
+        /* item "fantasma" à esquerda centralizar o manter o layout do footer */
+        footer::before {
+            content: '';
+            width: 32px;
+        }
+        footer img {
+            width: 32px;
+            height: auto;
+            display: block;
+        }
+        footer a img:hover {
+            transform: scale(1.2);
+            transition: transform 0.3 ease-in-out;
+        }
+
+       .introducao {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    font-family: 'Poppins', sans-serif; /* Fonte bonita */
+    font-size: 3em; /* Tamanho do título */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    color: #333; /* Cor do texto do título */
+    animation: fadeIn 1s ease-in-out; /* Animação de entrada */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.descricao {
+    font-size: 0.9em; /* Tamanho menor para o texto abaixo */
+    line-height: 1.5; /* Altura da linha para legibilidade */
+    color: #555; /* Cor do texto */
+    max-width: 800px; /* Largura máxima do texto */
+    margin: 0 auto; /* Centraliza o parágrafo */
+    padding: 0 20px; /* Adiciona espaçamento lateral */
 }
