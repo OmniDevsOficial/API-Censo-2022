@@ -61,10 +61,13 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 | 🎗  6 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Grupos Etários por Região, para, por exemplo, destacar as regiões que demandam mais recursos para os idosos. | 3 | 2 |
 | 🎗  7 | Alta | Como secretário do planejamento, quero visualizar os gráficos em paineis dinâmicos onde posso filtrar os gráficos com um ou mais filtros, para obter resultados mais precisos e específicos. | 8 | 2 |
 | 🎗  8 | Média | Como secretário do planejamento, quero visualizar as quantidades e/ou percentuais totais dos gráficos, para que, ao filtrar, possa haver uma distinção entre o total e o número obtido da filtragem. | 5 | 2 |
-| 🎗  9 | Média | Como secretário do planejamento, quero visualizar um mapa de densidade demográfica da cidade para compreender a distribuição das pessoas pelo município. | 5 | 2 |
-| 🎗  10 | Baixa | Como secretário do planejamento, quero visualizar e interagir com  um mapa geral da cidade onde posso adicionar ou retirar camadas de filtragem, para visualizar as informações de uma perspectiva mais dinâmica. | 13 | 3 |
-| 🎗  11 | Baixa | Como secretário do planejamento, quero pesquisar gráficos por nome, para que possa encontrá-los sem muita navegação. | 8 | 3 |
-| 🎗  12 | Baixa | Como secretário do planejamento, quero controlar a exibição dos gráficos a partir de filtros, como Tema e Tipo, para restringir minhas análises. | 8 | 3 |
+| 🎗  9 | Média | Como secretário do planejamento, quero visualizar um gráfico de Uso de Internet por Domicílio, para entender como é o nível tecnológico da população da cidade no geral. | 5 | 2 |
+| 🎗  10 | Média | Como secretário do planejamento, quero visualizar um gráfico de Nível de Escolaridade, de modo a compreender como está a proporção entre os diferentes níveis de instrução. | 5 | 2 |
+| 🎗  11 | Média | Como secretário do planejamento, quero visualizar um mapa de densidade demográfica da cidade para compreender a distribuição das pessoas pelo município. | 5 | 2 |
+| 🎗  12 | Baixa | Como secretário do planejamento, quero visualizar e interagir com  um mapa geral da cidade onde posso adicionar ou retirar camadas de filtragem, para visualizar as informações de uma perspectiva mais dinâmica. | 13 | 3 |
+| 🎗  13 | Baixa | Como secretário do planejamento, quero pesquisar gráficos por nome, para que possa encontrá-los sem muita navegação. | 8 | 3 |
+| 🎗  14 | Baixa | Como secretário do planejamento, quero controlar a exibição dos gráficos a partir de filtros, como Tema e Tipo, para restringir minhas análises. | 8 | 3 |
+
 
 ## 📅 Registros das Sprints
 
@@ -86,29 +89,42 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 ## 💻 Tecnologias Utilizadas
 
 <div text-align="left">
-    <img src="https://skillicons.dev/icons?i=html,css,bootstrap,py,github,git,figma,flask"/>
+    <img src="https://skillicons.dev/icons?i=html,css,javascript,bootstrap,tailwind,py,flask,git,github,figma"/>
 </div>
 
 ## ⛩ Estrutura do Projeto
 ```
-│
-├── 📁 Backend/
+├── 📁 Backend
 │   ├── 📁 database
-│   └── PlanejaSJC.ipynb
-│
-├── 📁 Frontend/
-│   ├── 📁 img/
-│   ├── BaseLayout.html
-│   ├── Index.html
-│   ├── Mapa.html
-│   ├── Sobre.html
-│   └── style.css
-│
-├── 📁 Docs/
-│   ├── 📁 Sprint-1/
-│   ├── 📁 Sprint-2/
-│   └── 📁 Sprint-3/
-└── README.md
+│   └── 📄 PlanejaSJC.ipynb
+├── 📁 Docs
+│   ├── 📁 Sprint-1
+│   │   └── 📝 README.md
+│   ├── 📁 Sprint-2
+│   │   └── 📝 README.md
+│   ├── 📁 Sprint-3
+│   │   └── 📝 README.md
+│   ├── 📁 mvp
+│   │   ├── 📁 img
+│   │   └── 📝 mvp.md
+│   └── 📕 Estratégia De Branch.pdf
+├── 📁 Frontend
+│   ├── 📁 static
+│   │   ├── 📁 images
+│   │   ├── 🎨 grafico.css
+│   │   └── 🎨 style.css
+│   ├── 📁 templates
+│   │   ├── 📁 graficos
+│   │   ├── 🌐 grafico.html
+│   │   ├── 🌐 graficos_sjc.html
+│   │   ├── 🌐 index.html
+│   │   ├── 🌐 mapa.html
+│   │   └── 🌐 sobre.html
+│   ├── 🐍 app.py
+│   ├── 📄 requirements.txt
+│   └── ⚙️ vercel.json
+├── ⚙️ .vercelignore
+└── 📝 README.md
 ```
 
 ## 📜 Como Executar o Projeto 
