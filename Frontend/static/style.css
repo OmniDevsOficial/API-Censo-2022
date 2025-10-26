@@ -196,14 +196,14 @@ text-decoration: underline;
 
 h2,
 p {
-    margin: 40px;
+    margin: 10px;
     text-align: center;
 }
 
 section {
     margin: 0px 2% 0px 2%;
 }
-#PopulaçãoTotal, #CrescimentoPopulacional, #PirâmideEtária {
+#PopulacaoTotal, #CrescimentoPopulacional, #PiramideEtaria  {
     border-bottom: 1px solid black;
 }
 
@@ -216,7 +216,7 @@ section {
     flex-direction: row;
     padding: 20px;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 1% auto;
     border: 5px solid transparent;
     border-radius: 10px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -352,15 +352,10 @@ background-size: 1.5em 1.5em;
             background-color: #0080FF;
             color: white;
             display: flex;
-            font-size: 100%;
+            font-size: 50%;
             font-weight: bold;
             justify-content: space-between;
             padding: 1.4%;
-        }
-        /* item "fantasma" à esquerda centralizar o manter o layout do footer */
-        footer::before {
-            content: '';
-            width: 32px;
         }
         footer img {
             width: 32px;

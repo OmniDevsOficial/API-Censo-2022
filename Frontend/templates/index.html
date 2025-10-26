@@ -94,10 +94,10 @@
         <section class="sumario text-center mb-5">
             <h1> Explore Nossos Gráficos </h1>
             <nav class="navegacao">
-                <a href="#PopulacaoTotal"> População por Região </a>
-                <a href="#CrescimentoPopulacional"> Taxa de Crescimento </a>
-                <a href="#PiramideEtaria"> Pirâmide Etária 2022 </a>
-                <a href="#PiramideEtaria2010"> Pirâmide Etária 2010 </a>
+                <a href="#PopulacaoTotal" style="text-decoration: none;"> População por Região </a>
+                <a href="#CrescimentoPopulacional" style="text-decoration: none;"> Taxa de Crescimento </a>
+                <a href="#PiramideEtaria" style="text-decoration: none;"> Pirâmide Etária 2022 </a>
+                <a href="#PiramideEtaria2010" style="text-decoration: none;"> Pirâmide Etária 2010 </a>
             </nav>
         </section>
         <section id="PopulacaoTotal" class="mb-5">
@@ -256,11 +256,10 @@
 
     </main>
 
-
-    <footer class="text-center mt-12"
-        style="background-color: #0080FF; color: white; padding: 1.4%; display: flex; justify-content: space-between; align-items: center; font-weight: bold;">
+    <footer
+        style="background-color: #0080FF; color: white; padding: 1.4%; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 100%;">
         <div style="width: 32px;"></div>
-        <h3>© 2025 Omnidevs, Todos os direitos reservados &copy;</h3>
+        <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
         <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank">
             <img src="{{ url_for('static', filename='images/github.png') }}" alt="Link para o GitHub do projeto"
                 style="width: 32px; height: auto; display: block; filter: brightness(0) invert(1);">
