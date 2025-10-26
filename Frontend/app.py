@@ -36,7 +36,9 @@ def get_grafico(regiao, tipo):
             'piramide_2010': 'graficos/piramide_etaria_sjc_2010.html',
             'piramide_2022': 'graficos/piramide_etaria_sjc_2022.html',
             'populacao': 'graficos/populacao_regiao_sjc.html',
-            'taxa_crescimento': 'graficos/taxa_crescimento_sjc.html'
+            'taxa_crescimento': 'graficos/taxa_crescimento_sjc.html',
+            'nivel_escolaridade': 'graficos/nivel_escolaridade_sjc.html',
+            'internet_domicilio': 'graficos/internet_domicilio_sjc.html'
         },
         'Norte': {
             'populacao': 'graficos/populacao_regiao_Norte.html',

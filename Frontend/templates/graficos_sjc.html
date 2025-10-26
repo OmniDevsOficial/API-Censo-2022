@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panorama do Censo 2022 - São José dos Campos</title>
+    <title>Planeja SJC</title>
      <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -148,16 +148,16 @@ a:hover::after {
                 de São José dos Campos, principalmente os relacionadas à população. Os gráficos foram desenvolvidos para facilitar 
                 a compreensão dos principais resultados do levantamento do Censo 2022, permitindo identificar tendências, comparações e transformações demográficas ao longo do tempo.</p>
             </div>
-
-       <section id="indicator-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        </section>
+       <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             <div class="card text-center">
                 <h3 class="text-lg font-semibold text-gray-500">População Total</h3>
-                <p id="populacao-total" class="text-4xl font-bold text-blue-600 mt-2">724 mil</p>
+                <p id="populacao-total" class="text-4xl font-bold text-blue-600 mt-2">697 mil</p>
                 <span class="text-sm text-gray-500">pessoas</span>
             </div>
             <div class="card text-center">
                 <h3 class="text-lg font-semibold text-gray-500">Densidade Demográfica</h3>
-                <p id="densidade-demografica" class="text-4xl font-bold text-blue-600 mt-2">634,4</p>
+                <p id="densidade-demografica" class="text-4xl font-bold text-blue-600 mt-2">634,03</p>
                 <span class="text-sm text-gray-500">hab/km²</span>
             </div>
             <div class="card text-center">
@@ -170,50 +170,63 @@ a:hover::after {
                 <p id="media-moradores" class="text-4xl font-bold text-blue-600 mt-2">2,81</p>
                 <span class="text-sm text-gray-500">moradores/domicílio</span>
             </div>
-
-
-
-            <div class="mt-8 max-w-md mx-auto">
-                <label for="region-select" class="block text-sm font-medium text-gray-700 mb-2 text-center">Selecione uma região:</label>
-                <select id="region-select" class="custom-select block w-full px-4 py-3 text-base text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                    <option value="sjc">São José dos Campos</option>
-                    <option value="Norte">Região Norte</option>
-                    <option value="Sul">Região Sul</option>
-                    <option value="Leste">Região Leste</option>
-                    <option value="Oeste">Região Oeste</option>
-                    <option value="Centro">Região Centro</option>
-                    <option value="Sudeste">Região Sudeste</option>
-                    <option value="São Francisco Xavier">São Francisco Xavier</option>
-                </select>
-            </div>
         </section>
 
+        <div class="mt-8 max-w-md mx-auto mb-8">
+            <label for="region-select" class="block text-sm font-medium text-gray-700 mb-2 text-center">Selecione uma região:</label>
+            <select id="region-select" class="custom-select block w-full px-4 py-3 text-base text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <option value="sjc">São José dos Campos</option>
+                <option value="Norte">Região Norte</option>
+                <option value="Sul">Região Sul</option>
+                <option value="Leste">Região Leste</option>
+                <option value="Oeste">Região Oeste</option>
+                <option value="Centro">Região Centro</option>
+                <option value="Sudeste">Região Sudeste</option>
+                <option value="São Francisco Xavier">São Francisco Xavier</option>
+            </select>
+        </div>
+        
+
         <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class="card">
+            <div class="card" id="card1">
                 <h2 class="text-xl font-bold mb-4 text-center" id="chart1-title">Gráfico 1</h2>
                 <div class="chart-container">
                     <iframe id="chart1" src=""></iframe>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" id="card2">
                 <h2 class="text-xl font-bold mb-4 text-center" id="chart2-title">Gráfico 2</h2>
                 <div class="chart-container">
                     <iframe id="chart2" src=""></iframe>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" id="card3">
                 <h2 class="text-xl font-bold mb-4 text-center" id="chart3-title">Gráfico 3</h2>
                 <div class="chart-container">
                     <iframe id="chart3" src=""></iframe>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" id="card4">
                 <h2 class="text-xl font-bold mb-4 text-center" id="chart4-title">Gráfico 4</h2>
                 <div class="chart-container">
                     <iframe id="chart4" src=""></iframe>
+                </div>
+            </div>
+
+            <div class="card" id="card5">
+                <h2 class="text-xl font-bold mb-4 text-center" id="chart5-title">Gráfico 5</h2>
+                <div class="chart-container">
+                    <iframe id="chart5" src=""></iframe>
+                </div>
+            </div>
+
+            <div class="card" id="card6">
+                <h2 class="text-xl font-bold mb-4 text-center" id="chart6-title">Gráfico 6</h2>
+                <div class="chart-container">
+                    <iframe id="chart6" src=""></iframe>
                 </div>
             </div>
         </main>
@@ -236,7 +249,9 @@ a:hover::after {
                         { id: 'chart1', title: 'Pirâmide Etária 2010', tipo: 'piramide_2010' },
                         { id: 'chart3', title: 'População por Região', tipo: 'populacao' },
                         { id: 'chart2', title: 'Pirâmide Etária 2022', tipo: 'piramide_2022' },
-                        { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' }
+                        { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' },
+                        { id: 'chart5', title: 'Nível de Escolaridade', tipo: 'nivel_escolaridade' },
+                        { id: 'chart6', title: 'Internet por Domicílio', tipo: 'internet_domicilio' }
                     ]
                 },
                 'Norte': {
@@ -245,7 +260,9 @@ a:hover::after {
                         { id: 'chart1', title: 'População da Região Norte', tipo: 'populacao' },
                         { id: 'chart2', title: 'População por Bairro - Norte', tipo: 'populacao_bairro' },
                         { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null },
+                        { id: 'chart5', title: 'Gráfico 5', tipo: null },
+                        { id: 'chart6', title: 'Gráfico 6', tipo: null }
                     ]
                 },
                 'Sul': {
@@ -254,7 +271,9 @@ a:hover::after {
                         { id: 'chart1', title: 'População da Região Sul', tipo: 'populacao' },
                         { id: 'chart2', title: 'População por Bairro - Sul', tipo: 'populacao_bairro' },
                         { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null },
+                        { id: 'chart5', title: 'Gráfico 5', tipo: null },
+                        { id: 'chart6', title: 'Gráfico 6', tipo: null }
                     ]
                 },
                 'Leste': {
@@ -263,7 +282,9 @@ a:hover::after {
                         { id: 'chart1', title: 'População da Região Leste', tipo: 'populacao' },
                         { id: 'chart2', title: 'População por Bairro - Leste', tipo: 'populacao_bairro' },
                         { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null },
+                        { id: 'chart5', title: 'Gráfico 5', tipo: null },
+                        { id: 'chart6', title: 'Gráfico 6', tipo: null }
                     ]
                 },
                 'Oeste': {
@@ -272,7 +293,9 @@ a:hover::after {
                         { id: 'chart1', title: 'População da Região Oeste', tipo: 'populacao' },
                         { id: 'chart2', title: 'População por Bairro - Oeste', tipo: 'populacao_bairro' },
                         { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null },
+                        { id: 'chart5', title: 'Gráfico 5', tipo: null },
+                        { id: 'chart6', title: 'Gráfico 6', tipo: null }
                     ]
                 },
                 'Centro': {
@@ -281,7 +304,9 @@ a:hover::after {
                         { id: 'chart1', title: 'População da Região Centro', tipo: 'populacao' },
                         { id: 'chart2', title: 'População por Bairro - Centro', tipo: 'populacao_bairro' },
                         { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null },
+                        { id: 'chart5', title: 'Gráfico 5', tipo: null },
+                        { id: 'chart6', title: 'Gráfico 6', tipo: null }
                     ]
                 },
                 'Sudeste': {
@@ -290,7 +315,9 @@ a:hover::after {
                         { id: 'chart1', title: 'População da Região Sudeste', tipo: 'populacao' },
                         { id: 'chart2', title: 'População por Bairro - Sudeste', tipo: 'populacao_bairro' },
                         { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null },
+                        { id: 'chart5', title: 'Gráfico 5', tipo: null },
+                        { id: 'chart6', title: 'Gráfico 6', tipo: null }
                     ]
                 },
                 'São Francisco Xavier': {
@@ -299,7 +326,9 @@ a:hover::after {
                         { id: 'chart1', title: 'População - São Francisco Xavier', tipo: 'populacao_bairro' },
                         { id: 'chart2', title: 'Gráfico 2', tipo: null },
                         { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null },
+                        { id: 'chart5', title: 'Gráfico 5', tipo: null },
+                        { id: 'chart6', title: 'Gráfico 6', tipo: null }
                     ]
                 }
             };
@@ -312,6 +341,7 @@ a:hover::after {
                 data.charts.forEach(chart => {
                     const iframeElement = document.getElementById(chart.id);
                     const titleElement = document.getElementById(chart.id + '-title');
+                    const cardElement = document.getElementById('card' + chart.id.replace('chart', ''));
                     // atualizar título com nome do gráfico atual
                     titleElement.textContent = chart.title;
                     // limpar iframe antes de atualizar
@@ -319,9 +349,11 @@ a:hover::after {
                     iframeElement.removeAttribute('srcdoc');
                     // atualizar iframe com o gráfico
                     if (chart.tipo) {
+                        cardElement.hasAttribute('hidden') && cardElement.removeAttribute('hidden');
                         iframeElement.src = `/grafico/${regionKey}/${chart.tipo}`;
                     } else {
                         // se não tiver gráfico, mostrar: gráfico não disponível
+                        cardElement.setAttribute('hidden', 'true');
                         iframeElement.srcdoc = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; font-family: Inter, sans-serif; color: #666;">Gráfico não disponível</div>';
                     }
                 });
