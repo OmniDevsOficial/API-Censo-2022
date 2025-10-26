@@ -34,6 +34,7 @@
         .chart-container {
             position: relative;
             height: 450px;
+            /* Altura padrão para os gráficos na página principal */
             width: 100%;
             background-color: #f9fafb;
             border-radius: 0.5rem;
@@ -49,8 +50,16 @@
 
         @media (min-width: 576px) {
             .modal-dialog-chart {
-                max-width: 800px;
+                max-width: 1140px;
+                /* <-- ALTERAÇÃO 1: Modal mais largo */
             }
+        }
+
+        /* ALTERAÇÃO 2: Container do gráfico dentro do modal mais alto */
+        .modal-body .chart-container {
+            height: 70vh;
+            /* 70% da altura da tela (viewport height) */
+            /* Você pode ajustar este valor se precisar (ex: 650px) */
         }
     </style>
 </head>
@@ -404,9 +413,16 @@
 
             // 4. LISTENER DO DROPDOWN
             // Atualiza todos os 8 gráficos quando a região mudar
-            document.getElementById('region-select').addEventListener('change', (event) => {
-                updateDashboard(event.target.value);
-            });
+            // Verifique se o elemento 'region-select' existe antes de adicionar o listener
+            const regionSelect = document.getElementById('region-select');
+            if (regionSelect) {
+                regionSelect.addEventListener('change', (event) => {
+                    updateDashboard(event.target.value);
+                });
+            } else {
+                // Se não houver dropdown, não faz nada. 
+                // O código continua funcionando para a carga inicial 'sjc'.
+            }
 
         });
     </script>
