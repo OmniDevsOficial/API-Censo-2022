@@ -53,20 +53,20 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 | Rank | Prioridade | User Story | Estimativa | Sprint
 | :---------: | :---------: | :---------: | :---------: | :---------: |
-| 🎗  1 | Alta | Como secretário do planejamento, quero visualizar os principais gráficos na página inicial, para eu esteja a par de informações importantes da cidade logo de início. | 5 | 1 |
+| 🎗  1 | Alta | Como secretário do planejamento, quero visualizar os principais tópicos & gráficos na página inicial, para eu esteja a par de informações importantes da cidade logo de início. | 5 | 1 |
 | 🎗  2 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Densidade Populacional por Região, de modo que eu possa compreender a distribuição da população por área. | 3 | 1 |
 | 🎗  3 | Alta | Como secretário do planejamento, quero visualizar um gráfico de População total por bairro e/ou Zona, para poder identificar as áreas mais populosas. | 3 | 1 |
 | 🎗  4 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Crescimento Populacional por Região no decorrer dos últimos censos (2000, 2010 e 2022), para compreender a evolução quantitativa da população.| 3 | 1 |
 | 🎗  5 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Pirâmide Etária por Ano, de modo a compreender como a cidade está mudando sua estrutura social. | 3 | 1 |
 | 🎗  6 | Alta | Como secretário do planejamento, quero visualizar um gráfico de Grupos Etários por Região, para, por exemplo, destacar as regiões que demandam mais recursos para os idosos. | 3 | 2 |
-| 🎗  7 | Alta | Como secretário do planejamento, quero visualizar os gráficos em paineis dinâmicos onde posso filtrar os gráficos com um ou mais filtros, para obter resultados mais precisos e específicos. | 8 | 2 |
-| 🎗  8 | Média | Como secretário do planejamento, quero visualizar as quantidades e/ou percentuais totais dos gráficos, para que, ao filtrar, possa haver uma distinção entre o total e o número obtido da filtragem. | 5 | 2 |
-| 🎗  9 | Média | Como secretário do planejamento, quero visualizar um gráfico de Uso de Internet por Domicílio, para entender como é o nível tecnológico da população da cidade no geral. | 5 | 2 |
-| 🎗  10 | Média | Como secretário do planejamento, quero visualizar um gráfico de Nível de Escolaridade, de modo a compreender como está a proporção entre os diferentes níveis de instrução. | 5 | 2 |
-| 🎗  11 | Média | Como secretário do planejamento, quero visualizar um mapa de densidade demográfica da cidade para compreender a distribuição das pessoas pelo município. | 5 | 2 |
-| 🎗  12 | Baixa | Como secretário do planejamento, quero visualizar e interagir com  um mapa geral da cidade onde posso adicionar ou retirar camadas de filtragem, para visualizar as informações de uma perspectiva mais dinâmica. | 13 | 3 |
+| 🎗  7 | Média | Como secretário do planejamento, quero visualizar um gráfico de Uso de Internet por Domicílio, para entender como é o nível tecnológico da população da cidade no geral. | 5 | 2 |
+| 🎗  8 | Média | Como secretário do planejamento, quero visualizar um gráfico de Nível de Escolaridade, de modo a compreender como está a proporção entre os diferentes níveis de instrução. | 5 | 2 |
+| 🎗  9 | Alta | Como secretário do planejamento, quero uma página que liste os gráficos gerados nas análises, um Catálogo, para que eu possa ver mais gráficos além dos destaques na página principal. | 8 | 2 |
+| 🎗  10 | Alta | Como secretário do planejamento, quero análises sobre temas em evidência da cidade, contendo descrições e gráficos, destacadas na página principal, a fim de trazer detalhamento e contexto aos gráficos e dados obtidos e analisados. | 13 | 3 |
+| 🎗  11 | Alta | Como secretário do planejamento, quero poder controlar, na página do Catálogo, a exibição dos gráficos a partir de filtros, como Região e Tema, para restringir minhas análises. | 8 | 3 |
+| 🎗  12 | Média | Como secretário do planejamento, quero visualizar um mapa de densidade demográfica da cidade para compreender a distribuição das pessoas pelo município. | 5 | 3 |
 | 🎗  13 | Baixa | Como secretário do planejamento, quero pesquisar gráficos por nome, para que possa encontrá-los sem muita navegação. | 8 | 3 |
-| 🎗  14 | Baixa | Como secretário do planejamento, quero controlar a exibição dos gráficos a partir de filtros, como Tema e Tipo, para restringir minhas análises. | 8 | 3 |
+
 
 
 ## 📅 Registros das Sprints
@@ -187,6 +187,7 @@ https://colab.research.google.com/github/OmniDevsOficial/API-Censo-2022/blob/mai
 
 ## Definition of Ready (DoR)
 - A User Story está descrita de forma clara, usando o formato "Como [persona], quero [ação] para que [objetivo]"
+- A User Story foi dividida múltiplas tasks para descomplicar e organizar a execução (quando necessário)
 - Necessidade do Cliente bem compreendida pela Equipe
 - Documentos de Apoio, especificando/guiando o que se espera do resultado final (quando aplicável)
 - Sem dependências bloqueadoras
