@@ -320,8 +320,8 @@
               font: { color: "#2a3f5f" },
               hovermode: "closest",
               hoverlabel: { align: "left" },
-              paper_bgcolor: "white",
-              plot_bgcolor: "#E5ECF6",
+              paper_bgcolor: "rgba(0,0,0,0)",
+              plot_bgcolor: "rgba(0,0,0,0)",
               polar: {
                 bgcolor: "#E5ECF6",
                 angularaxis: {
@@ -456,11 +456,19 @@
             domain: [0.0, 1.0],
             title: { text: "Percentual (%)" },
           },
-          legend: { title: { text: "Uso de Internet" }, tracegroupgap: 0 },
-          title: { text: "Internet por domicílio 2022", x: 0.5, xanchor: 'center' },
+          legend: {
+            title: { text: "Uso de Internet" },
+            tracegroupgap: 0,
+            bgcolor: 'rgba(0,0,0,0)',
+            bordercolor: 'rgba(0,0,0,0)'
+          },
+          title: { text: "Internet por domicílio 2022", x: 0.5, xanchor: 'center', y: 1.08, yanchor: 'top' },
+          paper_bgcolor: 'rgba(0,0,0,0)',
+          plot_bgcolor: 'rgba(0,0,0,0)',
+          margin: { t: 120 },
           barmode: "group",
         },
-        { responsive: true }
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("c997d99e-e6c0-4646-aa06-3a05ab076ee4");
         var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
@@ -480,9 +488,25 @@
         function applyForWidth(w) {
           if (!gd) return;
           if (w < 640) {
-            Plotly.relayout(gd, { 'title.text': insertLineBreak(originalTitle), 'title.x': 0.5, 'title.xanchor': 'center' });
+            Plotly.relayout(gd, {
+              'title.text': insertLineBreak(originalTitle),
+              'title.x': 0.5,
+              'title.xanchor': 'center',
+              'title.y': 1.06,
+              'title.yanchor': 'top',
+              'legend.y': 1.01,
+              'margin.t': 100
+            });
           } else {
-            Plotly.relayout(gd, { 'title.text': originalTitle, 'title.x': 0.5, 'title.xanchor': 'center' });
+            Plotly.relayout(gd, {
+              'title.text': originalTitle,
+              'title.x': 0.5,
+              'title.xanchor': 'center',
+              'title.y': 1.08,
+              'title.yanchor': 'top',
+              'legend.y': 1.02,
+              'margin.t': 120
+            });
           }
         }
 

@@ -310,8 +310,8 @@
               font: { color: "#2a3f5f" },
               hovermode: "closest",
               hoverlabel: { align: "left" },
-              paper_bgcolor: "white",
-              plot_bgcolor: "#E5ECF6",
+              paper_bgcolor: "rgba(0,0,0,0)",
+              plot_bgcolor: "rgba(0,0,0,0)",
               polar: {
                 bgcolor: "#E5ECF6",
                 angularaxis: {
@@ -451,7 +451,7 @@
           title: { text: "Nivel de Escolaridade em SJC 2022 (%)" },
           barmode: "relative",
         },
-        { responsive: true }
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("ee37d1e7-0646-426d-998a-bfda9809d9eb");
         var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
