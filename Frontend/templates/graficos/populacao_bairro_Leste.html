@@ -360,7 +360,7 @@
               hovermode: "closest",
               hoverlabel: { align: "left" },
               paper_bgcolor: "white",
-              plot_bgcolor: "#E5ECF6",
+              plot_bgcolor: "rgba(0,0,0,0)",
               polar: {
                 bgcolor: "#E5ECF6",
                 angularaxis: {
@@ -499,7 +499,7 @@
           title: { text: "População por Bairro na Região: Leste" },
           barmode: "relative",
         },
-        { responsive: true }
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("6fb668fb-8fd7-4f8c-ad76-d39eb1b84572");
         if (!gd) return;

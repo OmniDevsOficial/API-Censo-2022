@@ -321,7 +321,7 @@
               hovermode: "closest",
               hoverlabel: { align: "left" },
               paper_bgcolor: "white",
-              plot_bgcolor: "#E5ECF6",
+              plot_bgcolor: "rgba(0,0,0,0)",
               polar: {
                 bgcolor: "#E5ECF6",
                 angularaxis: {
@@ -452,13 +452,65 @@
             domain: [0.0, 1.0],
             title: { text: "Número de Habitantes" },
           },
-          legend: { title: { text: "Ano do Censo" }, tracegroupgap: 0 },
+          legend: { title: { text: "Ano do Censo" }, tracegroupgap: 0, bgcolor: "rgba(0,0,0,0)" },
           title: { text: "População por Região: Sudeste (2010 vs 2022)" },
           barmode: "group",
           bargap: 0.8,
         },
-        { responsive: true }
-      );
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
+      ).then(function() {
+        var gd = document.getElementById("dc623fb4-2d9b-45ef-ae9f-73ca0382418f");
+        if (!gd) return;
+        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : "População por Região: Sudeste (2010 vs 2022)";
+
+        function insertLineBreak(text) {
+          if (!text) return text;
+          if (text.length <= 30) return text;
+          var mid = Math.floor(text.length / 2);
+          var idx = text.lastIndexOf(' ', mid);
+          if (idx === -1) idx = text.indexOf(' ', mid);
+          if (idx === -1) return text;
+          return text.slice(0, idx) + '<br>' + text.slice(idx + 1);
+        }
+
+        function debounce(fn, wait) {
+          var t;
+          return function() {
+            var ctx = this, args = arguments;
+            clearTimeout(t);
+            t = setTimeout(function() { fn.apply(ctx, args); }, wait);
+          };
+        }
+
+        function applyForWidth(w) {
+          try {
+            if (w < 640) {
+              Plotly.relayout(gd, {
+                'title.text': insertLineBreak(originalTitle),
+                'title.x': 0.5,
+                'title.xanchor': 'center'
+              });
+            } else {
+              Plotly.relayout(gd, {
+                'title.text': originalTitle,
+                'title.x': 0.05,
+                'title.xanchor': 'left'
+              });
+            }
+          } catch (e) { }
+        }
+
+        applyForWidth(window.innerWidth || 800);
+
+        window.addEventListener('message', function(e) {
+          try {
+            var msg = (typeof e.data === 'string') ? JSON.parse(e.data) : e.data;
+            if (msg && msg.action === 'update-legend' && typeof msg.width === 'number') applyForWidth(msg.width);
+          } catch (err) { }
+        });
+
+        window.addEventListener('resize', debounce(function(){ applyForWidth(window.innerWidth); }, 150));
+      });
     }
   </script>
 </div>

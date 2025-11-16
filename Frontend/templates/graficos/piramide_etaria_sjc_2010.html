@@ -537,7 +537,7 @@
           plot_bgcolor: "white",
           yaxis: { autorange: "reversed" },
         },
-        { responsive: true }
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("1de11f31-96fc-4c28-a397-9e1fca17fcfb");
         var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';

@@ -327,7 +327,7 @@
               hovermode: "closest",
               hoverlabel: { align: "left" },
               paper_bgcolor: "white",
-              plot_bgcolor: "#E5ECF6",
+              plot_bgcolor: "rgba(0,0,0,0)",
               polar: {
                 bgcolor: "#E5ECF6",
                 angularaxis: {
@@ -466,7 +466,7 @@
           title: { text: "População por Bairro na Região: Centro" },
           barmode: "relative",
         },
-        { responsive: true }
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("99428f5c-6b3f-4ab3-819e-7992e094bd68");
         if (!gd) return;

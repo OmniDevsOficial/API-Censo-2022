@@ -303,7 +303,7 @@
               hovermode: "closest",
               hoverlabel: { align: "left" },
               paper_bgcolor: "white",
-              plot_bgcolor: "#E5ECF6",
+              plot_bgcolor: "rgba(0,0,0,0)",
               polar: {
                 bgcolor: "#E5ECF6",
                 angularaxis: {
@@ -444,7 +444,7 @@
           },
           barmode: "relative",
         },
-        { responsive: true }
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("4fbda145-d4ff-4bd6-8c9f-023c9eb534ef");
         if (!gd) return;

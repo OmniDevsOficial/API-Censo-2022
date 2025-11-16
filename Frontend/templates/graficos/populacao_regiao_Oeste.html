@@ -321,7 +321,7 @@
               hovermode: "closest",
               hoverlabel: { align: "left" },
               paper_bgcolor: "white",
-              plot_bgcolor: "#E5ECF6",
+              plot_bgcolor: "rgba(0,0,0,0)",
               polar: {
                 bgcolor: "#E5ECF6",
                 angularaxis: {
@@ -452,12 +452,12 @@
             domain: [0.0, 1.0],
             title: { text: "Número de Habitantes" },
           },
-          legend: { title: { text: "Ano do Censo" }, tracegroupgap: 0 },
+          legend: { title: { text: "Ano do Censo" }, tracegroupgap: 0, bgcolor: "rgba(0,0,0,0)" },
           title: { text: "População por Região: Oeste (2010 vs 2022)" },
           barmode: "group",
           bargap: 0.8,
         },
-        { responsive: true }
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("4813c4f5-c323-4301-8390-7312888f36e3");
         if (!gd) return;

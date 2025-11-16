@@ -484,7 +484,7 @@
           title: { text: "População por Região (2010 x 2022)", x: 0.5 },
           barmode: "group",
         },
-        { responsive: true }
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("2d28116e-2493-4c4b-9221-c80556f68efc");
         if (!gd) return;
