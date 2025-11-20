@@ -7,15 +7,15 @@
     src="https://cdn.plot.ly/plotly-2.35.2.min.js"
   ></script>
   <div
-    id="5d83bd67-a85f-4439-b143-ece8581810db"
+    id="311d077a-8ef9-4783-8e9d-247ef18d9721"
     class="plotly-graph-div"
     style="height: 100%; width: 100%"
   ></div>
   <script type="text/javascript">
     window.PLOTLYENV = window.PLOTLYENV || {};
-    if (document.getElementById("5d83bd67-a85f-4439-b143-ece8581810db")) {
+    if (document.getElementById("311d077a-8ef9-4783-8e9d-247ef18d9721")) {
       Plotly.newPlot(
-        "5d83bd67-a85f-4439-b143-ece8581810db",
+        "311d077a-8ef9-4783-8e9d-247ef18d9721",
         [
           {
             alignmentgroup: "True",
@@ -65,11 +65,11 @@
             offsetgroup: "Norte",
             orientation: "v",
             showlegend: true,
-            text: [3.3099999999999996],
+            text: [3.4035523862484056],
             textposition: "outside",
             x: ["Norte"],
             xaxis: "x",
-            y: [3.3099999999999996],
+            y: [3.4035523862484056],
             yaxis: "y",
             type: "bar",
             texttemplate: "%{text:.2f}%",
@@ -97,27 +97,8 @@
             alignmentgroup: "True",
             hovertemplate:
               "Região=%{x}\u003cbr\u003eCrescimento_Percentual=%{text}\u003cextra\u003e\u003c\u002fextra\u003e",
-            legendgroup: "São Francisco Xavier",
-            marker: { color: "#FFA15A", pattern: { shape: "" } },
-            name: "São Francisco Xavier",
-            offsetgroup: "São Francisco Xavier",
-            orientation: "v",
-            showlegend: true,
-            text: [7.53],
-            textposition: "outside",
-            x: ["São Francisco Xavier"],
-            xaxis: "x",
-            y: [7.53],
-            yaxis: "y",
-            type: "bar",
-            texttemplate: "%{text:.2f}%",
-          },
-          {
-            alignmentgroup: "True",
-            hovertemplate:
-              "Região=%{x}\u003cbr\u003eCrescimento_Percentual=%{text}\u003cextra\u003e\u003c\u002fextra\u003e",
             legendgroup: "Sudeste",
-            marker: { color: "#19d3f3", pattern: { shape: "" } },
+            marker: { color: "#FFA15A", pattern: { shape: "" } },
             name: "Sudeste",
             offsetgroup: "Sudeste",
             orientation: "v",
@@ -136,7 +117,7 @@
             hovertemplate:
               "Região=%{x}\u003cbr\u003eCrescimento_Percentual=%{text}\u003cextra\u003e\u003c\u002fextra\u003e",
             legendgroup: "Sul",
-            marker: { color: "#FF6692", pattern: { shape: "" } },
+            marker: { color: "#19d3f3", pattern: { shape: "" } },
             name: "Sul",
             offsetgroup: "Sul",
             orientation: "v",
@@ -155,7 +136,7 @@
             hovertemplate:
               "Região=%{x}\u003cbr\u003eCrescimento_Percentual=%{text}\u003cextra\u003e\u003c\u002fextra\u003e",
             legendgroup: "Rural",
-            marker: { color: "#B6E880", pattern: { shape: "" } },
+            marker: { color: "#FF6692", pattern: { shape: "" } },
             name: "Rural",
             offsetgroup: "Rural",
             orientation: "v",
@@ -584,7 +565,6 @@
               "Leste",
               "Norte",
               "Oeste",
-              "São Francisco Xavier",
               "Sudeste",
               "Sul",
               "Rural",
@@ -613,29 +593,6 @@
 
         // Save original trace names so we can update legend labels and restore later
         var originalTraceNames = (gd.data && gd.data.length) ? gd.data.map(function(t) { return (t && typeof t.name !== 'undefined') ? t.name : null; }) : null;
-
-        // Build wrapped trace names array that replaces the exact label variants with a two-line label
-        var wrappedTraceNames = null;
-        if (originalTraceNames) {
-          wrappedTraceNames = originalTraceNames.map(function(n) {
-            if (!n) return n;
-            if (n === 'São Francisco Xavier' || n === 'São Francisco de Xavier') return 'São Francisco<br>Xavier';
-            return n;
-          });
-        }
-
-        // Build a wrapped ticktext array that replaces the exact label variants with a two-line label
-        var wrappedTicktext = null;
-        if (baseCategoryArray) {
-          wrappedTicktext = baseCategoryArray.map(function(txt) {
-            if (!txt) return txt;
-            // handle both forms the label may appear with/without 'de'
-            if (txt === 'São Francisco Xavier' || txt === 'São Francisco de Xavier') {
-              return 'São Francisco<br>Xavier';
-            }
-            return txt;
-          });
-        }
 
         function insertLineBreak(text) {
           if (!text) return text;
