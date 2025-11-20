@@ -452,7 +452,7 @@
             domain: [0.0, 1.0],
             title: { text: "Número de Habitantes" },
           },
-          legend: { title: { text: "Ano do Censo" }, tracegroupgap: 0, bgcolor: "rgba(0,0,0,0)" },
+          legend: { title: { text: "Ano" }, tracegroupgap: 0, bgcolor: "rgba(0,0,0,0)" },
           title: { text: "População por Região: Sul (2010 vs 2022)" },
           barmode: "group",
           bargap: 0.8,
@@ -485,19 +485,51 @@
         function applyForWidth(w) {
           try {
             if (w < 640) {
-              Plotly.relayout(gd, {
+              var relayoutSmall = {
                 'title.text': insertLineBreak(originalTitle),
                 'title.x': 0.5,
-                'title.xanchor': 'center'
-              });
+                'title.xanchor': 'center',
+                'legend.orientation': 'h',
+                'legend.x': 0.5,
+                'legend.xanchor': 'center',
+                'legend.y': -0.2,
+                'legend.yanchor': 'top',
+                'legend.tracegroupgap': 0,
+                'legend.itemwidth': 60,
+                'legend.title.text': ''
+              };
+              Plotly.relayout(gd, relayoutSmall);
+              try {
+                if (wrappedTicktext) {
+                  Plotly.relayout(gd, {
+                    'xaxis.ticktext': wrappedTicktext,
+                    'xaxis.tickvals': baseX || (gd.data && gd.data.length ? gd.data[0].x : undefined),
+                    'xaxis.automargin': true
+                  });
+                }
+              } catch (e) {}
             } else {
-              Plotly.relayout(gd, {
+              var relayoutLarge = {
                 'title.text': originalTitle,
-                'title.x': 0.05,
-                'title.xanchor': 'left'
-              });
+                'title.x': originalX,
+                'title.xanchor': originalXAnchor,
+                'legend.orientation': originalLegend.orientation || 'v',
+                'legend.x': (originalLegend.x !== undefined) ? originalLegend.x : 1,
+                'legend.xanchor': originalLegend.xanchor || 'left',
+                'legend.y': (originalLegend.y !== undefined) ? originalLegend.y : 1,
+                'legend.yanchor': originalLegend.yanchor || 'top',
+                'legend.title.text': (originalLegend.title && originalLegend.title.text) ? originalLegend.title.text : 'Ano'
+              };
+              Plotly.relayout(gd, relayoutLarge);
+              try {
+                Plotly.relayout(gd, {
+                  'xaxis.ticktext': originalTicktext,
+                  'xaxis.tickvals': originalTickvals,
+                  'xaxis.automargin': true
+                });
+              } catch (e) {}
             }
-          } catch (e) { }
+          } catch (e) { /* ignore */ }
         }
 
         applyForWidth(window.innerWidth || 800);

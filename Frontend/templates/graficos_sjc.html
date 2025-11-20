@@ -118,7 +118,22 @@ a:hover::after {
     transform: scaleX(1);
 }
        
-    </style>
+                /* Responsividade adicional para títulos em telas pequenas */
+                @media (max-width: 640px) {
+                    h1.text-4xl { font-size: 1.9rem; line-height: 2.2rem; }
+                    .container p.text-lg { font-size: 0.95rem; margin-left: 0; margin-right: 0; }
+                    h2[id$='-title'] { font-size: 1.05rem; line-height: 1.25rem; }
+                    /* Aumentar altura dos contêineres para acomodar gráficos de 600px */
+                    .chart-container { height: 620px; }
+                    .chart-container iframe { height: 100%; }
+                }
+                @media (max-width: 420px) {
+                    h1.text-4xl { font-size: 1.6rem; line-height: 2rem; }
+                    h2[id$='-title'] { font-size: 0.95rem; line-height: 1.15rem; }
+                    /* Ajuste extra para telas muito estreitas */
+                    .chart-container { height: 640px; }
+                }
+        </style>
 </head>
 <body class="antialiased text-gray-800">
 

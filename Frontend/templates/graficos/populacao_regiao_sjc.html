@@ -462,21 +462,20 @@
             domain: [0.0, 1.0],
             title: { text: "Número de Habitantes" },
           },
-          legend: { title: { text: "Ano do Censo" }, tracegroupgap: 0, bgcolor: 'rgba(0,0,0,0)' },
+          legend: { title: { text: "Ano" }, tracegroupgap: 0, bgcolor: 'rgba(0,0,0,0)' },
           title: { text: "População por Região (2010 x 2022)", x: 0.5 },
           barmode: "group",
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
-        var gd = document.getElementById("2d28116e-2493-4c4b-9221-c80556f68efc");
+        var gd = document.getElementById("39c2a54c-ab4a-4f5b-83fd-2e605c91820a");
         if (!gd) return;
         var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : "População por Região (2010 x 2022)";
         var originalX = (gd.layout && gd.layout.title && typeof gd.layout.title.x !== 'undefined') ? gd.layout.title.x : 0.5;
         var originalXAnchor = (gd.layout && gd.layout.title && gd.layout.title.xanchor) ? gd.layout.title.xanchor : 'center';
-        // save original xaxis ticktext/tickvals so we can restore later
+        var originalLegend = (gd.layout && gd.layout.legend) ? JSON.parse(JSON.stringify(gd.layout.legend)) : {};
         var originalTicktext = (gd.layout && gd.layout.xaxis && typeof gd.layout.xaxis.ticktext !== 'undefined') ? gd.layout.xaxis.ticktext : null;
         var originalTickvals = (gd.layout && gd.layout.xaxis && typeof gd.layout.xaxis.tickvals !== 'undefined') ? gd.layout.xaxis.tickvals : null;
-        // prepare wrapped ticktext (replace "São Francisco Xavier" with a two-line label)
         var wrappedTicktext = null;
         try {
           var baseX = (gd.data && gd.data.length) ? gd.data[0].x : (gd.layout && gd.layout.xaxis && gd.layout.xaxis.tickvals ? gd.layout.xaxis.tickvals : null);
@@ -507,12 +506,20 @@
         function applyForWidth(w) {
           try {
             if (w < 640) {
-              Plotly.relayout(gd, {
+              var relayoutSmall = {
                 'title.text': insertLineBreak(originalTitle),
                 'title.x': 0.5,
-                'title.xanchor': 'center'
-              });
-              // apply wrapped x-axis label if we prepared one
+                'title.xanchor': 'center',
+                'legend.orientation': 'h',
+                'legend.x': 0.5,
+                'legend.xanchor': 'center',
+                'legend.y': -0.2,
+                'legend.yanchor': 'top',
+                'legend.tracegroupgap': 0,
+                'legend.itemwidth': 60,
+                'legend.title.text': ''
+              };
+              Plotly.relayout(gd, relayoutSmall);
               try {
                 if (wrappedTicktext) {
                   Plotly.relayout(gd, {
@@ -521,29 +528,33 @@
                     'xaxis.automargin': true
                   });
                 }
-              } catch (e) { }
+              } catch (e) {}
             } else {
-              Plotly.relayout(gd, {
+              var relayoutLarge = {
                 'title.text': originalTitle,
                 'title.x': originalX,
-                'title.xanchor': originalXAnchor
-              });
-              // restore original ticktext/tickvals
+                'title.xanchor': originalXAnchor,
+                'legend.orientation': originalLegend.orientation || 'v',
+                'legend.x': (originalLegend.x !== undefined) ? originalLegend.x : 1,
+                'legend.xanchor': originalLegend.xanchor || 'left',
+                'legend.y': (originalLegend.y !== undefined) ? originalLegend.y : 1,
+                'legend.yanchor': originalLegend.yanchor || 'top',
+                'legend.title.text': (originalLegend.title && originalLegend.title.text) ? originalLegend.title.text : 'Ano'
+              };
+              Plotly.relayout(gd, relayoutLarge);
               try {
                 Plotly.relayout(gd, {
                   'xaxis.ticktext': originalTicktext,
                   'xaxis.tickvals': originalTickvals,
                   'xaxis.automargin': true
                 });
-              } catch (e) { }
+              } catch (e) {}
             }
           } catch (e) { /* ignore */ }
         }
 
-        // initial
         applyForWidth(window.innerWidth || 800);
 
-        // listen to parent postMessage (parent posts { action:'update-legend', width: <n> })
         window.addEventListener('message', function(e) {
           try {
             var msg = (typeof e.data === 'string') ? JSON.parse(e.data) : e.data;
@@ -551,7 +562,6 @@
           } catch (err) { }
         });
 
-        // fallback: local resize
         window.addEventListener('resize', debounce(function(){ applyForWidth(window.innerWidth); }, 150));
       });
     }

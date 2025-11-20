@@ -454,11 +454,24 @@
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("ee37d1e7-0646-426d-998a-bfda9809d9eb");
+        // Referência ao gráfico Plotly renderizado
         var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
+        // Guarda texto original de ticks (se existir) para restaurar em telas grandes
         var originalTicktext = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.ticktext) ? gd.layout.xaxis.ticktext : null;
+        // Guarda valores originais dos ticks (se existir)
         var originalTickvals = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.tickvals) ? gd.layout.xaxis.tickvals : null;
+        // Fonte original dos rótulos do eixo X (usada na restauração)
+        var originalXTickFontSize = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.tickfont && gd.layout.xaxis.tickfont.size) ? gd.layout.xaxis.tickfont.size : 12;
+        // Margens originais para voltar ao padrão quando largura >= 640px
+        var originalMargins = (gd.layout && gd.layout.margin) ? {
+          l: gd.layout.margin.l || 80,
+          r: gd.layout.margin.r || 80,
+          t: gd.layout.margin.t || 100,
+          b: gd.layout.margin.b || 80
+        } : { l:80, r:80, t:100, b:80 };
 
         function insertLineBreak(text) {
+          // Insere quebra de linha em títulos longos procurando espaço próximo ao meio
           if (!text) return text;
           if (text.indexOf('<br>') !== -1) return text;
           if (text.length <= 30) return text;
@@ -471,22 +484,22 @@
         }
 
         function wrapAxisLabel(text) {
+          // Quebra rótulos do eixo X em duas linhas para caber em telas pequenas
           if (!text) return text;
           if (text.indexOf('<br>') !== -1) return text;
-          // shorter threshold for axis labels
           if (text.length <= 12) return text;
           var mid = Math.floor(text.length / 2);
           var left = text.lastIndexOf(' ', mid);
           var right = text.indexOf(' ', mid + 1);
           var idx = left > -1 ? left : (right > -1 ? right : -1);
           if (idx === -1) {
-            // fallback: break after 12 chars
             return text.slice(0, 12) + '<br>' + text.slice(12);
           }
           return text.slice(0, idx) + '<br>' + text.slice(idx + 1);
         }
 
         function applyForWidth(w) {
+          // Aplica ajustes responsivos dependendo da largura (breakpoint: 640px)
           if (!gd) return;
           if (w < 640) {
             try {
@@ -500,13 +513,34 @@
                   'xaxis.ticktext': wrapped,
                   'xaxis.tickvals': xVals,
                   'xaxis.automargin': true,
-                  'yaxis.range': [0, 40]
+                  'yaxis.range': [0, 40],
+                  'xaxis.tickfont.size': Math.max(10, originalXTickFontSize - 2),
+                  'margin.l': 40,
+                  'margin.r': 10,
+                  'margin.t': 60,
+                  'margin.b': 50
                 });
               } else {
-                Plotly.relayout(gd, { 'title.text': insertLineBreak(originalTitle), 'title.x': 0.5, 'title.xanchor': 'center' });
+                Plotly.relayout(gd, { 
+                  'title.text': insertLineBreak(originalTitle), 
+                  'title.x': 0.5, 
+                  'title.xanchor': 'center',
+                  'xaxis.tickfont.size': Math.max(10, originalXTickFontSize - 2),
+                  'margin.l': 40,
+                  'margin.r': 10,
+                  'margin.t': 60,
+                  'margin.b': 50
+                });
               }
             } catch (e) {
-              Plotly.relayout(gd, { 'title.text': insertLineBreak(originalTitle) });
+              Plotly.relayout(gd, { 
+                'title.text': insertLineBreak(originalTitle),
+                'xaxis.tickfont.size': Math.max(10, originalXTickFontSize - 2),
+                'margin.l': 40,
+                'margin.r': 10,
+                'margin.t': 60,
+                'margin.b': 50
+              });
             }
           } else {
             try {
@@ -517,15 +551,30 @@
                 'xaxis.ticktext': originalTicktext,
                 'xaxis.tickvals': originalTickvals,
                 'xaxis.automargin': true,
-                'yaxis.range': [0, 40]
+                'yaxis.range': [0, 40],
+                'xaxis.tickfont.size': originalXTickFontSize,
+                'margin.l': originalMargins.l,
+                'margin.r': originalMargins.r,
+                'margin.t': originalMargins.t,
+                'margin.b': originalMargins.b
               });
             } catch (e) {
-              Plotly.relayout(gd, { 'title.text': originalTitle, 'title.x': 0.5, 'title.xanchor': 'center' });
+              Plotly.relayout(gd, { 
+                'title.text': originalTitle, 
+                'title.x': 0.5, 
+                'title.xanchor': 'center',
+                'xaxis.tickfont.size': originalXTickFontSize,
+                'margin.l': originalMargins.l,
+                'margin.r': originalMargins.r,
+                'margin.t': originalMargins.t,
+                'margin.b': originalMargins.b
+              });
             }
           }
         }
 
         function debounce(fn, wait) {
+          // Evita múltiplas execuções seguidas em resize usando temporizador
           var t = null;
           return function() {
             var args = arguments;
@@ -534,12 +583,15 @@
           };
         }
 
+        // Chamada inicial usando largura atual da janela
         try { applyForWidth(window.innerWidth || document.documentElement.clientWidth); } catch (e) {}
 
+        // Atualiza responsividade em mudanças de tamanho da janela (com debounce)
         window.addEventListener('resize', debounce(function() {
           applyForWidth(window.innerWidth || document.documentElement.clientWidth);
         }, 150));
 
+        // Permite receber largura via postMessage do container pai (iframe)
         window.addEventListener('message', function(ev) {
           try {
             if (ev && ev.data && ev.data.action === 'update-legend' && typeof ev.data.width === 'number') {

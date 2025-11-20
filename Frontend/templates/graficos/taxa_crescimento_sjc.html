@@ -9,7 +9,7 @@
   <div
     id="311d077a-8ef9-4783-8e9d-247ef18d9721"
     class="plotly-graph-div"
-    style="height: 100%; width: 100%"
+    style="height: 100%; width: 100%; overflow: visible;"
   ></div>
   <script type="text/javascript">
     window.PLOTLYENV = window.PLOTLYENV || {};
@@ -584,91 +584,143 @@
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
-        var gd = document.getElementById("5d83bd67-a85f-4439-b143-ece8581810db");
-        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
-        // Save original x-axis ticktext/tickvals (if any) and categoryarray
-        var originalTicktext = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.ticktext) ? gd.layout.xaxis.ticktext.slice() : null;
-        var originalTickvals = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.tickvals) ? gd.layout.xaxis.tickvals.slice() : null;
-        var baseCategoryArray = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.categoryarray) ? gd.layout.xaxis.categoryarray.slice() : null;
+        var gd = document.getElementById('311d077a-8ef9-4783-8e9d-247ef18d9721');
+        if (!gd) return;
+        var originalTitle = gd.layout && gd.layout.title && gd.layout.title.text ? gd.layout.title.text : '';
+        var originalX = (gd.layout && gd.layout.title && typeof gd.layout.title.x !== 'undefined') ? gd.layout.title.x : 0.5;
+        var originalXAnchor = (gd.layout && gd.layout.title && gd.layout.title.xanchor) ? gd.layout.title.xanchor : 'center';
+        var originalFontSize = (gd.layout && gd.layout.title && gd.layout.title.font && gd.layout.title.font.size) ? gd.layout.title.font.size : 20;
+        // Salvar legenda original
+        var originalLegend = {
+          orientation: (gd.layout && gd.layout.legend && gd.layout.legend.orientation) ? gd.layout.legend.orientation : 'v',
+          x: (gd.layout && gd.layout.legend && typeof gd.layout.legend.x !== 'undefined') ? gd.layout.legend.x : 1,
+          y: (gd.layout && gd.layout.legend && typeof gd.layout.legend.y !== 'undefined') ? gd.layout.legend.y : 0.5,
+          xanchor: (gd.layout && gd.layout.legend && gd.layout.legend.xanchor) ? gd.layout.legend.xanchor : 'left'
+        };
+        var originalMarginBottom = (gd.layout && gd.layout.margin && typeof gd.layout.margin.b !== 'undefined') ? gd.layout.margin.b : 80;
+        var originalHeight = (gd.layout && gd.layout.height) ? gd.layout.height : gd.offsetHeight;
+        // Guardar índices dos traces para operações de rótulo
+        var traceIndices = (gd.data || []).map(function(_, i){ return i; });
+        // Guardar posição original dos rótulos (assume todos iguais)
+        var originalTextPosition = (gd.data && gd.data[0] && gd.data[0].textposition) ? gd.data[0].textposition : 'outside';
+        var originalTextTemplate = (gd.data && gd.data[0] && gd.data[0].texttemplate) ? gd.data[0].texttemplate : '%{text:.2f}%';
+        // Categorias originais para manter ordem ao filtrar
+        var originalCategories = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.categoryarray) ? gd.layout.xaxis.categoryarray.slice() : [];
 
-        // Save original trace names so we can update legend labels and restore later
-        var originalTraceNames = (gd.data && gd.data.length) ? gd.data.map(function(t) { return (t && typeof t.name !== 'undefined') ? t.name : null; }) : null;
+        // Atualiza lista de categorias removendo espaços de traces ocultos
+        function updateVisibleCategories() {
+          try {
+            var visibleCatsMap = {};
+            for (var i=0;i<gd.data.length;i++) {
+              var trace = gd.data[i];
+              if (trace && trace.visible !== 'legendonly' && Array.isArray(trace.x) && trace.x.length) {
+                visibleCatsMap[trace.x[0]] = true;
+              }
+            }
+            var newCats = [];
+            for (var j=0;j<originalCategories.length;j++) {
+              var cat = originalCategories[j];
+              if (visibleCatsMap[cat]) newCats.push(cat);
+            }
+            // Se nada visível mantém original para evitar erro
+            if (!newCats.length) newCats = originalCategories.slice();
+            Plotly.relayout(gd, { 'xaxis.categoryarray': newCats });
+          } catch(e) {}
+        }
 
-        function insertLineBreak(text) {
-          if (!text) return text;
-          if (text.indexOf('<br>') !== -1) return text;
-          if (text.length <= 30) return text;
-          var mid = Math.floor(text.length / 2);
-          var left = text.lastIndexOf(' ', mid);
-          var right = text.indexOf(' ', mid + 1);
-          var idx = left > -1 ? left : (right > -1 ? right : -1);
-          if (idx === -1) return text;
-          return text.slice(0, idx) + '<br>' + text.slice(idx + 1);
+        function wrapBase(title, maxChars) {
+          if (!title) return title;
+          var words = title.split(/\s+/); var lines=[]; var current='';
+          for (var i=0;i<words.length;i++) {
+            var w=words[i];
+            if ((current + (current?' ':'') + w).length > maxChars) { if (current) lines.push(current); current=w; }
+            else { current = current ? current + ' ' + w : w; }
+          }
+          if (current) lines.push(current);
+          return lines.join('<br>');
+        }
+
+        function compute(w) {
+          // Para telas grandes mantém título original
+          if (w >= 640) return { text: originalTitle, size: originalFontSize, top: 80 };
+          // Forçar exatamente duas linhas: 'Taxa de Crescimento' + 'Populacional por Região'
+          var line1 = 'Taxa de Crescimento';
+            // Se o título original não contém 'Taxa de Crescimento', usa primeira metade do original até 'Crescimento'
+          if (originalTitle.indexOf('Taxa de Crescimento') === -1) {
+            var idx = originalTitle.indexOf('Crescimento');
+            if (idx > -1) line1 = originalTitle.slice(0, idx + 'Crescimento'.length).trim();
+            else line1 = originalTitle.split(/\s+/).slice(0,3).join(' '); // fallback
+          }
+          var line2 = 'Populacional por Região';
+          if (originalTitle.indexOf('Populacional por Região') === -1) {
+            // tenta extrair restante após 'Crescimento'
+            var after = originalTitle.split('Crescimento')[1];
+            if (after) line2 = after.trim();
+          }
+          var forcedTwoLine = line1 + '<br>' + line2;
+          var size = w < 420 ? 16 : 18;
+          var top = w < 420 ? 100 : 90; // mantém margem para não sobrepor barras
+          return { text: forcedTwoLine, size: size, top: top };
         }
 
         function applyForWidth(w) {
-          if (!gd) return;
+          var cfg = compute(w);
           try {
-            if (w < 640) {
-              var rel = { 'title.text': insertLineBreak(originalTitle) };
-              if (wrappedTicktext) rel['xaxis.ticktext'] = wrappedTicktext;
-              if (baseCategoryArray) rel['xaxis.tickvals'] = baseCategoryArray;
-              Plotly.relayout(gd, rel);
-
-              // Update trace names in legend to wrapped names (only where different)
-              if (wrappedTraceNames && originalTraceNames) {
-                for (var i = 0; i < wrappedTraceNames.length; i++) {
-                  var newName = wrappedTraceNames[i];
-                  var oldName = originalTraceNames[i];
-                  if (newName !== oldName) {
-                    try { Plotly.restyle(gd, { name: newName }, [i]); } catch (e) {}
-                  }
-                }
-              }
-            } else {
-              var rel2 = { 'title.text': originalTitle };
-              if (originalTicktext) rel2['xaxis.ticktext'] = originalTicktext;
-              if (originalTickvals) rel2['xaxis.tickvals'] = originalTickvals;
-              Plotly.relayout(gd, rel2);
-
-              // Restore original trace names
-              if (originalTraceNames) {
-                for (var j = 0; j < originalTraceNames.length; j++) {
-                  var orig = originalTraceNames[j];
-                  if (typeof orig !== 'undefined' && gd.data && gd.data[j] && gd.data[j].name !== orig) {
-                    try { Plotly.restyle(gd, { name: orig }, [j]); } catch (e) {}
-                  }
-                }
-              }
-            }
-          } catch (e) {
-            // safe noop on relayout/restyle errors
-          }
+            var rel = {
+              'title.text': cfg.text,
+              'title.x': 0.5,
+              'title.xanchor': 'center',
+              'title.font.size': cfg.size,
+              'margin.t': cfg.top,
+              'legend.orientation': 'h',
+              'legend.x': 0.5,
+              'legend.xanchor': 'center',
+              'legend.y': -0.3,
+              'margin.b': 110,
+              height: 600
+            };
+            Plotly.relayout(gd, rel);
+            // Ocultar rótulos acima das barras em telas pequenas
+            Plotly.restyle(gd, { textposition: 'none' }, traceIndices);
+            Plotly.restyle(gd, { texttemplate: '' }, traceIndices);
+            updateVisibleCategories();
+          } catch(e) {}
         }
 
-        function debounce(fn, wait) {
-          var t = null;
-          return function() {
-            var args = arguments;
-            clearTimeout(t);
-            t = setTimeout(function() { fn.apply(null, args); }, wait);
-          };
+        function restore() {
+          try {
+            var rel = {
+              'title.text': originalTitle,
+              'title.x': originalX,
+              'title.xanchor': originalXAnchor,
+              'title.font.size': originalFontSize,
+              'margin.t': 80,
+              'legend.orientation': originalLegend.orientation,
+              'legend.x': originalLegend.x,
+              'legend.xanchor': originalLegend.xanchor,
+              'legend.y': originalLegend.y,
+              'margin.b': originalMarginBottom,
+              height: originalHeight
+            };
+            Plotly.relayout(gd, rel);
+            // Restaurar rótulos acima das barras
+            Plotly.restyle(gd, { textposition: originalTextPosition }, traceIndices);
+            Plotly.restyle(gd, { texttemplate: originalTextTemplate }, traceIndices);
+            updateVisibleCategories();
+          } catch(e) {}
         }
 
-        try { applyForWidth(window.innerWidth || document.documentElement.clientWidth); } catch (e) {}
-
-        window.addEventListener('resize', debounce(function() {
-          applyForWidth(window.innerWidth || document.documentElement.clientWidth);
-        }, 150));
-
-        window.addEventListener('message', function(ev) {
-          try {
-            if (ev && ev.data && ev.data.action === 'update-legend' && typeof ev.data.width === 'number') {
-              applyForWidth(ev.data.width);
-            }
-          } catch (e) {}
-        });
-      });
+        function onResize() {
+          var w = window.innerWidth || document.documentElement.clientWidth;
+          if (w < 640) applyForWidth(w); else restore();
+        }
+        onResize();
+        window.addEventListener('resize', function(){ onResize(); });
+        // Recalcular categorias quando visibilidade mudar (legend click / restyle)
+        gd.on('plotly_restyle', function(){ updateVisibleCategories(); });
+        // Chamada inicial para garantir consistência
+        updateVisibleCategories();
+      })
     }
   </script>
 </div>

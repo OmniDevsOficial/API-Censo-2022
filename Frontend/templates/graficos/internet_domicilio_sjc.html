@@ -470,9 +470,33 @@
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
+        // ========================= BLOCO DE RESPONSIVIDADE DO GRÁFICO =========================
+        // Este bloco é executado após o Plotly concluir a renderização inicial do gráfico.
+        // A ideia é tornar título, legenda, rótulos do eixo X e fonte dos valores (%) adaptáveis
+        // para telas pequenas (largura < 640px), mantendo os originais para telas maiores.
         var gd = document.getElementById("c997d99e-e6c0-4646-aa06-3a05ab076ee4");
+        // Título original guardado para restaurar quando a largura for >= 640px
         var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
 
+        var originalTicktext = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.ticktext) ? gd.layout.xaxis.ticktext.slice() : null;
+        var originalTickvals = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.tickvals) ? gd.layout.xaxis.tickvals.slice() : null;
+        // Categorias base do eixo X (prioriza categoryarray; caso ausente, usa o vetor x do primeiro trace)
+        var baseCategories = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.categoryarray) ? gd.layout.xaxis.categoryarray.slice() : (gd.data && gd.data[0] && gd.data[0].x ? gd.data[0].x.slice() : null);
+        var wrappedTicktext = null;
+        if (baseCategories) {
+          // Cria nova lista de rótulos quebrando "São José dos Campos" em duas linhas para telas pequenas
+          wrappedTicktext = baseCategories.map(function(c) {
+            if (!c) return c;
+            var trimmed = (typeof c === 'string') ? c.trim() : c;
+            if (trimmed === 'São José dos Campos') {
+              return 'São José dos<br>Campos';
+            }
+            return c;
+          });
+        }
+
+        // Função utilitária para inserir uma quebra <br> no título caso ele seja muito longo.
+        // Procura o espaço mais próximo do meio do texto para evitar cortes bruscos.
         function insertLineBreak(text) {
           if (!text) return text;
           if (text.indexOf('<br>') !== -1) return text;
@@ -485,6 +509,9 @@
           return text.slice(0, idx) + '<br>' + text.slice(idx + 1);
         }
 
+        // Função principal que aplica layout diferente conforme a largura (w).
+        // < 640px: título quebrado + legenda horizontal embaixo + rótulo "São José dos Campos" em duas linhas.
+        // >= 640px: restaura tudo ao estado original (título e rótulos do eixo X).
         function applyForWidth(w) {
           if (!gd) return;
           if (w < 640) {
@@ -494,9 +521,22 @@
               'title.xanchor': 'center',
               'title.y': 1.06,
               'title.yanchor': 'top',
-              'legend.y': 1.01,
-              'margin.t': 100
+              'legend.orientation': 'h',
+              'legend.x': 0.5,
+              'legend.xanchor': 'center',
+              'legend.y': -0.26,
+              'legend.yanchor': 'top',
+              'margin.t': 100,
+              'margin.b': 110
             });
+            if (wrappedTicktext && baseCategories) {
+              try {
+                Plotly.relayout(gd, {
+                  'xaxis.ticktext': wrappedTicktext,
+                  'xaxis.tickvals': baseCategories
+                });
+              } catch (e) {}
+            }
           } else {
             Plotly.relayout(gd, {
               'title.text': originalTitle,
@@ -504,12 +544,28 @@
               'title.xanchor': 'center',
               'title.y': 1.08,
               'title.yanchor': 'top',
-              'legend.y': 1.02,
-              'margin.t': 120
+              'legend.orientation': 'v',
+              'legend.x': 1.02,
+              'legend.xanchor': 'left',
+              'legend.y': 1.0,
+              'legend.yanchor': 'top',
+              'margin.t': 120,
+              'margin.b': 60
             });
+            if (originalTicktext && originalTickvals) {
+              try {
+                Plotly.relayout(gd, {
+                  'xaxis.ticktext': originalTicktext,
+                  'xaxis.tickvals': originalTickvals
+                });
+              } catch (e) {}
+            } else if (baseCategories) {
+              try { Plotly.relayout(gd, { 'xaxis.ticktext': null, 'xaxis.tickvals': null }); } catch (e) {}
+            }
           }
         }
 
+        // Debounce simples para evitar excesso de chamadas em resize (aguarda 150ms sem nova mudança).
         function debounce(fn, wait) {
           var t = null;
           return function() {
@@ -519,12 +575,15 @@
           };
         }
 
+        // Chamada inicial usando a largura atual da janela.
         try { applyForWidth(window.innerWidth || document.documentElement.clientWidth); } catch (e) {}
 
+        // Ajusta dinamicamente ao redimensionar a janela.
         window.addEventListener('resize', debounce(function() {
           applyForWidth(window.innerWidth || document.documentElement.clientWidth);
         }, 150));
 
+        // Listener para mensagens do parent (caso a página principal envie larguras específicas via postMessage).
         window.addEventListener('message', function(ev) {
           try {
             if (ev && ev.data && ev.data.action === 'update-legend' && typeof ev.data.width === 'number') {
@@ -532,6 +591,7 @@
             }
           } catch (e) {}
         });
+        // ======================= FIM DO BLOCO DE RESPONSIVIDADE =======================
       });
     }
   </script>

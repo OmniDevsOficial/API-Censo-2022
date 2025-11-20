@@ -452,65 +452,95 @@
             domain: [0.0, 1.0],
             title: { text: "Número de Habitantes" },
           },
-          legend: { title: { text: "Ano do Censo" }, tracegroupgap: 0, bgcolor: "rgba(0,0,0,0)" },
+          legend: { title: { text: "Ano" }, tracegroupgap: 0, bgcolor: "rgba(0,0,0,0)" },
           title: { text: "População por Região: Norte (2010 vs 2022)" },
           barmode: "group",
           bargap: 0.8,
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
-        var gd = document.getElementById("d17dc63b-d272-402a-8ffc-95e1570331b0");
+        var gd = document.getElementById("f4f03622-f77f-4475-a41d-415a7abcd9a6");
         if (!gd) return;
         var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : "População por Região: Norte (2010 vs 2022)";
+        var originalLegend = {
+          orientation: (gd.layout && gd.layout.legend && gd.layout.legend.orientation) ? gd.layout.legend.orientation : 'v',
+          x: (gd.layout && gd.layout.legend && typeof gd.layout.legend.x !== 'undefined') ? gd.layout.legend.x : 0.05,
+          y: (gd.layout && gd.layout.legend && typeof gd.layout.legend.y !== 'undefined') ? gd.layout.legend.y : 0.5,
+          xanchor: (gd.layout && gd.layout.legend && gd.layout.legend.xanchor) ? gd.layout.legend.xanchor : 'left'
+        };
+        var originalMarginBottom = (gd.layout && gd.layout.margin && typeof gd.layout.margin.b !== 'undefined') ? gd.layout.margin.b : 80;
 
         function insertLineBreak(text) {
           if (!text) return text;
           if (text.length <= 30) return text;
           var mid = Math.floor(text.length / 2);
-          var idx = text.lastIndexOf(' ', mid);
-          if (idx === -1) idx = text.indexOf(' ', mid);
-          if (idx === -1) return text;
-          return text.slice(0, idx) + '<br>' + text.slice(idx + 1);
+            var idx = text.lastIndexOf(' ', mid);
+            if (idx === -1) idx = text.indexOf(' ', mid);
+            if (idx === -1) return text;
+            return text.slice(0, idx) + '<br>' + text.slice(idx + 1);
         }
 
         function debounce(fn, wait) {
-          var t;
-          return function() {
-            var ctx = this, args = arguments;
-            clearTimeout(t);
-            t = setTimeout(function() { fn.apply(ctx, args); }, wait);
-          };
+          var t; return function() { var ctx = this, args = arguments; clearTimeout(t); t = setTimeout(function() { fn.apply(ctx, args); }, wait); };
         }
 
         function applyForWidth(w) {
           try {
             if (w < 640) {
-              Plotly.relayout(gd, {
+              var relayoutSmall = {
                 'title.text': insertLineBreak(originalTitle),
                 'title.x': 0.5,
-                'title.xanchor': 'center'
-              });
+                'title.xanchor': 'center',
+                'legend.orientation': 'h',
+                'legend.x': 0.5,
+                'legend.xanchor': 'center',
+                'legend.y': -0.2,
+                'legend.yanchor': 'top',
+                'legend.tracegroupgap': 0,
+                'legend.itemwidth': 60,
+                'legend.title.text': ''
+              };
+              Plotly.relayout(gd, relayoutSmall);
+              try {
+                if (wrappedTicktext) {
+                  Plotly.relayout(gd, {
+                    'xaxis.ticktext': wrappedTicktext,
+                    'xaxis.tickvals': baseX || (gd.data && gd.data.length ? gd.data[0].x : undefined),
+                    'xaxis.automargin': true
+                  });
+                }
+              } catch (e) {}
             } else {
-              Plotly.relayout(gd, {
+              var relayoutLarge = {
                 'title.text': originalTitle,
-                'title.x': 0.05,
-                'title.xanchor': 'left'
-              });
+                'title.x': originalX,
+                'title.xanchor': originalXAnchor,
+                'legend.orientation': originalLegend.orientation || 'v',
+                'legend.x': (originalLegend.x !== undefined) ? originalLegend.x : 1,
+                'legend.xanchor': originalLegend.xanchor || 'left',
+                'legend.y': (originalLegend.y !== undefined) ? originalLegend.y : 1,
+                'legend.yanchor': originalLegend.yanchor || 'top',
+                'legend.title.text': (originalLegend.title && originalLegend.title.text) ? originalLegend.title.text : 'Ano'
+              };
+              Plotly.relayout(gd, relayoutLarge);
+              try {
+                Plotly.relayout(gd, {
+                  'xaxis.ticktext': originalTicktext,
+                  'xaxis.tickvals': originalTickvals,
+                  'xaxis.automargin': true
+                });
+              } catch (e) {}
             }
           } catch (e) { /* ignore */ }
         }
 
-        // initial
         applyForWidth(window.innerWidth || 800);
-
         window.addEventListener('message', function(e) {
           try {
             var msg = (typeof e.data === 'string') ? JSON.parse(e.data) : e.data;
             if (msg && msg.action === 'update-legend' && typeof msg.width === 'number') applyForWidth(msg.width);
-          } catch (err) { }
+          } catch(err) {}
         });
-
-        // fallback: local resize
         window.addEventListener('resize', debounce(function(){ applyForWidth(window.innerWidth); }, 150));
       });
     }

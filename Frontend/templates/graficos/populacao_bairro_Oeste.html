@@ -483,16 +483,22 @@
         function applyForWidth(w) {
           try {
             if (w < 640) {
+              var line1 = 'População por Bairro';
+              var line2 = 'na Região: Oeste';
               Plotly.relayout(gd, {
-                'title.text': insertLineBreak(originalTitle),
+                'title.text': line1 + '<br>' + line2,
                 'title.x': 0.5,
-                'title.xanchor': 'center'
+                'title.xanchor': 'center',
+                'title.font.size': w < 420 ? 16 : 18,
+                'margin.t': w < 420 ? 90 : 80
               });
             } else {
               Plotly.relayout(gd, {
                 'title.text': originalTitle,
                 'title.x': 0.05,
-                'title.xanchor': 'left'
+                'title.xanchor': 'left',
+                'title.font.size': 20,
+                'margin.t': 60
               });
             }
           } catch (e) { }

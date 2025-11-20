@@ -591,8 +591,10 @@
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
-        var gd = document.getElementById("1de11f31-96fc-4c28-a397-9e1fca17fcfb");
-        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
+        var gd = document.getElementById("f3ca6ee6-ea52-46d6-91fb-b7f163de83ef");
+        var originalTitle = (gd && gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
+        var originalAgeLabels = (gd && gd.data && gd.data[0] && gd.data[0].y) ? gd.data[0].y.slice() : [];
+        var originalLegend = (gd && gd.layout && gd.layout.legend) ? JSON.parse(JSON.stringify(gd.layout.legend)) : {};
 
         function insertLineBreak(text) {
           if (!text) return text;
@@ -609,14 +611,36 @@
         function applyForWidth(w) {
           if (!gd) return;
           if (w < 640) {
+            var compactLabels = originalAgeLabels.map(function(label){
+              if (!label) return label;
+              return label.replace(/ anos(?!.*ano)/g,'').replace(/ anos ou mais/,' ou mais').replace(/ anos$/,'');
+            });
             Plotly.relayout(gd, {
               'xaxis.showticklabels': false,
-              'title.text': insertLineBreak(originalTitle)
+              'title.text': insertLineBreak(originalTitle),
+              'title.x': 0.5,
+              'title.xanchor': 'center',
+              'yaxis.ticktext': compactLabels,
+              'yaxis.tickvals': originalAgeLabels,
+              'legend.orientation': 'h',
+              'legend.x': 0.5,
+              'legend.xanchor': 'center',
+              'legend.y': -0.01,
+              'legend.yanchor': 'top'
             });
           } else {
             Plotly.relayout(gd, {
               'xaxis.showticklabels': true,
-              'title.text': originalTitle
+              'title.text': originalTitle,
+              'title.x': 0.5,
+              'title.xanchor': 'center',
+              'yaxis.ticktext': originalAgeLabels,
+              'yaxis.tickvals': originalAgeLabels,
+              'legend.orientation': originalLegend.orientation || 'v',
+              'legend.x': (originalLegend.x !== undefined) ? originalLegend.x : 1,
+              'legend.xanchor': originalLegend.xanchor || 'left',
+              'legend.y': (originalLegend.y !== undefined) ? originalLegend.y : 1,
+              'legend.yanchor': originalLegend.yanchor || 'top'
             });
           }
         }
