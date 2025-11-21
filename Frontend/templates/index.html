@@ -115,22 +115,6 @@
             background-size: 1.5em 1.5em;
         }
 
-        .chart-container {
-            position: relative;
-            height: 450px;
-            width: 100%;
-            background-color: #f9fafb;
-            border-radius: 0.5rem;
-            border: 1px solid #eee;
-        }
-
-        .chart-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 0.5rem;
-        }
-
         @media (min-width: 576px) {
             .modal-dialog-chart {
                 max-width: 1140px;
@@ -144,7 +128,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #043e79; flex-wrap: wrap;">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #152887; flex-wrap: wrap;">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="{{ url_for('index') }}">
@@ -174,79 +158,178 @@
         </div>
     </nav>
 
-    <main>
-        <section class="introducao text-center my-5">
-            <h1>Planejamento Urbano Inteligente para uma cidade mais viva.</h1>
-            <p class="lead text-muted mx-auto" style="max-width: 800px;">Aqui, você encontrará uma ampla gama de
-                recursos para explorar e compreender a dinâmica da nossa cidade. Nossa plataforma oferece mapas
-                interativos que permitem
-                visualizar diferentes aspectos do espaço urbano, desde a infraestrutura até as áreas
-                verdes, ajudando você a entender melhor o ambiente em que vive.
-                Além disso, disponibilizamos dados demográficos detalhados, que fornecem uma visão
-                abrangente sobre a população, suas características e necessidades. Esses dados são
-                essenciais para que cidadãos, planejadores urbanos e gestores públicos possam tomar
-                decisões informadas e embasadas.</p>
-        </section>
+     <main>
+            <section class="imagem-cidade p-3">
+                <div class="container-foto">
+                    <img src="{{ url_for('static', filename='images/cidade1_jpg.jpeg') }}" alt="Foto Cidade">
+                </div>
+            </section>
 
-        <section class="sumario text-center mb-5">
-            <h1> Explore Nossos Gráficos </h1>
-            <nav class="navegacao">
-                <a href="#PopulacaoTotal" style="text-decoration: none; margin: 0 10px;"> População por Região </a>
-                <a href="#CrescimentoPopulacional" style="text-decoration: none; margin: 0 10px;"> Taxa de Crescimento
-                </a>
-                <a href="#PiramideEtaria" style="text-decoration: none; margin: 0 10px;"> Pirâmide Etária 2022 </a>
-                <a href="#PiramideEtaria2010" style="text-decoration: none; margin: 0 10px;"> Pirâmide Etária 2010 </a>
-            </nav>
-        </section>
+            <section class="introducao text-center " style="background-color:#152887;">
+                <h2 id="titulo-sumario">Como Explorar Nossos Gráficos?</h2>
+                <p class="mx-auto text-2xl max-w-[800px]">
+                    Estes painéis oferecem uma visão geral dos dados, permitindo explorar informações de forma prática.
+                    Para ver cada análise detalhada, basta clicar nos botões que abrem os gráficos em seus modais.
+                    Utilize os filtros para ajustar período e categorias — as visualizações serão atualizadas automaticamente
+                    conforme suas escolhas.
+                </p>
+            </section>
 
-        <section id="PopulacaoTotal" class="mb-5">
-            <h2 id="chart3-title" class="text-center">População Total</h2>
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-md-8">
-                        <div class="chart-container">
-                            <iframe id="chart3-main" src=""></iframe>
-                        </div>
+            <!--Sumário-->
+            <section class="sumario text-center mb-5">
+                <h2 id="titulo-sumario"> Visão Geral dos Temas</h2>
+                <nav class="navegacao">
+                    <a href="#escolaridade"> Escolaridade </a>
+                    <a href="#longevidade"> Longevidade </a>
+                    <a href="#regiaooeste"> Região Oeste</a>
+                </nav>
+            </section>
+
+            <!--Gráficos principais-->
+            <section id="escolaridade" class="mb-5">
+                <h2>Escolaridade</h2>
+                <div class="flex-container">
+                    <div class="chart-container">
+                        <img src="{{ url_for('static', filename='images/escola.jpg') }}" alt="Foto Escola">
                     </div>
-                    <div class="col-md-4 text-center">
-                        <p>O gráfico ilustra a distribuição da população por bairros e regiões...</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
-                            Ver mais
+                    <div class="texto-e-botao-container">
+                        <p> Escolaridade refere-se ao nível de instrução formal que uma pessoa alcançou, como ensino
+                            fundamental, médio,superior ou pós-graduação. Ela indica o percurso educacional de um
+                            indivíduo e ajuda a compreender seu grau de formação e conhecimento acadêmico.</p>
+                        <button class="button" data-toggle="modal" data-target="#myModal1" style="vertical-align:middle">
+                            <span> Ver mais</span>
                         </button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle1"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Mais Informações</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle1"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle1">Mais Informações</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Este painel apresenta uma visão geral dos níveis de escolaridade dos participantes,
+                            permitindo filtrar e explorar os diferentes grupos conforme a necessidade.</p>
+                            <div class="chart-container mb-3">
+                                <iframe id="chart3-modal" src=""></iframe>
+                            </div>
+                            <p>Aqui é possível comparar diferentes categorias entre si. 
+                            As barras mais altas indicam maior representatividade dentro do intervalo filtrado.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <div class="chart-container mb-3"><iframe id="chart3-modal" src=""></iframe></div>
-                        <p>O gráfico ilustra a distribuição da população por bairros e regiões...</p>
-                    </div>
-                    <div class="modal-footer"><button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Fechar</button></div>
                 </div>
             </div>
-        </div>
 
-    </main>
+            <section id="longevidade" class="mb-5">
+                <h2>Longevidade</h2>
+                <div class="flex-container">
+                    <div class="chart-container">
+                        <img src="{{ url_for('static', filename='images/idosos.jpg') }}" alt="Foto Idosos">
+                    </div>
+                    <div class="texto-e-botao-container">
+                        <p> Envelhecimento refere-se ao aumento da proporção de pessoas idosas na população ao longo do tempo,
+                            indicando mudanças na estrutura etária e revelando tendências importantes sobre longevidade e demandas
+                            sociais</p>
+                        <button class="button" data-toggle="modal" data-target="#myModal2" style="vertical-align:middle">
+                            <span> Ver mais</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
 
-    <footer
-        style="background-color: #0080FF; color: white; padding: 1.4%; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 100%;">
-        <div style="width: 32px;"></div>
-        <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
-        <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank">
-            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github"
-                style="width: 32px; height: auto; display: block; filter: brightness(0) invert(1);">
-        </a>
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="modalTitle2"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle2">Mais Informações</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="chart-container mb-3">
+                                <p>A longevidade em SJC tem aumentado, refletindo melhores condições de vida e saúde.
+                                    A população vive mais e envelhece de forma contínua, mostrando um avanço no bem-estar do município.
+                                </p>
+                                    <iframe id="chart4-modal" src=""></iframe>
+                                </div>
+                                <p>O gráfico de faixa etária mostra como a população se distribui entre jovens, adultos e idosos.
+                                    Ele revela quais grupos são mais numerosos e ajuda a entender o perfil demográfico da cidade.
+                                </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="regiaooeste" class="mb-5">
+                <h2>Região Oeste</h2>
+                <div class="flex-container">
+                    <div class="chart-container">
+                        <img src="{{ url_for('static', filename='images/oeste2.jpg') }}" alt="Foto Regiao Oeste">
+                    </div>
+                    <div class="texto-e-botao-container">
+                        <p> A região Oeste de São José dos Campos caracteriza-se por ser uma área em expansão urbana,
+                            com bairros residenciais consolidados e crescente oferta de serviços, comércio e infraestrutura.
+                            É uma das regiões mais dinâmicas da cidade, marcada por desenvolvimento contínuo e aumento populacional</p>
+                        <button class="button" data-toggle="modal" data-target="#myModal3" style="vertical-align:middle">
+                            <span> Ver mais</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="modalTitle3"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle3">Mais Informações</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                                <p>A região Oeste de SJC é uma área em forte expansão, com bairros consolidados e crescente oferta
+                                    de serviços. Destaca-se pelo desenvolvimento urbano contínuo e pelo aumento da população residente.
+                                </p>
+                                <div class="chart-container mb-3">
+                                    <iframe id="chart2-modal" src=""></iframe>
+                                </div>
+                                <p>O gráfico de barras destaca as diferenças entre os bairros da região Oeste, facilitando a
+                                    comparação de indicadores. Ele evidencia quais áreas se destacam e onde há maior concentração
+                                    populacional ou de serviços.
+                                </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    <footer>
+            <div style="width: 32px;"> </div>
+                <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
+                <div class="icons">
+                    <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank" class="menu-link">
+                        <img src="{{ url_for('static', filename='images/github.png') }}" alt="Link para o GitHub do projeto"
+                            style="width: 32px; height: auto; display: block; filter: brightness(0) invert(1);">
+                    </a>
+                </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
