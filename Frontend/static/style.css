@@ -55,6 +55,18 @@ nav {
     font-size: 25px;
 }
 
+/* Força o menu a ficar à direita */
+.navbar-nav {
+    margin-left: auto !important;
+}
+
+/* telas grandes */
+@media (min-width: 992px) {
+    #menuPrincipalColapsavel {
+        justify-content: flex-end;
+    }
+}
+
 h1 {
     display: flex;
     justify-content: center;
@@ -131,6 +143,11 @@ ul li a {
     border-radius: 8px;
 }
 
+.navbar-link{
+    color: #ffffff !important; 
+    padding: 10px 20px !important; 
+    border-radius: 8px;
+}
 
 /* Estilos do cabeçalho principal */
 h1 {
@@ -401,4 +418,10 @@ background-size: 1.5em 1.5em;
     max-width: 800px; /* Largura máxima do texto */
     margin: 0 auto; /* Centraliza o parágrafo */
     padding: 0 20px; /* Adiciona espaçamento lateral */
+}
+
+.custom-select {
+    /* ... aparência ... */
+    background-image: url("{{ url_for('static', filename='images/seta.svg') }}"); 
+    /* ... */
 }
