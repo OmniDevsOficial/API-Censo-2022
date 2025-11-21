@@ -7,51 +7,57 @@
     src="https://cdn.plot.ly/plotly-2.35.2.min.js"
   ></script>
   <div
-    id="7103504f-beaa-4c5d-96fb-eda44fa66905"
+    id="718da683-a0c7-4d9c-a65f-56c12d1aad9e"
     class="plotly-graph-div"
     style="height: 100%; width: 100%"
   ></div>
   <script type="text/javascript">
     window.PLOTLYENV = window.PLOTLYENV || {};
-    if (document.getElementById("7103504f-beaa-4c5d-96fb-eda44fa66905")) {
+    if (document.getElementById("718da683-a0c7-4d9c-a65f-56c12d1aad9e")) {
       Plotly.newPlot(
-        "7103504f-beaa-4c5d-96fb-eda44fa66905",
+        "718da683-a0c7-4d9c-a65f-56c12d1aad9e",
         [
           {
             alignmentgroup: "True",
             hovertemplate:
-              "Ano do Censo=Pop. 2010\u003cbr\u003eRegião=%{x}\u003cbr\u003eNúmero de Habitantes=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
+              "Ano=Pop. 2010\u003cbr\u003ex=%{x}\u003cbr\u003ePopulação=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
             legendgroup: "Pop. 2010",
-            marker: { color: "#636efa", pattern: { shape: "" } },
+            marker: {
+              color: "#636efa",
+              pattern: { shape: "" },
+              line: { color: "black", width: 1.2 },
+            },
             name: "Pop. 2010",
             offsetgroup: "Pop. 2010",
             orientation: "v",
             showlegend: true,
             textposition: "auto",
-            x: ["Leste"],
+            x: ["Oeste", "Sul"],
             xaxis: "x",
-            y: [160990],
+            y: [41161, 233536],
             yaxis: "y",
             type: "bar",
-            width: 0.1,
           },
           {
             alignmentgroup: "True",
             hovertemplate:
-              "Ano do Censo=Pop. 2022\u003cbr\u003eRegião=%{x}\u003cbr\u003eNúmero de Habitantes=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
+              "Ano=Pop. 2022\u003cbr\u003ex=%{x}\u003cbr\u003ePopulação=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
             legendgroup: "Pop. 2022",
-            marker: { color: "#EF553B", pattern: { shape: "" } },
+            marker: {
+              color: "#EF553B",
+              pattern: { shape: "" },
+              line: { color: "black", width: 1.2 },
+            },
             name: "Pop. 2022",
             offsetgroup: "Pop. 2022",
             orientation: "v",
             showlegend: true,
             textposition: "auto",
-            x: ["Leste"],
+            x: ["Oeste", "Sul"],
             xaxis: "x",
-            y: [181463],
+            y: [64482, 237572],
             yaxis: "y",
             type: "bar",
-            width: 0.1,
           },
         ],
         {
@@ -321,7 +327,7 @@
               hovermode: "closest",
               hoverlabel: { align: "left" },
               paper_bgcolor: "white",
-              plot_bgcolor: "rgba(0,0,0,0)",
+              plot_bgcolor: "#E5ECF6",
               polar: {
                 bgcolor: "#E5ECF6",
                 angularaxis: {
@@ -450,99 +456,24 @@
           yaxis: {
             anchor: "x",
             domain: [0.0, 1.0],
-            title: { text: "Número de Habitantes" },
+            title: { text: "População" },
           },
-          legend: { title: { text: "Ano" }, tracegroupgap: 0, bgcolor: "rgba(0,0,0,0)" },
-          title: { text: "População por Região: Leste (2010 vs 2022)" },
+          legend: {
+            title: { text: "Ano" },
+            tracegroupgap: 0,
+            orientation: "h",
+            yanchor: "bottom",
+            y: -0.2,
+            xanchor: "center",
+            x: 0.5,
+          },
+          title: { text: "Taxa de Crescimento – Sul vs Oeste", x: 0.5 },
           barmode: "group",
-          bargap: 0.8,
+          font: { size: 14 },
+          plot_bgcolor: "white",
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
-      ).then(function() {
-        var gd = document.getElementById("7103504f-beaa-4c5d-96fb-eda44fa66905");
-        if (!gd) return;
-        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : "População por Região: Leste (2010 vs 2022)";
-
-        function insertLineBreak(text) {
-          if (!text) return text;
-          if (text.length <= 30) return text;
-          var mid = Math.floor(text.length / 2);
-          var idx = text.lastIndexOf(' ', mid);
-          if (idx === -1) idx = text.indexOf(' ', mid);
-          if (idx === -1) return text;
-          return text.slice(0, idx) + '<br>' + text.slice(idx + 1);
-        }
-
-        function debounce(fn, wait) {
-          var t;
-          return function() {
-            var ctx = this, args = arguments;
-            clearTimeout(t);
-            t = setTimeout(function() { fn.apply(ctx, args); }, wait);
-          };
-        }
-
-        function applyForWidth(w) {
-          try {
-            if (w < 640) {
-              var relayoutSmall = {
-                'title.text': insertLineBreak(originalTitle),
-                'title.x': 0.5,
-                'title.xanchor': 'center',
-                'legend.orientation': 'h',
-                'legend.x': 0.5,
-                'legend.xanchor': 'center',
-                'legend.y': -0.2,
-                'legend.yanchor': 'top',
-                'legend.tracegroupgap': 0,
-                'legend.itemwidth': 60,
-                'legend.title.text': ''
-              };
-              Plotly.relayout(gd, relayoutSmall);
-              try {
-                if (wrappedTicktext) {
-                  Plotly.relayout(gd, {
-                    'xaxis.ticktext': wrappedTicktext,
-                    'xaxis.tickvals': baseX || (gd.data && gd.data.length ? gd.data[0].x : undefined),
-                    'xaxis.automargin': true
-                  });
-                }
-              } catch (e) {}
-            } else {
-              var relayoutLarge = {
-                'title.text': originalTitle,
-                'title.x': originalX,
-                'title.xanchor': originalXAnchor,
-                'legend.orientation': originalLegend.orientation || 'v',
-                'legend.x': (originalLegend.x !== undefined) ? originalLegend.x : 1,
-                'legend.xanchor': originalLegend.xanchor || 'left',
-                'legend.y': (originalLegend.y !== undefined) ? originalLegend.y : 1,
-                'legend.yanchor': originalLegend.yanchor || 'top',
-                'legend.title.text': (originalLegend.title && originalLegend.title.text) ? originalLegend.title.text : 'Ano'
-              };
-              Plotly.relayout(gd, relayoutLarge);
-              try {
-                Plotly.relayout(gd, {
-                  'xaxis.ticktext': originalTicktext,
-                  'xaxis.tickvals': originalTickvals,
-                  'xaxis.automargin': true
-                });
-              } catch (e) {}
-            }
-          } catch (e) { /* ignore */ }
-        }
-
-        applyForWidth(window.innerWidth || 800);
-
-        window.addEventListener('message', function(e) {
-          try {
-            var msg = (typeof e.data === 'string') ? JSON.parse(e.data) : e.data;
-            if (msg && msg.action === 'update-legend' && typeof msg.width === 'number') applyForWidth(msg.width);
-          } catch (err) { }
-        });
-
-        window.addEventListener('resize', debounce(function(){ applyForWidth(window.innerWidth); }, 150));
-      });
+      );
     }
   </script>
 </div>
