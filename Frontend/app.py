@@ -11,13 +11,9 @@ def index():
 # def mapa():
 #     return render_template('mapa.html')
 
-# @app.route('/sobre')
-# def sobre():
-#     return render_template('sobre.html')
-
-# @app.route('/grafico')
-# def grafico():
-#     return render_template('grafico.html')
+@app.route('/sobre')
+def sobre():
+     return render_template('sobre.html')
 
 @app.route('/graficos')
 def graficos():
