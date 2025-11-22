@@ -445,17 +445,18 @@
             anchor: "x",
             domain: [0.0, 1.0],
             title: { text: "População (%)" },
+            gridcolor: "#EBF0F8",
             range: [0, 35],
           },
           legend: { tracegroupgap: 0 },
-          title: { text: "Nivel de Escolaridade em SJC 2022 (%)" },
+          title: { text: "" },
           barmode: "relative",
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("ee37d1e7-0646-426d-998a-bfda9809d9eb");
         // Referência ao gráfico Plotly renderizado
-        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
+        var originalTitle = '';
         // Guarda texto original de ticks (se existir) para restaurar em telas grandes
         var originalTicktext = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.ticktext) ? gd.layout.xaxis.ticktext : null;
         // Guarda valores originais dos ticks (se existir)
@@ -507,9 +508,7 @@
               if (xVals && Array.isArray(xVals)) {
                 var wrapped = xVals.map(wrapAxisLabel);
                 Plotly.relayout(gd, {
-                  'title.text': insertLineBreak(originalTitle),
-                  'title.x': 0.5,
-                  'title.xanchor': 'center',
+                  'title.text': '',
                   'xaxis.ticktext': wrapped,
                   'xaxis.tickvals': xVals,
                   'xaxis.automargin': true,
@@ -522,13 +521,11 @@
                 });
               } else {
                 Plotly.relayout(gd, { 
-                  'title.text': insertLineBreak(originalTitle), 
-                  'title.x': 0.5, 
-                  'title.xanchor': 'center',
+                  'title.text': '', 
                   'xaxis.tickfont.size': Math.max(10, originalXTickFontSize - 2),
                   'margin.l': 40,
                   'margin.r': 10,
-                  'margin.t': 60,
+                  'margin.t': 40,
                   'margin.b': 50
                 });
               }
@@ -545,9 +542,7 @@
           } else {
             try {
               Plotly.relayout(gd, {
-                'title.text': originalTitle,
-                'title.x': 0.5,
-                'title.xanchor': 'center',
+                'title.text': '',
                 'xaxis.ticktext': originalTicktext,
                 'xaxis.tickvals': originalTickvals,
                 'xaxis.automargin': true,
@@ -555,18 +550,16 @@
                 'xaxis.tickfont.size': originalXTickFontSize,
                 'margin.l': originalMargins.l,
                 'margin.r': originalMargins.r,
-                'margin.t': originalMargins.t,
+                'margin.t': 60,
                 'margin.b': originalMargins.b
               });
             } catch (e) {
               Plotly.relayout(gd, { 
-                'title.text': originalTitle, 
-                'title.x': 0.5, 
-                'title.xanchor': 'center',
+                'title.text': '', 
                 'xaxis.tickfont.size': originalXTickFontSize,
                 'margin.l': originalMargins.l,
                 'margin.r': originalMargins.r,
-                'margin.t': originalMargins.t,
+                'margin.t': 60,
                 'margin.b': originalMargins.b
               });
             }

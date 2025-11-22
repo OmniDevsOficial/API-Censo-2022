@@ -568,10 +568,7 @@
               mapbox: { style: "light" },
             },
           },
-          title: {
-            text: "Pirâmide Etária de São José dos Campos 2010",
-            x: 0.5,
-          },
+          title: { text: "" },
           xaxis: {
             tickvals: [
               -30000, -25000, -20000, -15000, -10000, -5000, 0, 5000, 10000,
@@ -592,7 +589,7 @@
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("f3ca6ee6-ea52-46d6-91fb-b7f163de83ef");
-        var originalTitle = (gd && gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
+        var originalTitle = '';
         var originalAgeLabels = (gd && gd.data && gd.data[0] && gd.data[0].y) ? gd.data[0].y.slice() : [];
         var originalLegend = (gd && gd.layout && gd.layout.legend) ? JSON.parse(JSON.stringify(gd.layout.legend)) : {};
 
@@ -617,30 +614,28 @@
             });
             Plotly.relayout(gd, {
               'xaxis.showticklabels': false,
-              'title.text': insertLineBreak(originalTitle),
-              'title.x': 0.5,
-              'title.xanchor': 'center',
+              'title.text': '',
               'yaxis.ticktext': compactLabels,
               'yaxis.tickvals': originalAgeLabels,
               'legend.orientation': 'h',
               'legend.x': 0.5,
               'legend.xanchor': 'center',
-              'legend.y': -0.01,
-              'legend.yanchor': 'top'
+              'legend.y': -0.02,
+              'legend.yanchor': 'top',
+              'margin.t': 40
             });
           } else {
             Plotly.relayout(gd, {
               'xaxis.showticklabels': true,
-              'title.text': originalTitle,
-              'title.x': 0.5,
-              'title.xanchor': 'center',
+              'title.text': '',
               'yaxis.ticktext': originalAgeLabels,
               'yaxis.tickvals': originalAgeLabels,
               'legend.orientation': originalLegend.orientation || 'v',
               'legend.x': (originalLegend.x !== undefined) ? originalLegend.x : 1,
               'legend.xanchor': originalLegend.xanchor || 'left',
               'legend.y': (originalLegend.y !== undefined) ? originalLegend.y : 1,
-              'legend.yanchor': originalLegend.yanchor || 'top'
+              'legend.yanchor': originalLegend.yanchor || 'top',
+              'margin.t': 60
             });
           }
         }

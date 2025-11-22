@@ -574,19 +574,17 @@
             anchor: "x",
             domain: [0.0, 1.0],
             title: { text: "Percentual de Habitantes" },
+            gridcolor: "#EBF0F8"
           },
           legend: { title: { text: "Regiões" }, tracegroupgap: 0, bgcolor: 'rgba(0,0,0,0)'},
-          title: {
-            text: "Taxa de Crescimento Populacional por Região",
-            x: 0.5,
-          },
+          title: { text: '' },
           barmode: "relative",
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById('311d077a-8ef9-4783-8e9d-247ef18d9721');
         if (!gd) return;
-        var originalTitle = gd.layout && gd.layout.title && gd.layout.title.text ? gd.layout.title.text : '';
+        var originalTitle = '';
         var originalX = (gd.layout && gd.layout.title && typeof gd.layout.title.x !== 'undefined') ? gd.layout.title.x : 0.5;
         var originalXAnchor = (gd.layout && gd.layout.title && gd.layout.title.xanchor) ? gd.layout.title.xanchor : 'center';
         var originalFontSize = (gd.layout && gd.layout.title && gd.layout.title.font && gd.layout.title.font.size) ? gd.layout.title.font.size : 20;
@@ -642,32 +640,17 @@
 
         function compute(w) {
           // Para telas grandes mantém título original
-          if (w >= 640) return { text: originalTitle, size: originalFontSize, top: 80 };
-          // Forçar exatamente duas linhas: 'Taxa de Crescimento' + 'Populacional por Região'
-          var line1 = 'Taxa de Crescimento';
-            // Se o título original não contém 'Taxa de Crescimento', usa primeira metade do original até 'Crescimento'
-          if (originalTitle.indexOf('Taxa de Crescimento') === -1) {
-            var idx = originalTitle.indexOf('Crescimento');
-            if (idx > -1) line1 = originalTitle.slice(0, idx + 'Crescimento'.length).trim();
-            else line1 = originalTitle.split(/\s+/).slice(0,3).join(' '); // fallback
-          }
-          var line2 = 'Populacional por Região';
-          if (originalTitle.indexOf('Populacional por Região') === -1) {
-            // tenta extrair restante após 'Crescimento'
-            var after = originalTitle.split('Crescimento')[1];
-            if (after) line2 = after.trim();
-          }
-          var forcedTwoLine = line1 + '<br>' + line2;
-          var size = w < 420 ? 16 : 18;
-          var top = w < 420 ? 100 : 90; // mantém margem para não sobrepor barras
-          return { text: forcedTwoLine, size: size, top: top };
+          if (w >= 640) return { text: '', size: originalFontSize, top: 40 };
+          var size = w < 420 ? 14 : 16;
+          var top = 30;
+          return { text: '', size: size, top: top };
         }
 
         function applyForWidth(w) {
           var cfg = compute(w);
           try {
             var rel = {
-              'title.text': cfg.text,
+              'title.text': '',
               'title.x': 0.5,
               'title.xanchor': 'center',
               'title.font.size': cfg.size,
@@ -690,7 +673,7 @@
         function restore() {
           try {
             var rel = {
-              'title.text': originalTitle,
+              'title.text': '',
               'title.x': originalX,
               'title.xanchor': originalXAnchor,
               'title.font.size': originalFontSize,
@@ -698,7 +681,8 @@
               'legend.orientation': originalLegend.orientation,
               'legend.x': originalLegend.x,
               'legend.xanchor': originalLegend.xanchor,
-              'legend.y': originalLegend.y,
+              'legend.y': 0.95,
+              'legend.yanchor': 'top',
               'margin.b': originalMarginBottom,
               height: originalHeight
             };

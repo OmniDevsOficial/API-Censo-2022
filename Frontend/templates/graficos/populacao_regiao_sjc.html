@@ -463,14 +463,14 @@
             title: { text: "Número de Habitantes" },
           },
           legend: { title: { text: "Ano" }, tracegroupgap: 0, bgcolor: 'rgba(0,0,0,0)' },
-          title: { text: "População por Região (2010 x 2022)", x: 0.5 },
+          title: { text: "" },
           barmode: "group",
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("39c2a54c-ab4a-4f5b-83fd-2e605c91820a");
         if (!gd) return;
-        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : "População por Região (2010 x 2022)";
+        var originalTitle = '';
         var originalX = (gd.layout && gd.layout.title && typeof gd.layout.title.x !== 'undefined') ? gd.layout.title.x : 0.5;
         var originalXAnchor = (gd.layout && gd.layout.title && gd.layout.title.xanchor) ? gd.layout.title.xanchor : 'center';
         var originalLegend = (gd.layout && gd.layout.legend) ? JSON.parse(JSON.stringify(gd.layout.legend)) : {};
@@ -507,9 +507,7 @@
           try {
             if (w < 640) {
               var relayoutSmall = {
-                'title.text': insertLineBreak(originalTitle),
-                'title.x': 0.5,
-                'title.xanchor': 'center',
+                'title.text': '',
                 'legend.orientation': 'h',
                 'legend.x': 0.5,
                 'legend.xanchor': 'center',
@@ -531,9 +529,7 @@
               } catch (e) {}
             } else {
               var relayoutLarge = {
-                'title.text': originalTitle,
-                'title.x': originalX,
-                'title.xanchor': originalXAnchor,
+                'title.text': '',
                 'legend.orientation': originalLegend.orientation || 'v',
                 'legend.x': (originalLegend.x !== undefined) ? originalLegend.x : 1,
                 'legend.xanchor': originalLegend.xanchor || 'left',
