@@ -5,36 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planeja SJC</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Poppins">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <!-- Linkamento da estilazação CSS -->
+   <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
 </head>
 
 <body>
-    <header style="display: flex; align-items: center; justify-content: space-between; background-color: #152887; padding: 0.9% 1%;">
-        <a href="{{ url_for('index') }}" style="display: flex; justify-content: center; align-items: center; text-decoration: none;">
-            <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo Censo 2022" style="height: 55px; margin-right: 1rem;">
-        </a>
-        <nav style="color: #f1f1f1; font-weight: bold; font-size: 25px;">
-            <ul style="list-style-type: none; padding: 0; display: flex; font-size: 18px; margin: 0;">
-                <li style="margin-right: 30px;">
-                    <a class="nav-link" href="{{ url_for('index') }}" style="color: #ffffff; text-decoration: none;">Home</a>
-                </li>
-                <li style="margin-right: 30px;">
-                    <a class="nav-link" href="{{ url_for('graficos') }}" style="color: #ffffff; text-decoration: none;">Gráficos</a>
-                </li>
-                <li style="margin-right: 30px;">
-                    <a class="nav-link" href="{{ url_for('sobre') }}" style="color: #ffffff; text-decoration: none;">Sobre</a>
-                </li>
+    <header>
+        <img src="static/images/logo.png">
+        <nav>
+            <ul class="menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
             </ul>
         </nav>
     </header>
+    <main>
 
+<<<<<<< HEAD
     <div class="container fade-in">
         <h2>Sobre o Nosso Site</h2>
         <p>Bem-vindo ao Planejamento Urbano Inteligente! Nossa plataforma oferece uma abordagem inovadora para compreender a dinâmica urbana e demográfica da nossa cidade.</p>
@@ -100,6 +88,8 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
+=======
+>>>>>>> parent of 1edcbbc (pagina sobre)
 </body>
 
 </html>
