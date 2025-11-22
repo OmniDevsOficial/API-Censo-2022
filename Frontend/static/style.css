@@ -354,18 +354,41 @@ background-size: 1.5em 1.5em;
             display: flex;
             font-size: 50%;
             font-weight: bold;
-            justify-content: space-between;
+            justify-content: center;
             padding: 1.4%;
-        }
-        footer img {
-            width: 32px;
-            height: auto;
-            display: block;
-        }
-        footer a img:hover {
-            transform: scale(1.2);
-            transition: transform 0.3 ease-in-out;
-        }
+              flex-direction: column;
+}
+        
+
+   footer {
+    background-color: #152887;
+    color: white;
+    padding: 1.4%;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do footer */
+    align-items: center;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo dentro da footer-content */
+    align-items: center;
+    gap: 15px; /* Espaçamento entre os itens */
+    max-width: 800px; /* Defina uma largura máxima, se necessário */
+    width: 100%;
+}
+
+footer img {
+    width: 32px;
+    height: auto;
+}
+
+footer a img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out; /* Corrigido para incluir 's' após 0.3 */
+}
 
        .introducao {
     text-align: center;
