@@ -95,13 +95,56 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Este painel apresenta uma visão geral dos níveis de escolaridade dos participantes,
-                            permitindo filtrar e explorar os diferentes grupos conforme a necessidade.</p>
-                            <div class="chart-container mb-3">
-                                <iframe id="chart3-modal" src=""></iframe>
-                            </div>
-                            <p>Aqui é possível comparar diferentes categorias entre si. 
-                            As barras mais altas indicam maior representatividade dentro do intervalo filtrado.</p>
+                            <div class="relatorio-sjc">
+    <h1>O Perfil Educacional de São José dos Campos</h1>
+    <div class="chart-container mb-3">
+        <iframe id="chart5-modal" src=""></iframe>
+    </div>   
+    <p class="legenda-fonte mb-2">Fonte dos dados: Censo Demográfico 2022 (IBGE); Recorte: População residente de 15 anos ou mais</p>
+    <p>
+        São José dos Campos sempre carregou a fama de "capital tecnológica", mas o que os números oficiais do Censo 2022
+        dizem sobre a escolaridade real de seus habitantes? Ao analisarmos o universo de 541.849 pessoas (com 15 anos ou
+        mais) recenseadas na cidade, desenha-se o perfil de uma população majoritariamente qualificada, onde o Ensino Médio
+        tornou-se o padrão básico e o Ensino Superior atinge uma parcela expressiva da sociedade.
+    </p>
+    <h2>Grande Força de Trabalho: Ensino Médio</h2>
+    <p>
+        O maior grupo populacional de São José dos Campos é formado por aqueles que concluíram a educação básica regular,
+        representado por 32,82% população. Totalizando 228.774 pessoas.
+        Isso representa quase metade da população adulta se encontra nessa faixa de conclusão do Ensino Médio.
+        Este número mostra que a cidade teve sucesso em universalizar o acesso ao Ensino Médio nas últimas décadas. Este
+        contingente forma a espinha dorsal da força de trabalho local, atuando no comércio, serviços e na indústria, muitas
+        vezes com qualificação técnica agregada (cursos do SENAI, ETECs) que não aparecem discriminados no nível formal, mas
+        que elevam a qualidade dessa mão de obra.
+    </p>
+    <h2>A Elite do Conhecimento: Ensino Superior</h2>
+    <p>
+        O dado que mais diferencia São José dos Campos de outras cidades do mesmo porte é a densidade de pessoas graduadas,
+        que representa 20,38% da população. Totalizando 142.053 pessoas.
+        Mais de 1 em cada 4 adultos joseenses tem diploma universitário.
+        Ter mais de 140 mil pessoas com ensino superior completo é um reflexo direto do ecossistema da cidade (ITA, Unifesp,
+        Fatec, Parque Tecnológico). Isso gera uma demanda por serviços sofisticados e atrai empresas que precisam de capital
+        intelectual, criando um ciclo virtuoso de qualificação.
+    </p>
+    <h2>O Desafio Social: Sem Instrução ou Fundamental Incompleto</h2>
+    <p>
+        Apesar dos altos índices no topo, a base da pirâmide revela onde a política pública precisa atuar com força,
+        já que representa 13,91% da população, sendo algo preocupante de se ter em vista em uma cidade tão populosa.
+        Totalizando 96.985 pessoas.
+        Embora inclua o analfabetismo residual, a maior parte deste grupo é formada por pessoas que frequentaram a escola,
+        mas evadiram antes de terminar o Ensino Fundamental. É um público que enfrenta maiores dificuldades de recolocação
+        no mercado de trabalho tecnológico da cidade e que demanda programas de EJA (Educação de Jovens e Adultos) e
+        qualificação profissional básica.
+    </p>
+    <h2>A Transição: Fundamental Completo</h2>
+    <p>
+        Este é o menor grupo demográfico da escolaridade em São José dos campos representando 10.62% da população,
+        o que deve ter sua devida atenção. Totalizando 74.037 pessoas.
+        O fato de este ser o menor grupo é, paradoxalmente, um bom sinal. Indica que quem termina o Ensino Fundamental em
+        São José dos Campos tende a não parar de estudar; a maioria segue adiante e entra nas estatísticas do Ensino Médio.
+        Este grupo funciona como uma "zona de passagem".
+    </p>
+</div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -238,7 +281,8 @@
                         { id: 'chart1', title: 'Pirâmide Etária 2010', tipo: 'piramide_2010' },
                         { id: 'chart3', title: 'População por Região', tipo: 'populacao' },
                         { id: 'chart2', title: 'Pirâmide Etária 2022', tipo: 'piramide_2022' },
-                        { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' }
+                        { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' },
+                        { id: 'chart5', title: 'Nivel de Escolaridade', tipo: 'nivel_escolaridade' }
                     ]
                 }
             };
