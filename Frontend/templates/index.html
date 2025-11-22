@@ -10,152 +10,32 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Poppins">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap"
     rel="stylesheet">
-
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f0f2f5;
-            overflow-x: hidden;
-        }
-        /* --- ESTILOS NOVOS DO MENU (Copiados da página Gráficos) --- */
-
-        /* 1. Botão Mobile Customizado */
-        #btnMenuMobile {
-            display: none;
-            /* Escondido no Desktop */
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        /* 2. Ícone SVG (Os três riscos brancos) */
-        .toggler-icon {
-            width: 30px;
-            height: 30px;
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* 3. Container do Menu Mobile (Animação Slide) */
-        #menuMobile {
-            display: block;
-            width: 100%;
-            overflow: hidden;
-            max-height: 0;
-            /* Começa fechado */
-            opacity: 0;
-            transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out;
-            background-color: #043e79;
-            /* Mesma cor da navbar */
-            text-align: center;
-        }
-
-        #menuMobile.open {
-            max-height: 300px;
-            /* Altura quando aberto */
-            opacity: 1;
-            padding: 15px 0;
-            margin-top: 10px;
-        }
-
-        .mobile-link {
-            display: block;
-            color: white;
-            padding: 10px;
-            font-size: 18px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .mobile-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            text-decoration: none;
-        }
-
-        /* 4. Controle de Visibilidade (Media Queries) */
-        /* No Desktop (telas grandes), mostra o menu padrão do Bootstrap e esconde o nosso botão */
-        @media (min-width: 992px) {
-            #menuDesktop {
-                display: flex !important;
-            }
-
-            #btnMenuMobile {
-                display: none !important;
-            }
-
-            #menuMobile {
-                display: none !important;
-            }
-        }
-
-        /* No Mobile (telas pequenas), esconde o menu desktop e mostra o botão */
-        @media (max-width: 991px) {
-            #menuDesktop {
-                display: none !important;
-            }
-
-            #btnMenuMobile {
-                display: block !important;
-            }
-        }
-
-        /* --- ESTILOS ORIGINAIS DA HOME --- */
-        .custom-select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-image: url("{{ url_for('static', filename='images/seta.svg') }}");
-            background-repeat: no-repeat;
-            background-position: right 0.75rem center;
-            background-size: 1.5em 1.5em;
-        }
-
-        @media (min-width: 576px) {
-            .modal-dialog-chart {
-                max-width: 1140px;
-            }
-        }
-
-        .modal-body .chart-container {
-            height: 70vh;
-        }
-    </style>
 </head>
 
 <body class="antialiased text-gray-800">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #152887; flex-wrap: wrap;">
-        <div class="container-fluid">
+    
+    <nav class="navbar-custom">
+        <a class="brand-animate" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo" style="height: 55px;">
+        </a>
 
-            <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo Censo 2022"
-                    style="height: 55px;margin: 0 4% 0 4%">
-            </a>
-
-            <button id="btnMenuMobile" type="button">
-                <div class="toggler-icon"></div>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menuDesktop">
-                <ul class="navbar-nav ml-auto mb-2 mb-lg-0" style="font-size: 18px;">
-                    <li class="nav-item">
-                        <a class="nav-link navbar-link" href="{{ url_for('graficos') }}">Gráficos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-link" href="{{ url_for('sobre') }}">Sobre</a>
-                    </li>
-                </ul>
-            </div>
+        <div id="menuDesktop">
+            <ul class="nav">
+                <li class="nav-item mx-2"><a class="nav-link-custom" href="{{ url_for('graficos') }}">Gráficos</a></li>
+                <li class="nav-item mx-2"><a class="nav-link-custom" href="{{ url_for('sobre') }}">Sobre</a></li>
+            </ul>
         </div>
 
+        <button id="btnMenuMobile" type="button" class="btn btn-outline"
+            style="border: 1px solid rgba(255,255,255,0.5);">
+            <div class="toggler-icon"></div>
+        </button>
+
         <div id="menuMobile">
-            <a class="mobile-link" href="{{ url_for('graficos') }}">Gráficos</a>
-            <a class="mobile-link" href="{{ url_for('sobre') }}">Sobre</a>
+            <a class="d-block py-3 nav-link-custom text-center" href="{{ url_for('graficos') }}">Gráficos</a>
+            <a class="d-block py-3 nav-link-custom text-center" href="{{ url_for('sobre') }}">Sobre</a>
         </div>
     </nav>
 
@@ -179,15 +59,15 @@
             <!--Sumário-->
             <section class="sumario text-center mb-5">
                 <h2 id="titulo-sumario"> Visão Geral dos Temas</h2>
-                <nav class="navegacao">
-                    <a href="#escolaridade"> Escolaridade </a>
+                <nav>
+                    <a href="#escolaridade" style="border-right: 1px solid white;"> Escolaridade </a>
                     <a href="#longevidade"> Longevidade </a>
-                    <a href="#regiaooeste"> Região Oeste</a>
+                    <a href="#regiaooeste" style="border-left: 1px solid white;"> Região Oeste</a>
                 </nav>
             </section>
 
             <!--Gráficos principais-->
-            <section id="escolaridade" class="mb-5">
+            <section id="escolaridade" class="section-card mx-5">
                 <h2>Escolaridade</h2>
                 <div class="flex-container">
                     <div class="chart-container">
@@ -230,7 +110,7 @@
                 </div>
             </div>
 
-            <section id="longevidade" class="mb-5">
+            <section id="longevidade" class="section-card mx-5">
                 <h2>Longevidade</h2>
                 <div class="flex-container">
                     <div class="chart-container">
@@ -275,7 +155,7 @@
                 </div>
             </div>
 
-            <section id="regiaooeste" class="mb-5">
+            <section id="regiaooeste" class="section-card mx-5">
                 <h2>Região Oeste</h2>
                 <div class="flex-container">
                     <div class="chart-container">
@@ -320,17 +200,16 @@
                     </div>
                 </div>
             </div>
+
         </main>
 
-    <footer>
-            <div style="width: 32px;"> </div>
-                <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
-                <div class="icons">
-                    <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank" class="menu-link">
-                        <img src="{{ url_for('static', filename='images/github.png') }}" alt="Link para o GitHub do projeto"
-                            style="width: 32px; height: auto; display: block; filter: brightness(0) invert(1);">
-                    </a>
-                </div>
+    <footer class="text-white py-3 px-4 d-flex justify-content-between align-items-center mt-5 font-weight-bold"
+        style="background-color: #152887;">
+        <div style="width: 32px;"></div>
+        <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
+        <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" class="mb-1" style="width: 32px;">
+        </a>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

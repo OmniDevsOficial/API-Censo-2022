@@ -251,19 +251,33 @@
 
         <div class="row justify-content-center mb-5">
             <div class="col-md-6">
-                <label for="region-select" class="d-block text-center font-weight-bold mb-2">Selecione uma
-                    região:</label>
-                <select id="region-select" class="form-control form-control-lg shadow-sm"
-                    style="border-radius: 0.5rem;">
-                    <option value="sjc">São José dos Campos</option>
-                    <option value="Norte">Região Norte</option>
-                    <option value="Sul">Região Sul</option>
-                    <option value="Leste">Região Leste</option>
-                    <option value="Oeste">Região Oeste</option>
-                    <option value="Centro">Região Centro</option>
-                    <option value="Sudeste">Região Sudeste</option>
-                    <option value="São Francisco Xavier">São Francisco Xavier</option>
-                </select>
+                <label for="region-select" class="d-block text-center font-weight-bold mb-2">
+                    Selecione uma região:
+                </label>
+        
+                <div class="relative position-relative">
+        
+                    <select id="region-select" class="form-control form-control-lg shadow-sm appearance-none pr-10"
+                        style="border-radius: 0.5rem;">
+                        <option value="sjc">São José dos Campos</option>
+                        <option value="Norte">Região Norte</option>
+                        <option value="Sul">Região Sul</option>
+                        <option value="Leste">Região Leste</option>
+                        <option value="Oeste">Região Oeste</option>
+                        <option value="Centro">Região Centro</option>
+                        <option value="Sudeste">Região Sudeste</option>
+                        <option value="São Francisco Xavier">São Francisco Xavier</option>
+                    </select>
+        
+                    <!-- Setinha do Select Customizada, pra não ficar colada na borda do Select -->
+                    <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center px-2 text-gray-700"
+                        style="top: 0; bottom: 0; right: 15px; position: absolute; display: flex; align-items: center; pointer-events: none;">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                    </div>
+                    
+                </div>
             </div>
         </div>
 
@@ -308,7 +322,7 @@
         <div style="width: 32px;"></div>
         <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
         <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank">
-            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" style="width: 32px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" class="mb-1" style="width: 32px;">
         </a>
     </footer>
 
