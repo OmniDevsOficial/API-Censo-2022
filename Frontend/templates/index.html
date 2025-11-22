@@ -7,70 +7,18 @@
     <title>Planeja SJC</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Poppins">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .custom-select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-image: url("{{ url_for('static', filename='images/seta.svg') }}");
-            background-repeat: no-repeat;
-            background-position: right 0.75rem center;
-            background-size: 1.5em 1.5em;
-        }
-
-        .chart-container {
-            position: relative;
-            height: 450px;
-            /* Altura padrão para os gráficos na página principal */
-            width: 100%;
-            background-color: #f9fafb;
-            border-radius: 0.5rem;
-            border: 1px solid #eee;
-        }
-
-        .chart-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 0.5rem;
-        }
-
-        @media (min-width: 576px) {
-            .modal-dialog-chart {
-                max-width: 1140px;
-                /* <-- ALTERAÇÃO 1: Modal mais largo */
-            }
-        }
-
-        /* ALTERAÇÃO 2: Container do gráfico dentro do modal mais alto */
-        .modal-body .chart-container {
-            height: 70vh;
-            /* 70% da altura da tela (viewport height) */
-            /* Você pode ajustar este valor se precisar (ex: 650px) */
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap"
+    rel="stylesheet">
 </head>
 
-<body>
-    <header
-        style="display: flex; align-items: center; justify-content: space-between; background-color: #0080FF; padding: 0.9% 1% 0.9% 1%;">
-        <a href="{{ url_for('index') }}"
-            style="display: flex; justify-content: center; align-items: center; text-decoration: none;">
-            <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo Censo 2022"
-                style="height: 55px; margin-right: 1rem;">
+<body class="antialiased text-gray-800">
+    
+    <nav class="navbar-custom">
+        <a class="brand-animate" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo" style="height: 55px;">
         </a>
         <nav style="text-decoration: none; color: #f1f1f1; font-weight: bold; font-size: 25px;">
             <ul
@@ -83,199 +31,190 @@
                     <a class="nav-link" href="{{ url_for('graficos') }}"
                         style="display: block; color: #ffffff; text-align: center; padding: 6px 4px; text-decoration: none; border-radius: 8px;">Gráficos</a>
                 </li>
-                <li style="margin: 5px; margin-right: 30px; float: left; padding-left: 10px;">
-                    <a class="nav-link" href="{{ url_for('sobre') }}"
-                        style="display: block; color: #ffffff; text-align: center; padding: 6px 4px; text-decoration: none; border-radius: 8px;">sobre</a>
-                </li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="introducao text-center my-5">
-            <h1>Planejamento Urbano Inteligente para uma cidade mais viva.</h1>
-            <p class="lead text-muted mx-auto" style="max-width: 800px;">Aqui, você encontrará uma ampla gama de
-                recursos para explorar e compreender
-                a dinâmica da nossa cidade. Nossa plataforma oferece mapas interativos que permitem
-                visualizar diferentes aspectos do espaço urbano, desde a infraestrutura até as áreas
-                verdes, ajudando você a entender melhor o ambiente em que vive.
-                Além disso, disponibilizamos dados demográficos detalhados, que fornecem uma visão
-                abrangente sobre a população, suas características e necessidades. Esses dados são
-                essenciais para que cidadãos, planejadores urbanos e gestores públicos possam tomar
-                decisões informadas e embasadas.</p>
-        </section>
-
-        <section class="sumario text-center mb-5">
-            <h1> Explore Nossos Gráficos </h1>
-            <nav class="navegacao">
-                <a href="#PopulacaoTotal" style="text-decoration: none;"> População por Região </a>
-                <a href="#CrescimentoPopulacional" style="text-decoration: none;"> Taxa de Crescimento </a>
-                <a href="#PiramideEtaria" style="text-decoration: none;"> Pirâmide Etária 2022 </a>
-                <a href="#PiramideEtaria2010" style="text-decoration: none;"> Pirâmide Etária 2010 </a>
-            </nav>
-        </section>
-        <section id="PopulacaoTotal" class="mb-5">
-            <h2 id="chart3-title">População Total</h2>
-            <div class="flex-container">
-                <div class="chart-container">
-                    <iframe id="chart3-main" src=""></iframe>
-                </div>
-                <div class="texto-e-botao-container">
-                    <p>O gráfico ilustra a distribuição da população por bairros e regiões...</p>
-                    <button class="button" data-toggle="modal" data-target="#myModal1" style="vertical-align:middle">
-                        <span>Ver mais</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle1"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitle1">Mais Informações</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="chart-container mb-3">
-                            <iframe id="chart3-modal" src=""></iframe>
-                        </div>
-                        <p>O gráfico ilustra a distribuição da população por bairros e regiões de São José dos
-                            Campos, oferecendo uma visão clara e detalhada sobre a demografia local.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <section id="CrescimentoPopulacional" class="mb-5">
-            <h2 id="chart4-title">Crescimento Populacional</h2>
-            <div class="flex-container">
-                <div class="chart-container">
-                    <iframe id="chart4-main" src=""></iframe>
-                </div>
-                <div class="texto-e-botao-container">
-                    <p>O gráfico ilustra o crescimento populacional ao longo dos anos...</p>
-                    <button class="button" data-toggle="modal" data-target="#myModal2" style="vertical-align:middle">
-                        <span>Ver mais</span>
-                    </button>
-                </div>
-            </div>
-        </section>
+        <button id="btnMenuMobile" type="button" class="btn btn-outline"
+            style="border: 1px solid rgba(255,255,255,0.5);">
+            <div class="toggler-icon"></div>
+        </button>
 
-        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="modalTitle2"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitle2">Mais Informações</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+        <div id="menuMobile">
+            <a class="d-block py-3 nav-link-custom text-center" href="{{ url_for('graficos') }}">Gráficos</a>
+            <a class="d-block py-3 nav-link-custom text-center" href="{{ url_for('sobre') }}">Sobre</a>
+        </div>
+    </nav>
+
+     <main>
+            <section class="imagem-cidade p-3">
+                <div class="container-foto">
+                    <img src="{{ url_for('static', filename='images/cidade2.jpg') }}" alt="Foto Cidade">
+                </div>
+            </section>
+
+            <section class="introducao text-center " style="background-color:#152887;">
+                <h2 id="titulo-sumario">Como Explorar Nossos Gráficos?</h2>
+                <p class="mx-auto text-2xl max-w-[800px]">
+                    Estes painéis oferecem uma visão geral dos dados, permitindo explorar informações de forma prática.
+                    Para ver cada análise detalhada, basta clicar nos botões que abrem os gráficos em seus modais.
+                    Utilize os filtros para ajustar período e categorias — as visualizações serão atualizadas automaticamente
+                    conforme suas escolhas.
+                </p>
+            </section>
+
+            <!--Sumário-->
+            <section class="sumario text-center mb-5">
+                <h2 id="titulo-sumario"> Visão Geral dos Temas</h2>
+                <nav>
+                    <a href="#escolaridade" style="border-right: 1px solid white;"> Escolaridade </a>
+                    <a href="#longevidade"> Longevidade </a>
+                    <a href="#regiaooeste" style="border-left: 1px solid white;"> Região Oeste</a>
+                </nav>
+            </section>
+
+            <!--Gráficos principais-->
+            <section id="escolaridade" class="section-card mx-5">
+                <h2>Escolaridade</h2>
+                <div class="flex-container">
+                    <div class="chart-container">
+                        <img src="{{ url_for('static', filename='images/escola.jpg') }}" alt="Foto Escola">
+                    </div>
+                    <div class="texto-e-botao-container">
+                        <p> Escolaridade refere-se ao nível de instrução formal que uma pessoa alcançou, como ensino
+                            fundamental, médio,superior ou pós-graduação. Ela indica o percurso educacional de um
+                            indivíduo e ajuda a compreender seu grau de formação e conhecimento acadêmico.</p>
+                        <button class="button" data-toggle="modal" data-target="#myModal1" style="vertical-align:middle">
+                            <span> Ver mais</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="chart-container mb-3">
-                            <iframe id="chart4-modal" src=""></iframe>
+                </div>
+            </section>
+
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle1"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle1">Mais Informações</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <p>O gráfico ilustra o crescimento populacional ao longo dos anos, permitindo uma análise das
-                            tendências demográficas na área estudada.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <div class="modal-body">
+                            <p>Este painel apresenta uma visão geral dos níveis de escolaridade dos participantes,
+                            permitindo filtrar e explorar os diferentes grupos conforme a necessidade.</p>
+                            <div class="chart-container mb-3">
+                                <iframe id="chart3-modal" src=""></iframe>
+                            </div>
+                            <p>Aqui é possível comparar diferentes categorias entre si. 
+                            As barras mais altas indicam maior representatividade dentro do intervalo filtrado.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <section id="PiramideEtaria" class="mb-5">
-            <h2 id="chart2-title">Pirâmide Etária</h2>
-            <div class="flex-container">
-                <div class="chart-container">
-                    <iframe id="chart2-main" src=""></iframe>
-                </div>
-                <div class="texto-e-botao-container">
-                    <p>O gráfico ilustra a pirâmide etária da população de São José dos Campos de 2022</p>
-                    <button class="button" data-toggle="modal" data-target="#myModal3" style="vertical-align:middle">
-                        <span>Ver mais</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="modalTitle3"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitle3">Mais Informações</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+            <section id="longevidade" class="section-card mx-5">
+                <h2>Longevidade</h2>
+                <div class="flex-container">
+                    <div class="chart-container">
+                        <img src="{{ url_for('static', filename='images/idosos.jpg') }}" alt="Foto Idosos">
+                    </div>
+                    <div class="texto-e-botao-container">
+                        <p> Longevidade refere-se ao aumento da proporção de pessoas idosas na população ao longo do tempo,
+                            indicando mudanças na estrutura etária e revelando tendências importantes sobre longevidade e demandas
+                            sociais</p>
+                        <button class="button" data-toggle="modal" data-target="#myModal2" style="vertical-align:middle">
+                            <span> Ver mais</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="chart-container mb-3">
-                            <iframe id="chart2-modal" src=""></iframe>
+                </div>
+            </section>
+
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="modalTitle2"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle2">Mais Informações</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <p>O gráfico ilustra a pirâmide etária da população de São José dos Campos de 2022</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <div class="modal-body">
+                            <div class="chart-container mb-3">
+                                <p>A longevidade em SJC tem aumentado, refletindo melhores condições de vida e saúde.
+                                    A população vive mais e envelhece de forma contínua, mostrando um avanço no bem-estar do município.
+                                </p>
+                                    <iframe id="chart4-modal" src=""></iframe>
+                                </div>
+                                <p>O gráfico de faixa etária mostra como a população se distribui entre jovens, adultos e idosos.
+                                    Ele revela quais grupos são mais numerosos e ajuda a entender o perfil demográfico da cidade.
+                                </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <section id="PiramideEtaria2010" class="mb-5">
-            <h2 id="chart1-title">Pirâmide Etária 2010</h2>
-            <div class="flex-container">
-                <div class="chart-container">
-                    <iframe id="chart1-main" src=""></iframe>
-                </div>
-                <div class="texto-e-botao-container">
-                    <p>O gráfico ilustra a pirâmide etária da população de São José dos Campos de 2010</p>
-                    <button class="button" data-toggle="modal" data-target="#myModal4" style="vertical-align:middle">
-                        <span>Ver mais</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="modalTitle4"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitle4">Mais Informações</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+            <section id="regiaooeste" class="section-card mx-5">
+                <h2>Região Oeste</h2>
+                <div class="flex-container">
+                    <div class="chart-container">
+                        <img src="{{ url_for('static', filename='images/oeste2.jpg') }}" alt="Foto Regiao Oeste">
+                    </div>
+                    <div class="texto-e-botao-container">
+                        <p> A região Oeste de São José dos Campos caracteriza-se por ser uma área em expansão urbana,
+                            com bairros residenciais consolidados e crescente oferta de serviços, comércio e infraestrutura.
+                            É uma das regiões mais dinâmicas da cidade, marcada por desenvolvimento contínuo e aumento populacional</p>
+                        <button class="button" data-toggle="modal" data-target="#myModal3" style="vertical-align:middle">
+                            <span> Ver mais</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="chart-container mb-3">
-                            <iframe id="chart1-modal" src=""></iframe>
+                </div>
+            </section>
+
+            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="modalTitle3"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle3">Mais Informações</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <p>O gráfico ilustra a pirâmide etária da população de São José dos Campos de 2010</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <div class="modal-body">
+                                <p>A região Oeste de SJC é uma área em forte expansão, com bairros consolidados e crescente oferta
+                                    de serviços. Destaca-se pelo desenvolvimento urbano contínuo e pelo aumento da população residente.
+                                </p>
+                                <div class="chart-container mb-3">
+                                    <iframe id="chart2-modal" src=""></iframe>
+                                </div>
+                                <p>O gráfico de barras destaca as diferenças entre os bairros da região Oeste, facilitando a
+                                    comparação de indicadores. Ele evidencia quais áreas se destacam e onde há maior concentração
+                                    populacional ou de serviços.
+                                </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </main>
+        </main>
 
-    <footer
-        style="background-color: #0080FF; color: white; padding: 1.4%; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 100%;">
+    <footer class="text-white py-3 px-4 d-flex justify-content-between align-items-center mt-5 font-weight-bold"
+        style="background-color: #152887;">
         <div style="width: 32px;"></div>
         <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
         <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank">
-            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Link para o GitHub do projeto"
-                style="width: 32px; height: auto; display: block; filter: brightness(0) invert(1);">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" class="mb-1" style="width: 32px;">
         </a>
     </footer>
 
@@ -286,7 +225,18 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // 1. MAPEAMENTO DE GRÁFICOS (O mesmo da sua página de gráficos)
+            // --- LÓGICA DO SEU NOVO BOTÃO TOGGLE ---
+            const btn = document.getElementById('btnMenuMobile');
+            const menu = document.getElementById('menuMobile');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('open');
+                });
+            }
+
+            // --- SEU CÓDIGO DE GRÁFICOS ORIGINAL ---
+            // (Mantive exatamente o mesmo comportamento para carregar os gráficos)
             const regionData = {
                 'sjc': {
                     name: 'São José dos Campos',
@@ -296,138 +246,24 @@
                         { id: 'chart2', title: 'Pirâmide Etária 2022', tipo: 'piramide_2022' },
                         { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' }
                     ]
-                },
-                'Norte': {
-                    name: 'Região Norte',
-                    charts: [
-                        { id: 'chart1', title: 'População da Região Norte', tipo: 'populacao' },
-                        { id: 'chart2', title: 'População por Bairro - Norte', tipo: 'populacao_bairro' },
-                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
-                    ]
-                },
-                'Sul': {
-                    name: 'Região Sul',
-                    charts: [
-                        { id: 'chart1', title: 'População da Região Sul', tipo: 'populacao' },
-                        { id: 'chart2', title: 'População por Bairro - Sul', tipo: 'populacao_bairro' },
-                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
-                    ]
-                },
-                'Leste': {
-                    name: 'Região Leste',
-                    charts: [
-                        { id: 'chart1', title: 'População da Região Leste', tipo: 'populacao' },
-                        { id: 'chart2', title: 'População por Bairro - Leste', tipo: 'populacao_bairro' },
-                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
-                    ]
-                },
-                'Oeste': {
-                    name: 'Região Oeste',
-                    charts: [
-                        { id: 'chart1', title: 'População da Região Oeste', tipo: 'populacao' },
-                        { id: 'chart2', title: 'População por Bairro - Oeste', tipo: 'populacao_bairro' },
-                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
-                    ]
-                },
-                'Centro': {
-                    name: 'Região Centro',
-                    charts: [
-                        { id: 'chart1', title: 'População da Região Centro', tipo: 'populacao' },
-                        { id: 'chart2', title: 'População por Bairro - Centro', tipo: 'populacao_bairro' },
-                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
-                    ]
-                },
-                'Sudeste': {
-                    name: 'Região Sudeste',
-                    charts: [
-                        { id: 'chart1', title: 'População da Região Sudeste', tipo: 'populacao' },
-                        { id: 'chart2', title: 'População por Bairro - Sudeste', tipo: 'populacao_bairro' },
-                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
-                    ]
-                },
-                'São Francisco Xavier': {
-                    name: 'São Francisco Xavier',
-                    charts: [
-                        { id: 'chart1', title: 'População - São Francisco Xavier', tipo: 'populacao_bairro' },
-                        { id: 'chart2', title: 'Gráfico 2', tipo: null },
-                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
-                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
-                    ]
                 }
             };
 
-            // 2. FUNÇÃO DE ATUALIZAÇÃO (Atualiza todos os 8 gráficos)
             function updateDashboard(regionKey) {
                 const data = regionData[regionKey];
+                if (!data) return;
 
                 data.charts.forEach(chart => {
-                    // Seleciona os iframes (principal e do modal)
-                    const iframeElementMain = document.getElementById(chart.id + '-main');
-                    const iframeElementModal = document.getElementById(chart.id + '-modal');
+                    const iframeMain = document.getElementById(chart.id + '-main');
+                    const iframeModal = document.getElementById(chart.id + '-modal');
+                    let newSrc = chart.tipo ? `/grafico/${regionKey}/${chart.tipo}` : '';
 
-                    // Seleciona o título da seção
-                    const titleElement = document.getElementById(chart.id + '-title');
-
-                    if (titleElement) {
-                        titleElement.textContent = chart.title;
-                    }
-
-                    // Define a URL ou o texto de 'Não disponível'
-                    let newSrc = '';
-                    let newSrcDoc = '';
-                    if (chart.tipo) {
-                        newSrc = `/grafico/${regionKey}/${chart.tipo}`;
-                    } else {
-                        newSrcDoc = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; font-family: Montserrat, sans-serif; color: #666;">Gráfico não disponível</div>';
-                    }
-
-                    // Atualiza o iframe principal
-                    if (iframeElementMain) {
-                        iframeElementMain.removeAttribute('src');
-                        iframeElementMain.removeAttribute('srcdoc');
-                        if (newSrc) {
-                            iframeElementMain.src = newSrc;
-                        } else {
-                            iframeElementMain.srcdoc = newSrcDoc;
-                        }
-                    }
-
-                    // Atualiza o iframe do modal
-                    if (iframeElementModal) {
-                        iframeElementModal.removeAttribute('src');
-                        iframeElementModal.removeAttribute('srcdoc');
-                        if (newSrc) {
-                            iframeElementModal.src = newSrc;
-                        } else {
-                            iframeElementModal.srcdoc = newSrcDoc;
-                        }
-                    }
+                    if (iframeMain) iframeMain.src = newSrc;
+                    if (iframeModal) iframeModal.src = newSrc;
                 });
             }
 
-            // 3. CARGA INICIAL
-            // Carrega todos os 8 gráficos (4 da página + 4 dos modais)
             updateDashboard('sjc');
-
-            // 4. LISTENER DO DROPDOWN
-            // Atualiza todos os 8 gráficos quando a região mudar
-            // Verifique se o elemento 'region-select' existe antes de adicionar o listener
-            const regionSelect = document.getElementById('region-select');
-            if (regionSelect) {
-                regionSelect.addEventListener('change', (event) => {
-                    updateDashboard(event.target.value);
-                });
-            } else {
-                // Se não houver dropdown, não faz nada. 
-                // O código continua funcionando para a carga inicial 'sjc'.
-            }
-
         });
     </script>
 
