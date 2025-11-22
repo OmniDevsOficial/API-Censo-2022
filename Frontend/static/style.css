@@ -679,3 +679,74 @@ footer img:hover {
     height: 24px;
     object-fit: contain;
 }
+
+/* Container principal para limitar a largura e centralizar */
+    .relatorio-sjc {
+        max-width: 900px; /* Largura máxima de leitura agradável */
+        margin: 40px auto; /* Centraliza na tela */
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px; /* Bordas arredondadas suaves */
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* Sombra leve para destaque */
+    }
+
+    /* Título Principal */
+    .relatorio-sjc h1 {
+        color: #004a8f; /* Azul sóbrio, institucional */
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 15px;
+    }
+
+    /* Subtítulos */
+    .relatorio-sjc h2 {
+        color: #0056b3;
+        font-size: 1.5rem;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        border-left: 5px solid #0056b3; /* Detalhe visual à esquerda */
+        padding-left: 15px;
+    }
+
+    /* Estilização do Gráfico (Iframe) */
+    .chart-container {
+        position: relative;
+        width: 100%;
+        height: 450px; /* Altura fixa para o gráfico */
+        background-color: #f8f9fa; /* Fundo cinza enquanto carrega */
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #e0e0e0;
+    }
+
+    .chart-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Texto de Fonte/Legenda */
+    .legenda-fonte {
+        font-size: 0.85rem;
+        color: #666;
+        font-style: italic;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* Parágrafos */
+    .relatorio-sjc p {
+        margin-bottom: 1.2rem;
+        text-align: justify; /* Justificado para ficar como "jornal" */
+    }
+    
+    /* Destaque para números (Opcional - veja nota abaixo) */
+    .destaque-numero {
+        font-weight: bold;
+        color: #d63384; /* Uma cor de destaque para os % e totais */
+    }
