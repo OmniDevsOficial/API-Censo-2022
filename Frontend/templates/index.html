@@ -11,13 +11,14 @@
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Poppins">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f2f5;
+            overflow-x: hidden;
         }
-
         /* --- ESTILOS NOVOS DO MENU (Copiados da página Gráficos) --- */
 
         /* 1. Botão Mobile Customizado */
@@ -127,13 +128,13 @@
     </style>
 </head>
 
-<body>
+<body class="antialiased text-gray-800">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #152887; flex-wrap: wrap;">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="{{ url_for('index') }}">
                 <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo Censo 2022"
-                    style="height: 55px;">
+                    style="height: 55px;margin: 0 4% 0 4%">
             </a>
 
             <button id="btnMenuMobile" type="button">
@@ -161,7 +162,7 @@
      <main>
             <section class="imagem-cidade p-3">
                 <div class="container-foto">
-                    <img src="{{ url_for('static', filename='images/cidade1_jpg.jpeg') }}" alt="Foto Cidade">
+                    <img src="{{ url_for('static', filename='images/cidade2.jpg') }}" alt="Foto Cidade">
                 </div>
             </section>
 
@@ -236,7 +237,7 @@
                         <img src="{{ url_for('static', filename='images/idosos.jpg') }}" alt="Foto Idosos">
                     </div>
                     <div class="texto-e-botao-container">
-                        <p> Envelhecimento refere-se ao aumento da proporção de pessoas idosas na população ao longo do tempo,
+                        <p> Longevidade refere-se ao aumento da proporção de pessoas idosas na população ao longo do tempo,
                             indicando mudanças na estrutura etária e revelando tendências importantes sobre longevidade e demandas
                             sociais</p>
                         <button class="button" data-toggle="modal" data-target="#myModal2" style="vertical-align:middle">
