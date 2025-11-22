@@ -5,23 +5,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planeja SJC</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-    <!-- Linkamento da estilazação CSS -->
-   <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Poppins">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
 </head>
 
 <body>
-    <header>
-        <img src="static/images/logo.png">
-        <nav>
-            <ul class="menu">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
+    <header style="display: flex; align-items: center; justify-content: space-between; background-color: #152887; padding: 0.9% 1%;">
+        <a href="{{ url_for('index') }}" style="display: flex; justify-content: center; align-items: center; text-decoration: none;">
+            <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo Censo 2022" style="height: 55px; margin-right: 1rem;">
+        </a>
+        <nav style="color: #f1f1f1; font-weight: bold; font-size: 25px;">
+            <ul style="list-style-type: none; padding: 0; display: flex; font-size: 18px; margin: 0;">
+                <li style="margin-right: 30px;">
+                    <a class="nav-link" href="{{ url_for('index') }}" style="color: #ffffff; text-decoration: none;">Home</a>
+                </li>
+                <li style="margin-right: 30px;">
+                    <a class="nav-link" href="{{ url_for('graficos') }}" style="color: #ffffff; text-decoration: none;">Gráficos</a>
+                </li>
+                <li style="margin-right: 30px;">
+                    <a class="nav-link" href="{{ url_for('sobre') }}" style="color: #ffffff; text-decoration: none;">Sobre</a>
+                </li>
             </ul>
         </nav>
     </header>
-    <main>
 
+    <div class="container fade-in">
+        <h2>Sobre o Nosso Site</h2>
+        <p>Bem-vindo ao Planejamento Urbano Inteligente! Nossa plataforma oferece uma abordagem inovadora para compreender a dinâmica urbana e demográfica da nossa cidade.</p>
+
+        <h2>O Que Oferecemos</h2>
+        <p>Nossa plataforma é composta por recursos abrangentes e interativos que permitem explorar diversos aspectos da cidade:</p>
+        <ul>
+            <li><strong>Mapas Interativos:</strong> Visualização da infraestrutura, áreas verdes e interação intuitiva.</li>
+            <li><strong>Gráficos Interativos:</strong> Dados acessíveis e engajamento visual com análises demográficas.</li>
+            <li><strong>Catálogo de Gráficos:</strong> Acesso a múltiplos gráficos, permitindo filtragens e pesquisas.</li>
+        </ul>
+
+        <h2>Como Usar</h2>
+        <p>Navegar em nossa plataforma é simples e intuitivo:</p>
+        <ul>
+            <li><strong>Explorando a Página Inicial:</strong> Acesse os gráficos mais relevantes logo no início.</li>
+            <li><strong>Interagindo com os Gráficos:</strong> Obtenha dados detalhados ao selecionar diferentes gráficos.</li>
+            <li><strong>Utilizando o Catálogo:</strong> Descubra mais visualizações e filtre por região ou tema.</li>
+        </ul>
+
+        <h2>Para Quem É Este Site?</h2>
+        <p>Nossa plataforma foi criada pensando em:</p>
+        <ul>
+            <li>Cidadãos que desejam entender melhor sua cidade.</li>
+            <li>Planejadores Urbanos e Gestores Públicos que precisam de dados para análise.</li>
+            <li>Estudantes e Pesquisadores que buscam recursos acadêmicos.</li>
+        </ul>
+
+        <h2>Por Que Isso Importa?</h2>
+        <p>A compreensão dos dados demográficos e urbanos é vital para:</p>
+        <ul>
+            <li>Tomada de decisões baseadas em evidências.</li>
+            <li>Engajamento comunitário e participação ativa.</li>
+            <li>Promoção de cidades sustentáveis.</li>
+        </ul>
+
+        <h2>Como Interpretar os Gráficos</h2>
+        <p>Os gráficos proporcionam insights valiosos:</p>
+        <ul>
+            <li><strong>Densidade Populacional:</strong> Entenda a distribuição populacional.</li>
+            <li><strong>Crescimento Populacional:</strong> Analise as tendências de crescimento.</li>
+            <li><strong>Pirâmides Etárias:</strong> Observe a estrutura etária ao longo do tempo.</li>
+            <li><strong>Uso de Internet e Nível de Escolaridade:</strong> Avalie a tecnologia e a educação na cidade.</li>
+        </ul>
+    </div>
+
+    <footer style="background-color: #152887; color: white; padding: 1.4%; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 100%;">
+        <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
+        <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Link para o GitHub do projeto" style="width: 32px; height: auto; display: block; filter: brightness(0) invert(1);">
+        </a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Inicialização do tooltip do Bootstrap
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
 
 </html>
