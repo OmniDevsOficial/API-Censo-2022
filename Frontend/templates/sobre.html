@@ -5,34 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planeja SJC</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='sobre.css') }}">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Poppins">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sobre.css') }}">
 </head>
 
 <body>
-    <header style="display: flex; align-items: center; justify-content: space-between; background-color: #152887; padding: 0.9% 1%;">
-        <a href="{{ url_for('index') }}" style="display: flex; justify-content: center; align-items: center; text-decoration: none;">
-            <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo Censo 2022" style="height: 55px; margin-right: 1rem;">
+    <nav class="navbar-custom">
+        <a class="brand-animate" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo" style="height: 55px;">
         </a>
-        <nav style="color: #f1f1f1; font-weight: bold; font-size: 25px;">
-            <ul style="list-style-type: none; padding: 0; display: flex; font-size: 18px; margin: 0;">
-                <li style="margin-right: 30px;">
-                    <a class="nav-link" href="{{ url_for('index') }}" style="color: #ffffff; text-decoration: none;">Home</a>
-                </li>
-                <li style="margin-right: 30px;">
-                    <a class="nav-link" href="{{ url_for('graficos') }}" style="color: #ffffff; text-decoration: none;">Gráficos</a>
-                </li>
+
+        <div id="menuDesktop">
+            <ul class="nav">
+                <li class="nav-item mx-2"><a class="nav-link-custom" href="{{ url_for('index') }}">Home</a></li>
+                <li class="nav-item mx-2"><a class="nav-link-custom" href="{{ url_for('graficos') }}">Gráficos</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+
+        <button id="btnMenuMobile" type="button" class="btn btn-outline"
+            style="border: 1px solid rgba(255,255,255,0.5);">
+            <div class="toggler-icon"></div>
+        </button>
+
+        <div id="menuMobile">
+            <a class="d-block py-3 nav-link-custom text-center" href="{{ url_for('index') }}">Home</a>
+            <a class="d-block py-3 nav-link-custom text-center" href="{{ url_for('sobre') }}">Sobre</a>
+        </div>
+    </nav>
 
     <div class="container fade-in">
-        <h2>Sobre o Nosso Site</h2>
+        <h2 class="first">Sobre o Nosso Site</h2>
         <p>Bem-vindo ao Planejamento Urbano Inteligente! Nossa plataforma oferece uma abordagem inovadora para compreender a dinâmica urbana e demográfica da nossa cidade.</p>
 
         <h2>O Que Oferecemos</h2>
@@ -82,8 +89,7 @@
         <div style="width: 32px;"></div>
         <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
         <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank">
-            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" class="mb-1"
-                style="width: 32px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" class="mb-1" style="width: 32px;">
         </a>
     </footer>
 

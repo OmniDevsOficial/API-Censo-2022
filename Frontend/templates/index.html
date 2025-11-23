@@ -77,16 +77,16 @@
             <h2 id="titulo-sumario"> Visão Geral dos Temas</h2>
             <nav>
                 <a href="#escolaridade" style="border-right: 1px solid white;"> Escolaridade </a>
-                <a href="#longevidade"> Longevidade </a>
+                <a href="#longevidade"> Envelhecimento </a>
                 <a href="#regiaooeste" style="border-left: 1px solid white;"> Região Oeste</a>
             </nav>
         </section>
 
         <!--Gráficos principais-->
-        <section id="escolaridade" class="section-card mx-5">
-            <h2>Escolaridade</h2>
+        <section id="escolaridade" class="section-card mx-auto">
+            <h2>Destaque na Escolaridade</h2>
             <div class="flex-container">
-                <div class="chart-container">
+                <div class="theme-img-container">
                     <figure> 
                         <img src="{{ url_for('static', filename='images/escola.jpg') }}" alt="Foto Escola">
                         <figurecaption> 
@@ -116,11 +116,77 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="chart-container mb-3">
-                            <iframe id="chart3-modal" src=""></iframe>
+                        <div class="relatorio-sjc">
+                            <h1>O Perfil Educacional de São José dos Campos</h1>
+                            <div class="chart-container mb-3">
+                                <iframe id="chart5-modal" src=""></iframe>
+                            </div>
+                            <p class="legenda-fonte mb-2">Fonte dos dados: Censo Demográfico 2022 (IBGE); Recorte:
+                                População residente de 15 anos ou mais</p>
+                            <p class="mt-5">
+                                São José dos Campos sempre carregou a fama de "capital tecnológica", mas o que os
+                                números oficiais do Censo 2022
+                                dizem sobre a escolaridade real de seus habitantes? Ao analisarmos o universo de 541.849
+                                pessoas (com 15 anos ou
+                                mais) recenseadas na cidade, desenha-se o perfil de uma população majoritariamente
+                                qualificada, onde o Ensino Médio
+                                tornou-se o padrão básico e o Ensino Superior atinge uma parcela expressiva da
+                                sociedade.
+                            </p>
+                            <h2>Grande Força de Trabalho: Ensino Médio</h2>
+                            <p>
+                                O maior grupo populacional de São José dos Campos é formado por aqueles que concluíram a
+                                educação básica regular,
+                                representado por 32,82% população. Totalizando 228.774 pessoas.
+                                Isso representa quase metade da população adulta se encontra nessa faixa de conclusão do
+                                Ensino Médio.
+                                Este número mostra que a cidade teve sucesso em universalizar o acesso ao Ensino Médio
+                                nas últimas décadas. Este
+                                contingente forma a espinha dorsal da força de trabalho local, atuando no comércio,
+                                serviços e na indústria, muitas
+                                vezes com qualificação técnica agregada (cursos do SENAI, ETECs) que não aparecem
+                                discriminados no nível formal, mas
+                                que elevam a qualidade dessa mão de obra.
+                            </p>
+                            <h2>A Elite do Conhecimento: Ensino Superior</h2>
+                            <p>
+                                O dado que mais diferencia São José dos Campos de outras cidades do mesmo porte é a
+                                densidade de pessoas graduadas,
+                                que representa 20,38% da população. Totalizando 142.053 pessoas.
+                                Mais de 1 em cada 4 adultos joseenses tem diploma universitário.
+                                Ter mais de 140 mil pessoas com ensino superior completo é um reflexo direto do
+                                ecossistema da cidade (ITA, Unifesp,
+                                Fatec, Parque Tecnológico). Isso gera uma demanda por serviços sofisticados e atrai
+                                empresas que precisam de capital
+                                intelectual, criando um ciclo virtuoso de qualificação.
+                            </p>
+                            <h2>O Desafio Social: Sem Instrução ou Fundamental Incompleto</h2>
+                            <p>
+                                Apesar dos altos índices no topo, a base da pirâmide revela onde a política pública
+                                precisa atuar com força,
+                                já que representa 13,91% da população, sendo algo preocupante de se ter em vista em uma
+                                cidade tão populosa.
+                                Totalizando 96.985 pessoas.
+                                Embora inclua o analfabetismo residual, a maior parte deste grupo é formada por pessoas
+                                que frequentaram a escola,
+                                mas evadiram antes de terminar o Ensino Fundamental. É um público que enfrenta maiores
+                                dificuldades de recolocação
+                                no mercado de trabalho tecnológico da cidade e que demanda programas de EJA (Educação de
+                                Jovens e Adultos) e
+                                qualificação profissional básica.
+                            </p>
+                            <h2>A Transição: Fundamental Completo</h2>
+                            <p>
+                                Este é o menor grupo demográfico da escolaridade em São José dos campos representando
+                                10.62% da população,
+                                o que deve ter sua devida atenção. Totalizando 74.037 pessoas.
+                                O fato de este ser o menor grupo é, paradoxalmente, um bom sinal. Indica que quem
+                                termina o Ensino Fundamental em
+                                São José dos Campos tende a não parar de estudar; a maioria segue adiante e entra nas
+                                estatísticas do Ensino Médio.
+                                Este grupo funciona como uma "zona de passagem".
+                            </p>
                         </div>
-                        <p>O gráfico ilustra a distribuição da população por bairros e regiões de São José dos
-                            Campos, oferecendo uma visão clara e detalhada sobre a demografia local.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -129,10 +195,10 @@
             </div>
         </div>
 
-        <section id="longevidade" class="section-card mx-5">
-            <h2>Longevidade</h2>
+        <section id="longevidade" class="section-card mx-auto">
+            <h2>Envelhecimento está alto</h2>
             <div class="flex-container">
-                <div class="chart-container">
+                <div class="theme-img-container">
                     <figure> 
                         <img src="{{ url_for('static', filename='images/idosos.jpg') }}" alt="Foto Escola">
                         <figurecaption> 
@@ -183,10 +249,10 @@
             </div>
         </div>
 
-        <section id="regiaooeste" class="section-card mx-5">
-            <h2>Região Oeste</h2>
+        <section id="regiaooeste" class="section-card mx-auto">
+            <h2>Região Oeste x Sul</h2>
             <div class="flex-container">
-                <div class="chart-container">
+                <div class="theme-img-container">
                     <figure> 
                         <img src="{{ url_for('static', filename='images/oeste2.jpg') }}" alt="Foto Escola">
                         <figurecaption> 
@@ -195,10 +261,7 @@
                     </figure>
                 </div>
                 <div class="texto-e-botao-container">
-                    <p> A região Oeste de São José dos Campos caracteriza-se por ser uma área em expansão urbana,
-                        com bairros residenciais consolidados e crescente oferta de serviços, comércio e infraestrutura.
-                        É uma das regiões mais dinâmicas da cidade, marcada por desenvolvimento contínuo e aumento
-                        populacional</p>
+                    <p> A região Oeste da cidade vem ganhado destaque mediante ao considerável crescimento populacional, que ocorreu devido à expansão urbana tomar o rumo do crescimento verticalizado, uma 'predificação' da região. Por outro lado, a Região Sul sendo a mais populosa, quase não obteve crescimento, em função da alta concentração de pessoas não abrir margem para qualquer crescimento significativo.</p>
                     <button class="button" data-toggle="modal" data-target="#myModal3" style="vertical-align:middle">
                         <span> Ver mais</span>
                     </button>
@@ -208,7 +271,7 @@
 
         <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="modalTitle3"
             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-chart modal-lg" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalTitle3">Mais Informações</h5>
@@ -233,13 +296,12 @@
                         <p class="small text-muted text-center font-italic mb-4">
                             Fonte: Censo 2022 (População e Domicílios - Primeiros resultados)
                         </p>
-                        <p class="text-justify text-secondary">
+                        <p class="text-justify text-secondary mb-5">
                             A análise dos dados do Censo 2022 revela dois cenários urbanos distintos dentro do mesmo
                             município. Enquanto uma região experimenta uma expansão acelerada e seus consequentes
                             desafios estruturais, a outra demonstra um comportamento de consolidação e maturidade
                             urbana.
                         </p>
-                        <hr class="my-4">
                         <div class="mb-4">
                             <h3 class="font-weight-bold border-bottom pb-2 mb-3" style="color: #152887;">
                                 📍 Região Oeste: Desenvolvimento e Desafios
@@ -348,7 +410,8 @@
                         { id: 'chart3', title: 'População por Região', tipo: 'populacao' },
                         { id: 'chart2', title: 'Pirâmide Etária 2022', tipo: 'piramide_2022' },
                         { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' },
-                        { id: 'chart6', title: 'Oeste X Sul', tipo: 'oeste_sul' }
+                        { id: 'chart6', title: 'Oeste X Sul', tipo: 'oeste_sul' },
+                        { id: 'chart5', title: 'Nivel de Escolaridade', tipo: 'nivel_escolaridade' }
                     ]
                 },
                 'Norte': {

@@ -88,7 +88,9 @@ li {
     position: relative;
 }
 
-a::after {
+/* Animação da linha laranja*/
+.nav-link-custom::after,
+.brand-animate::after {
     content: '';
     position: absolute;
     left: 0;
@@ -101,14 +103,16 @@ a::after {
     transition: transform 0.3s ease;
 }
 
-a:hover {
+.nav-link-custom:hover,
+.brand-animate:hover {
     color: #fff;
     /* Muda a cor do texto ao passar o mouse */
     transform: translateY(-2px);
     /* Levanta o botão levemente */
 }
 
-a:hover::after {
+.nav-link-custom:hover::after,
+.brand-animate:hover::after {
     transform: scaleX(1);
 }
 
@@ -156,17 +160,7 @@ h1 {
     /*centraliza o bloco*/
     color: #ffffff;
 }
-.carousel-img-fit {
-    width: 100%;  
-    height: 700px;   
-    object-fit: cover;
-}
 
-@media (max-width: 568px) {
-    .carousel-img-fit {
-        height: 300px;
-    }
-}
 .sumario {
     display: flex;
     background-color: #152887;
@@ -253,18 +247,6 @@ section {
     align-items: flex-start;
 }
 
-.chart-container {
-    max-width: 700px;
-    width: 100%;
-}
-
-.chart-container img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
 .container-foto {
     width: 100%;
     height: 580px;
@@ -277,32 +259,17 @@ section {
     object-fit: cover;
 }
 
-/* Faz o gráfico crescer bem dentro do modal */
-.modal .chart-container {
-    width: 100%;
-    height: 20vh;
-    /* altura ótima */
-    max-height: 80vh;
-}
-
-.modal .chart-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
 /* --- 2. NAVBAR CUSTOMIZADA --- */
 .navbar-custom {
     background-color: #152887 !important;
     padding: 0.9rem 4rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-/* Animação do LOGO (Restaurada) */
 .brand-animate {
     position: relative;
     display: flex;
@@ -311,28 +278,7 @@ section {
     text-decoration: none !important;
 }
 
-.brand-animate::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 3px;
-    background-color: rgb(255, 115, 0);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    border-radius: 5px;
-}
-
-.brand-animate:hover {
-    transform: translateY(-2px);
-}
-
-.brand-animate:hover::after {
-    transform: scaleX(1);
-}
-
-/* Animação dos LINKS (Restaurada) */
+/* Animação dos LINKS */
 .nav-link-custom {
     color: white !important;
     font-weight: bold;
@@ -424,6 +370,7 @@ section {
     padding: 5px 10px 10px 10px;
     margin-bottom: 30px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    width: fit-content;
 }
 
 .section-card:hover {
@@ -437,17 +384,6 @@ section {
     font-weight: bold;
     /* margin-bottom: 10px; */
 }
-
-@media (min-width: 576px) {
-    .modal-dialog-chart {
-        max-width: 1140px;
-    }
-}
-
-.modal-body .chart-container {
-    height: 70vh;
-}
-
 
 .button {
     background-color: #152887;
@@ -558,10 +494,6 @@ section {
     border-radius: 50px;
 }
 
-.modal-content {
-    border-radius: 1rem;
-}
-
 footer {
     align-items: center;
     background-color: #152887;
@@ -591,7 +523,7 @@ footer img:hover {
 }
 
 .titulo {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     /* Fonte bonita */
     font-size: 3em;
     /* Tamanho do título */
@@ -615,22 +547,123 @@ footer img:hover {
     }
 }
 
-.descricao {
-    font-size: 0.9em; /* Tamanho menor para o texto abaixo */
-    line-height: 1.5; /* Altura da linha para legibilidade */
-    color: #555; /* Cor do texto */
-    max-width: 800px; /* Largura máxima do texto */
-    margin: 0 auto; /* Centraliza o parágrafo */
-    padding: 0 20px; /* Adiciona espaçamento lateral */
+.theme-img-container {
+    max-width: 700px;
+    width: 100%;
 }
 
-/* Modal Crescimento Região Oeste e Sul */
+.theme-img-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
 
-.grafico-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Estilos para o modal */
+
+.modal-content {
+    border-radius: 1rem;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog-chart {
+        max-width: 1140px;
+    }
+}
+
+
+.modal .chart-container {
+    width: 100%;
+    height: 70vh;
+    max-height: 80vh;
+}
+
+.modal .chart-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ------- Estilos Artigos ------- */
+
+.relatorio-sjc {
+    /* max-width: 900px; */
+    /* Largura máxima de leitura agradável */
+    /* margin: 40px auto; */
+    /* Centraliza na tela */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    /* Bordas arredondadas suaves */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    /* Sombra leve para destaque */
+}
+
+/* Título Principal */
+.relatorio-sjc h1 {
+    color: #004a8f;
+    /* Azul sóbrio, institucional */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* Subtítulos */
+.relatorio-sjc h2 {
+    color: #0056b3;
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-left: 5px solid #0056b3;
+    /* Detalhe visual à esquerda */
+    padding-left: 15px;
+}
+
+/* Estilização do Gráfico (Iframe) */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    /* Altura fixa para o gráfico */
+    background-color: #f8f9fa;
+    /* Fundo cinza enquanto carrega */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.chart-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Texto de Fonte/Legenda */
+.legenda-fonte {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Parágrafos */
+.relatorio-sjc p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    /* Justificado para ficar como "jornal" */
+}
+
+/* Destaque para números (Opcional - veja nota abaixo) */
+.destaque-numero {
+    font-weight: bold;
+    color: #d63384;
+    /* Uma cor de destaque para os % e totais */
 }
 
 .font-imagem{
