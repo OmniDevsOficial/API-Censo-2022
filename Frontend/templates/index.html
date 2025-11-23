@@ -41,38 +41,36 @@
     </nav>
 
     <main>
-      <section class="imagem-cidade" style="padding: 0; margin: 0; width: 100%;">
-  
-  <div id="meuCarrossel" class="carousel slide carousel-fade" data-ride="carousel">
-    
-    <div class="carousel-inner">
-      
-      <div class="carousel-item active">
-        <img src="{{ url_for('static', filename='images/1.jpg') }}" class="d-block w-100 carousel-img-fit" alt="Imagem 1">
-      </div>
-      
-      <div class="carousel-item">
-        <img src="{{ url_for('static', filename='images/2.jpg') }}" class="d-block w-100 carousel-img-fit" alt="Imagem 2">
-      </div>
-      
-      <div class="carousel-item">
-        <img src="{{ url_for('static', filename='images/3.jpg') }}" class="d-block w-100 carousel-img-fit" alt="Imagem 3">
-      </div>
+        <section class="imagem-cidade">
+            <div id="meuCarrossel" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
 
-    </div>
+                    <div class="carousel-item active">
+                        <img src="{{ url_for('static', filename='images/banner1.jpg') }}" class="d-block carousel-img-fit">
+                    </div>
 
-    <a class="carousel-control-prev" href="#meuCarrossel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    
-    <a class="carousel-control-next" href="#meuCarrossel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Próximo</span>
-    </a>
+                    <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='images/banner2.jpg') }}" class="d-block carousel-img-fit">
+                    </div>
 
-  </div>
-</section>
+                    <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='images/banner3.jpg') }}" class="d-block carousel-img-fit">
+                    </div>
+
+                </div>
+
+                <a class="carousel-control-prev" href="#meuCarrossel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+
+                <a class="carousel-control-next" href="#meuCarrossel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+
+            </div>
+        </section>
 
         <!--Sumário-->
         <section class="sumario text-center mb-5">
@@ -89,7 +87,12 @@
             <h2>Escolaridade</h2>
             <div class="flex-container">
                 <div class="chart-container">
-                    <img src="{{ url_for('static', filename='images/escola.jpg') }}" alt="Foto Escola">
+                    <figure> 
+                        <img src="{{ url_for('static', filename='images/escola.jpg') }}" alt="Foto Escola">
+                        <figurecaption> 
+                            Fonte: <a href="https://www.sjc.sp.gov.br/galerias/2025/mobilidade-urbana/acao-educamob-no-cedin-zilda-arns-e-linha-verde " class="font-imagem"> Prefeitura de São José dos Campos</a>
+                        </figurecaption>
+                    </figure>
                 </div>
                 <div class="texto-e-botao-container">
                     <p> Escolaridade refere-se ao nível de instrução formal que uma pessoa alcançou, como ensino
@@ -130,7 +133,12 @@
             <h2>Longevidade</h2>
             <div class="flex-container">
                 <div class="chart-container">
-                    <img src="{{ url_for('static', filename='images/idosos.jpg') }}" alt="Foto Idosos">
+                    <figure> 
+                        <img src="{{ url_for('static', filename='images/idosos.jpg') }}" alt="Foto Escola">
+                        <figurecaption> 
+                            Fonte: <a href="https://www.sjc.sp.gov.br/galerias/2025/apoio-social-ao-cidadao/torneio-recreativo-de-jogos-adaptados-nas-casas-do-idoso" class="font-imagem"> Prefeitura de São José dos Campos</a>
+                        </figurecaption>
+                    </figure>
                 </div>
                 <div class="texto-e-botao-container">
                     <p> Longevidade refere-se ao aumento da proporção de pessoas idosas na população ao longo do tempo,
@@ -179,7 +187,12 @@
             <h2>Região Oeste</h2>
             <div class="flex-container">
                 <div class="chart-container">
-                    <img src="{{ url_for('static', filename='images/oeste2.jpg') }}" alt="Foto Regiao Oeste">
+                    <figure> 
+                        <img src="{{ url_for('static', filename='images/oeste2.jpg') }}" alt="Foto Escola">
+                        <figurecaption> 
+                            Fonte: <a href="https://www.sjc.sp.gov.br/galerias/2018/manutencao-da-cidade/apos-revitalizacao-praca-do-torii-recebe-comemoracao-dos-110-anos-da-imigracao-japonesa-no-brasil" class="font-imagem"> Prefeitura de São José dos Campos</a>
+                        </figurecaption>
+                    </figure>
                 </div>
                 <div class="texto-e-botao-container">
                     <p> A região Oeste de São José dos Campos caracteriza-se por ser uma área em expansão urbana,
