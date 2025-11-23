@@ -2,15 +2,8 @@
   <script type="text/javascript">
     window.PlotlyConfig = { MathJaxConfig: "local" };
   </script>
-  <script
-    charset="utf-8"
-    src="https://cdn.plot.ly/plotly-2.35.2.min.js"
-  ></script>
-  <div
-    id="718da683-a0c7-4d9c-a65f-56c12d1aad9e"
-    class="plotly-graph-div"
-    style="height: 100%; width: 100%"
-  ></div>
+  <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <div id="718da683-a0c7-4d9c-a65f-56c12d1aad9e" class="plotly-graph-div" style="height: 100%; width: 100%"></div>
   <script type="text/javascript">
     window.PLOTLYENV = window.PLOTLYENV || {};
     if (document.getElementById("718da683-a0c7-4d9c-a65f-56c12d1aad9e")) {
@@ -459,20 +452,23 @@
             title: { text: "População" },
           },
           legend: {
-            title: { text: "Ano" },
+            title: { text: "Ano"},
             tracegroupgap: 0,
             orientation: "h",
             yanchor: "bottom",
-            y: -0.2,
+            y: -0.3,
             xanchor: "center",
             x: 0.5,
+            entrywidth: 130,
+            entrywidthmode: "pixels",
+            itemwidth: 120
           },
           title: { text: "Taxa de Crescimento – Sul vs Oeste", x: 0.5 },
           barmode: "group",
           font: { size: 14 },
           plot_bgcolor: "white",
         },
-        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
+        { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d'] }
       );
     }
   </script>

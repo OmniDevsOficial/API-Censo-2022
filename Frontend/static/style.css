@@ -613,3 +613,12 @@ footer img:hover {
     margin: 0 auto; /* Centraliza o parágrafo */
     padding: 0 20px; /* Adiciona espaçamento lateral */
 }
+
+/* Modal Crescimento Região Oeste e Sul */
+
+.grafico-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

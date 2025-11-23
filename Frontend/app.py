@@ -34,7 +34,8 @@ def get_grafico(regiao, tipo):
             'populacao': 'graficos/populacao_regiao_sjc.html',
             'taxa_crescimento': 'graficos/taxa_crescimento_sjc.html',
             'nivel_escolaridade': 'graficos/nivel_escolaridade_sjc.html',
-            'internet_domicilio': 'graficos/internet_domicilio_sjc.html'
+            'internet_domicilio': 'graficos/internet_domicilio_sjc.html',
+            'oeste_sul': 'graficos/populacao_regiao_oeste_x_sul.html'
         },
         'Norte': {
             'populacao': 'graficos/populacao_regiao_Norte.html',

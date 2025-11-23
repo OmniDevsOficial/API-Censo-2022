@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/l1.png') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Poppins">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap"
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="antialiased text-gray-800">
-    
+
     <nav class="navbar-custom">
         <a class="brand-animate" href="{{ url_for('index') }}">
             <img src="{{ url_for('static', filename='images/l6.png') }}" alt="Logo" style="height: 55px;">
@@ -39,50 +40,51 @@
         </div>
     </nav>
 
-     <main>
-            <section class="imagem-cidade p-3">
-                <div class="container-foto">
-                    <img src="{{ url_for('static', filename='images/cidade2.jpg') }}" alt="Foto Cidade">
+    <main>
+        <section class="imagem-cidade p-3">
+            <div class="container-foto">
+                <img src="{{ url_for('static', filename='images/cidade2.jpg') }}" alt="Foto Cidade">
+            </div>
+        </section>
+
+        <section class="introducao text-center " style="background-color:#152887;">
+            <h2 id="titulo-sumario">Como Explorar Nossos Gráficos?</h2>
+            <p class="mx-auto text-2xl max-w-[800px]">
+                Estes painéis oferecem uma visão geral dos dados, permitindo explorar informações de forma prática.
+                Para ver cada análise detalhada, basta clicar nos botões que abrem os gráficos em seus modais.
+                Utilize os filtros para ajustar período e categorias — as visualizações serão atualizadas
+                automaticamente
+                conforme suas escolhas.
+            </p>
+        </section>
+
+        <!--Sumário-->
+        <section class="sumario text-center mb-5">
+            <h2 id="titulo-sumario"> Visão Geral dos Temas</h2>
+            <nav>
+                <a href="#escolaridade" style="border-right: 1px solid white;"> Escolaridade </a>
+                <a href="#longevidade"> Longevidade </a>
+                <a href="#regiaooeste" style="border-left: 1px solid white;"> Região Oeste</a>
+            </nav>
+        </section>
+
+        <!--Gráficos principais-->
+        <section id="escolaridade" class="section-card mx-5">
+            <h2>Escolaridade</h2>
+            <div class="flex-container">
+                <div class="chart-container">
+                    <img src="{{ url_for('static', filename='images/escola.jpg') }}" alt="Foto Escola">
                 </div>
-            </section>
-
-            <section class="introducao text-center " style="background-color:#152887;">
-                <h2 id="titulo-sumario">Como Explorar Nossos Gráficos?</h2>
-                <p class="mx-auto text-2xl max-w-[800px]">
-                    Estes painéis oferecem uma visão geral dos dados, permitindo explorar informações de forma prática.
-                    Para ver cada análise detalhada, basta clicar nos botões que abrem os gráficos em seus modais.
-                    Utilize os filtros para ajustar período e categorias — as visualizações serão atualizadas automaticamente
-                    conforme suas escolhas.
-                </p>
-            </section>
-
-            <!--Sumário-->
-            <section class="sumario text-center mb-5">
-                <h2 id="titulo-sumario"> Visão Geral dos Temas</h2>
-                <nav>
-                    <a href="#escolaridade" style="border-right: 1px solid white;"> Escolaridade </a>
-                    <a href="#longevidade"> Longevidade </a>
-                    <a href="#regiaooeste" style="border-left: 1px solid white;"> Região Oeste</a>
-                </nav>
-            </section>
-
-            <!--Gráficos principais-->
-            <section id="escolaridade" class="section-card mx-5">
-                <h2>Escolaridade</h2>
-                <div class="flex-container">
-                    <div class="chart-container">
-                        <img src="{{ url_for('static', filename='images/escola.jpg') }}" alt="Foto Escola">
-                    </div>
-                    <div class="texto-e-botao-container">
-                        <p> Escolaridade refere-se ao nível de instrução formal que uma pessoa alcançou, como ensino
-                            fundamental, médio,superior ou pós-graduação. Ela indica o percurso educacional de um
-                            indivíduo e ajuda a compreender seu grau de formação e conhecimento acadêmico.</p>
-                        <button class="button" data-toggle="modal" data-target="#myModal1" style="vertical-align:middle">
-                            <span> Ver mais</span>
-                        </button>
-                    </div>
+                <div class="texto-e-botao-container">
+                    <p> Escolaridade refere-se ao nível de instrução formal que uma pessoa alcançou, como ensino
+                        fundamental, médio,superior ou pós-graduação. Ela indica o percurso educacional de um
+                        indivíduo e ajuda a compreender seu grau de formação e conhecimento acadêmico.</p>
+                    <button class="button" data-toggle="modal" data-target="#myModal1" style="vertical-align:middle">
+                        <span> Ver mais</span>
+                    </button>
                 </div>
-            </section>
+            </div>
+        </section>
 
         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle1"
             aria-hidden="true">
@@ -108,105 +110,185 @@
             </div>
         </div>
 
-            <section id="longevidade" class="section-card mx-5">
-                <h2>Longevidade</h2>
-                <div class="flex-container">
-                    <div class="chart-container">
-                        <img src="{{ url_for('static', filename='images/idosos.jpg') }}" alt="Foto Idosos">
-                    </div>
-                    <div class="texto-e-botao-container">
-                        <p> Longevidade refere-se ao aumento da proporção de pessoas idosas na população ao longo do tempo,
-                            indicando mudanças na estrutura etária e revelando tendências importantes sobre longevidade e demandas
-                            sociais</p>
-                        <button class="button" data-toggle="modal" data-target="#myModal2" style="vertical-align:middle">
-                            <span> Ver mais</span>
+        <section id="longevidade" class="section-card mx-5">
+            <h2>Longevidade</h2>
+            <div class="flex-container">
+                <div class="chart-container">
+                    <img src="{{ url_for('static', filename='images/idosos.jpg') }}" alt="Foto Idosos">
+                </div>
+                <div class="texto-e-botao-container">
+                    <p> Longevidade refere-se ao aumento da proporção de pessoas idosas na população ao longo do tempo,
+                        indicando mudanças na estrutura etária e revelando tendências importantes sobre longevidade e
+                        demandas
+                        sociais</p>
+                    <button class="button" data-toggle="modal" data-target="#myModal2" style="vertical-align:middle">
+                        <span> Ver mais</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="modalTitle2"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle2">Mais Informações</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                </div>
-            </section>
-
-            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="modalTitle2"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalTitle2">Mais Informações</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                    <div class="modal-body">
+                        <div class="chart-container mb-3">
+                            <p>A longevidade em SJC tem aumentado, refletindo melhores condições de vida e saúde.
+                                A população vive mais e envelhece de forma contínua, mostrando um avanço no bem-estar do
+                                município.
+                            </p>
+                            <iframe id="chart4-modal" src=""></iframe>
                         </div>
-                        <div class="modal-body">
-                            <div class="chart-container mb-3">
-                                <p>A longevidade em SJC tem aumentado, refletindo melhores condições de vida e saúde.
-                                    A população vive mais e envelhece de forma contínua, mostrando um avanço no bem-estar do município.
-                                </p>
-                                    <iframe id="chart4-modal" src=""></iframe>
-                                </div>
-                                <p>O gráfico de faixa etária mostra como a população se distribui entre jovens, adultos e idosos.
-                                    Ele revela quais grupos são mais numerosos e ajuda a entender o perfil demográfico da cidade.
-                                </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        </div>
+                        <p>O gráfico de faixa etária mostra como a população se distribui entre jovens, adultos e
+                            idosos.
+                            Ele revela quais grupos são mais numerosos e ajuda a entender o perfil demográfico da
+                            cidade.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <section id="regiaooeste" class="section-card mx-5">
-                <h2>Região Oeste</h2>
-                <div class="flex-container">
-                    <div class="chart-container">
-                        <img src="{{ url_for('static', filename='images/oeste2.jpg') }}" alt="Foto Regiao Oeste">
-                    </div>
-                    <div class="texto-e-botao-container">
-                        <p> A região Oeste de São José dos Campos caracteriza-se por ser uma área em expansão urbana,
-                            com bairros residenciais consolidados e crescente oferta de serviços, comércio e infraestrutura.
-                            É uma das regiões mais dinâmicas da cidade, marcada por desenvolvimento contínuo e aumento populacional</p>
-                        <button class="button" data-toggle="modal" data-target="#myModal3" style="vertical-align:middle">
-                            <span> Ver mais</span>
+        <section id="regiaooeste" class="section-card mx-5">
+            <h2>Região Oeste</h2>
+            <div class="flex-container">
+                <div class="chart-container">
+                    <img src="{{ url_for('static', filename='images/oeste2.jpg') }}" alt="Foto Regiao Oeste">
+                </div>
+                <div class="texto-e-botao-container">
+                    <p> A região Oeste de São José dos Campos caracteriza-se por ser uma área em expansão urbana,
+                        com bairros residenciais consolidados e crescente oferta de serviços, comércio e infraestrutura.
+                        É uma das regiões mais dinâmicas da cidade, marcada por desenvolvimento contínuo e aumento
+                        populacional</p>
+                    <button class="button" data-toggle="modal" data-target="#myModal3" style="vertical-align:middle">
+                        <span> Ver mais</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="modalTitle3"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-chart modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle3">Mais Informações</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                </div>
-            </section>
 
-            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="modalTitle3"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalTitle3">Mais Informações</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                    <div class="modal-body px-4 py-4">
+                        <h2 class="text-center font-weight-bold mb-4" style="color: #152887;">
+                            Análise Populacional: Oeste vs. Sul
+                        </h2>
+
+                        
+                        <div class="grafico-container">
+                            <div class="chart-container mb-2 shadow-sm border rounded" style="overflow: hidden;">
+                                <iframe id="chart6-modal" src=""
+                                    style="width: 100%; min-height: 300px; border: 0;"></iframe>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                                <p>A região Oeste de SJC é uma área em forte expansão, com bairros consolidados e crescente oferta
-                                    de serviços. Destaca-se pelo desenvolvimento urbano contínuo e pelo aumento da população residente.
-                                </p>
-                                <div class="chart-container mb-3">
-                                    <iframe id="chart2-modal" src=""></iframe>
-                                </div>
-                                <p>O gráfico de barras destaca as diferenças entre os bairros da região Oeste, facilitando a
-                                    comparação de indicadores. Ele evidencia quais áreas se destacam e onde há maior concentração
-                                    populacional ou de serviços.
-                                </p>
+
+                        <p class="small text-muted text-center font-italic mb-4">
+                            Fonte: Censo 2022 (População e Domicílios - Primeiros resultados)
+                        </p>
+                        <p class="text-justify text-secondary">
+                            A análise dos dados do Censo 2022 revela dois cenários urbanos distintos dentro do mesmo
+                            município. Enquanto uma região experimenta uma expansão acelerada e seus consequentes
+                            desafios estruturais, a outra demonstra um comportamento de consolidação e maturidade
+                            urbana.
+                        </p>
+                        <hr class="my-4">
+                        <div class="mb-4">
+                            <h3 class="font-weight-bold border-bottom pb-2 mb-3" style="color: #152887;">
+                                📍 Região Oeste: Desenvolvimento e Desafios
+                            </h3>
+                            <p class="text-justify">
+                                A região Oeste consolidou-se como o <strong>principal vetor de expansão
+                                imobiliária</strong>. Entre os últimos censos, esta área passou de 41.161 habitantes
+                                (2010) para <strong>64.482 (2022)</strong>, um acréscimo absoluto de 23.321 pessoas.
+                                Isso representa aproximadamente <strong>56%</strong> de todo o crescimento populacional
+                                do município.
+                            </p>
+
+                            <h5 class="font-weight-bold mt-3">Impactos Econômicos Positivos:</h5>
+                            <ul class="mb-2">
+                                <li class="mb-2 text-justify" style="padding: 20px;">
+                                    <strong>• Mercado de Trabalho e Serviços:</strong> O aumento de
+                                    residentes criou
+                                    demanda por novos comércios,
+                                    escolas e serviços, impulsionando a geração de empregos.
+                                </li>
+                                <li class="mb-2" style="padding-left: 20px;">
+                                    <strong>• Valorização Imobiliária:</strong> A alta procura pressionou a valorização do
+                                    metro quadrado, aquecendo o setor de construção civil.
+                                </li>
+                            </ul>
+
+                            <h5 class="font-weight-bold mt-3">Desafios de Infraestrutura:</h5>
+                            <ul class="mb-2">
+                                <li class="mb-2" style="padding-left: 20px;">
+                                    <strong>• Mobilidade Urbana:</strong> As principais vias enfrentam agora
+                                    congestionamentos crônicos nos horários de pico.
+                                </li>
+                                <li class="mb-2" style="padding-left: 20px;">
+                                    <strong>• Transporte Público:</strong> Pressão imediata sobre o sistema, exigindo
+                                    revisão de itinerários e aumento de frequência.
+                                </li>
+                            </ul>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                        <div class="mb-3">
+                            <h3 class="font-weight-bold border-bottom pb-2 mb-3" style="color: #152887;">
+                                📍 Zona Sul: Estabilidade Demográfica
+                            </h3>
+                            <p class="text-justify">
+                                A Zona Sul manteve-se como a área mais populosa, passando de 233.536 para
+                                <strong>237.572 habitantes</strong> — um aumento discreto de 1,73%. Esse cenário indica
+                                bairros já consolidados e estoque habitacional estabilizado.
+                            </p>
+
+                            <h5 class="font-weight-bold mt-3">Análise do Ritmo Discreto:</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item px-0 py-2 border-0">
+                                    <strong>• Ocupação Consolidada:</strong> Diferente do Oeste, a região Sul já possui
+                                    uma malha urbana densa, com poucos vazios urbanos para novos loteamentos.
+                                </li>
+                                <li class="list-group-item px-0 py-2 border-0">
+                                    <strong>• Infraestrutura Equilibrada:</strong> O ritmo lento de crescimento permite
+                                    que os serviços públicos absorvam os novos moradores sem choques de demanda.
+                                </li>
+                            </ul>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-        </main>
+    </main>
 
     <footer class="text-white py-3 px-4 d-flex justify-content-between align-items-center mt-5 font-weight-bold"
         style="background-color: #152887;">
         <div style="width: 32px;"></div>
         <span>© 2025 Omnidevs, Todos os direitos reservados &copy;</span>
         <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main" target="_blank">
-            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" class="mb-1" style="width: 32px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" class="mb-1"
+                style="width: 32px;">
         </a>
     </footer>
 
@@ -236,7 +318,8 @@
                         { id: 'chart1', title: 'Pirâmide Etária 2010', tipo: 'piramide_2010' },
                         { id: 'chart3', title: 'População por Região', tipo: 'populacao' },
                         { id: 'chart2', title: 'Pirâmide Etária 2022', tipo: 'piramide_2022' },
-                        { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' }
+                        { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' },
+                        { id: 'chart6', title: 'Oeste X Sul', tipo: 'oeste_sul' }
                     ]
                 },
                 'Norte': {
