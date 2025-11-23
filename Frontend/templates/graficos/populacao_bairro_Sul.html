@@ -485,16 +485,17 @@
             anchor: "x",
             domain: [0.0, 1.0],
             title: { text: "População" },
+            gridcolor: "#EBF0F8",
           },
           legend: { tracegroupgap: 0 },
-          title: { text: "População por Bairro na Região: Sul" },
+          title: { text: "" },
           barmode: "relative",
         },
         { responsive: true, displayModeBar: true, displaylogo: false, modeBarButtonsToRemove: ['toImage','zoom2d','pan2d','select2d','lasso2d','zoomIn2d','zoomOut2d','autoScale2d','resetScale2d'] }
       ).then(function() {
         var gd = document.getElementById("80910d66-aa03-4305-85b3-30cc3ef29223");
         if (!gd) return;
-        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : "População por Bairro na Região: Sul";
+        var originalTitle = ""; // título removido
 
         function insertLineBreak(text) {
           if (!text) return text;
@@ -519,15 +520,17 @@
           try {
             if (w < 640) {
               Plotly.relayout(gd, {
-                'title.text': insertLineBreak(originalTitle),
+                'title.text': '',
                 'title.x': 0.5,
-                'title.xanchor': 'center'
+                'title.xanchor': 'center',
+                'margin.t': 40
               });
             } else {
               Plotly.relayout(gd, {
-                'title.text': originalTitle,
+                'title.text': '',
                 'title.x': 0.05,
-                'title.xanchor': 'left'
+                'title.xanchor': 'left',
+                'margin.t': 30
               });
             }
           } catch (e) { }

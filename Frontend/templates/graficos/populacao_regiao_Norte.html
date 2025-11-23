@@ -451,9 +451,10 @@
             anchor: "x",
             domain: [0.0, 1.0],
             title: { text: "Número de Habitantes" },
+            gridcolor: "#EBF0F8",
           },
           legend: { title: { text: "Ano" }, tracegroupgap: 0, bgcolor: "rgba(0,0,0,0)" },
-          title: { text: "População por Região: Norte (2010 vs 2022)" },
+          title: { text: "" },
           barmode: "group",
           bargap: 0.8,
         },
@@ -461,7 +462,7 @@
       ).then(function() {
         var gd = document.getElementById("f4f03622-f77f-4475-a41d-415a7abcd9a6");
         if (!gd) return;
-        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : "População por Região: Norte (2010 vs 2022)";
+        var originalTitle = ""; // título removido
         var originalLegend = {
           orientation: (gd.layout && gd.layout.legend && gd.layout.legend.orientation) ? gd.layout.legend.orientation : 'v',
           x: (gd.layout && gd.layout.legend && typeof gd.layout.legend.x !== 'undefined') ? gd.layout.legend.x : 0.05,
@@ -488,7 +489,7 @@
           try {
             if (w < 640) {
               var relayoutSmall = {
-                'title.text': insertLineBreak(originalTitle),
+                'title.text': '',
                 'title.x': 0.5,
                 'title.xanchor': 'center',
                 'legend.orientation': 'h',
@@ -512,7 +513,7 @@
               } catch (e) {}
             } else {
               var relayoutLarge = {
-                'title.text': originalTitle,
+                'title.text': '',
                 'title.x': originalX,
                 'title.xanchor': originalXAnchor,
                 'legend.orientation': originalLegend.orientation || 'v',

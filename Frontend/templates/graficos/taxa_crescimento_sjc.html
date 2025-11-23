@@ -596,7 +596,9 @@
           xanchor: (gd.layout && gd.layout.legend && gd.layout.legend.xanchor) ? gd.layout.legend.xanchor : 'left'
         };
         var originalMarginBottom = (gd.layout && gd.layout.margin && typeof gd.layout.margin.b !== 'undefined') ? gd.layout.margin.b : 80;
-        var originalHeight = (gd.layout && gd.layout.height) ? gd.layout.height : gd.offsetHeight;
+        // Alturas padronizadas (mobile / desktop)
+        var MOBILE_HEIGHT = 440;
+        var DESKTOP_HEIGHT = 560;
         // Guardar índices dos traces para operações de rótulo
         var traceIndices = (gd.data || []).map(function(_, i){ return i; });
         // Guardar posição original dos rótulos (assume todos iguais)
@@ -639,7 +641,6 @@
         }
 
         function compute(w) {
-          // Para telas grandes mantém título original
           if (w >= 640) return { text: '', size: originalFontSize, top: 40 };
           var size = w < 420 ? 14 : 16;
           var top = 30;
@@ -658,16 +659,26 @@
               'legend.orientation': 'h',
               'legend.x': 0.5,
               'legend.xanchor': 'center',
-              'legend.y': -0.3,
-              'margin.b': 110,
-              height: 600
+              'legend.y': -0.25,
+              'legend.yanchor': 'top',
+              'margin.b': 70,
+              height: MOBILE_HEIGHT
             };
             Plotly.relayout(gd, rel);
-            // Ocultar rótulos acima das barras em telas pequenas
             Plotly.restyle(gd, { textposition: 'none' }, traceIndices);
             Plotly.restyle(gd, { texttemplate: '' }, traceIndices);
             updateVisibleCategories();
           } catch(e) {}
+        }
+
+        function computeDesktopHeight() {
+          try {
+            var vh = (window.innerHeight || document.documentElement.clientHeight || 800);
+            var h = Math.floor(vh * 0.55);
+            if (h > 520) h = 520;
+            if (h < 440) h = 440;
+            return h;
+          } catch(e) { return DESKTOP_HEIGHT; }
         }
 
         function restore() {
@@ -677,17 +688,17 @@
               'title.x': originalX,
               'title.xanchor': originalXAnchor,
               'title.font.size': originalFontSize,
-              'margin.t': 80,
-              'legend.orientation': originalLegend.orientation,
-              'legend.x': originalLegend.x,
-              'legend.xanchor': originalLegend.xanchor,
-              'legend.y': 0.95,
+              'margin.t': 50,
+              'legend.orientation': 'v',
+              'legend.x': 1.02,
+              'legend.xanchor': 'left',
+              'legend.y': 1,
               'legend.yanchor': 'top',
-              'margin.b': originalMarginBottom,
-              height: originalHeight
+              'margin.b': 60,
+              'margin.r': 140,
+              height: computeDesktopHeight()
             };
             Plotly.relayout(gd, rel);
-            // Restaurar rótulos acima das barras
             Plotly.restyle(gd, { textposition: originalTextPosition }, traceIndices);
             Plotly.restyle(gd, { texttemplate: originalTextTemplate }, traceIndices);
             updateVisibleCategories();
