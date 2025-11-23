@@ -74,35 +74,38 @@
 
         <!--Sumário-->
         <section class="sumario text-center mb-5">
-            <h2 id="titulo-sumario"> Visão Geral dos Temas</h2>
+            <h2 id="titulo-sumario">Temas que se Destacaram nas Análises</h2>
             <nav>
                 <a href="#escolaridade" style="border-right: 1px solid white;"> Escolaridade </a>
-                <a href="#longevidade"> Envelhecimento </a>
+                <!-- <a href="#longevidade"> Envelhecimento </a> -->
                 <a href="#regiaooeste" style="border-left: 1px solid white;"> Região Oeste</a>
             </nav>
         </section>
 
         <!--Gráficos principais-->
         <section id="escolaridade" class="section-card mx-auto">
-            <h2>Destaque na Escolaridade</h2>
+            <h2>Escolaridade</h2>
             <div class="flex-container">
                 <div class="theme-img-container">
-                    <figure> 
+                    <figure>
                         <img src="{{ url_for('static', filename='images/escola.jpg') }}" alt="Foto Escola">
-                        <figurecaption> 
-                            Fonte: <a href="https://www.sjc.sp.gov.br/galerias/2025/mobilidade-urbana/acao-educamob-no-cedin-zilda-arns-e-linha-verde " class="font-imagem"> Prefeitura de São José dos Campos</a>
+                        <figurecaption>
+                            Fonte: <a
+                                href="https://www.sjc.sp.gov.br/galerias/2025/mobilidade-urbana/acao-educamob-no-cedin-zilda-arns-e-linha-verde "
+                                class="font-imagem"> Prefeitura de São José dos Campos</a>
                         </figurecaption>
                     </figure>
-                </div>
-                <div class="texto-e-botao-container">
-                    <p> Escolaridade refere-se ao nível de instrução formal que uma pessoa alcançou, como ensino
-                        fundamental, médio,superior ou pós-graduação. Ela indica o percurso educacional de um
-                        indivíduo e ajuda a compreender seu grau de formação e conhecimento acadêmico.</p>
-                    <button class="button" data-toggle="modal" data-target="#myModal1" style="vertical-align:middle">
-                        <span> Ver mais</span>
-                    </button>
-                </div>
-            </div>
+                    </div>
+                    <div class="texto-e-botao-container">
+                        <p> O Censo 2022 indica uma elevação no nível de escolaridade em São José dos Campos frente
+                            a 2010, com expansão significativa da população com ensino superior completo. Esse
+                            avanço reafirma o perfil tecnológico da cidade, evidenciando um capital humano com
+                            formação acadêmica e qualificação acima da média regional</p>
+                        <button class="button" data-toggle="modal" data-target="#myModal1" style="vertical-align:middle">
+                            <span> Ver mais</span>
+                        </button>
+                    </div>
+                    </div>
         </section>
 
         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle1"
@@ -195,7 +198,7 @@
             </div>
         </div>
 
-        <section id="longevidade" class="section-card mx-auto">
+        <!-- <section id="longevidade" class="section-card mx-auto">
             <h2>Envelhecimento está alto</h2>
             <div class="flex-container">
                 <div class="theme-img-container">
@@ -216,7 +219,7 @@
                     </button>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="modalTitle2"
             aria-hidden="true">
