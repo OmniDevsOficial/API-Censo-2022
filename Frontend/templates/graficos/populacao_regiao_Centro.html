@@ -451,9 +451,10 @@
             anchor: "x",
             domain: [0.0, 1.0],
             title: { text: "Número de Habitantes" },
+            gridcolor: "#EBF0F8",
           },
           legend: { title: { text: "Ano" }, tracegroupgap: 0, bgcolor: "rgba(0,0,0,0)" },
-          title: { text: "População por Região: Centro (2010 vs 2022)" },
+          title: { text: "" },
           barmode: "group",
           bargap: 0.8,
         },
@@ -461,7 +462,7 @@
       ).then(function() {
         var gd = document.getElementById("39086361-3b29-450b-8d69-2a9bde2ea552");
         if (!gd) return;
-        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : "População por Região: Centro (2010 vs 2022)";
+        var originalTitle = ""; // título removido
 
         function insertLineBreak(text) {
           if (!text) return text;
@@ -486,7 +487,7 @@
           try {
             if (w < 640) {
               var relayoutSmall = {
-                'title.text': insertLineBreak(originalTitle),
+                'title.text': '',
                 'title.x': 0.5,
                 'title.xanchor': 'center',
                 'legend.orientation': 'h',
@@ -510,7 +511,7 @@
               } catch (e) {}
             } else {
               var relayoutLarge = {
-                'title.text': originalTitle,
+                'title.text': '',
                 'title.x': originalX,
                 'title.xanchor': originalXAnchor,
                 'legend.orientation': originalLegend.orientation || 'v',

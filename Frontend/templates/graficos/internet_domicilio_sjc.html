@@ -455,6 +455,7 @@
             anchor: "x",
             domain: [0.0, 1.0],
             title: { text: "Percentual (%)" },
+            gridcolor: "#EBF0F8"
           },
           legend: {
             title: { text: "Uso de Internet" },
@@ -462,7 +463,7 @@
             bgcolor: 'rgba(0,0,0,0)',
             bordercolor: 'rgba(0,0,0,0)'
           },
-          title: { text: "Internet por domicílio 2022", x: 0.5, xanchor: 'center', y: 1.08, yanchor: 'top' },
+          title: { text: '' },
           paper_bgcolor: 'rgba(0,0,0,0)',
           plot_bgcolor: 'rgba(0,0,0,0)',
           margin: { t: 120 },
@@ -476,7 +477,7 @@
         // para telas pequenas (largura < 640px), mantendo os originais para telas maiores.
         var gd = document.getElementById("c997d99e-e6c0-4646-aa06-3a05ab076ee4");
         // Título original guardado para restaurar quando a largura for >= 640px
-        var originalTitle = (gd.layout && gd.layout.title && gd.layout.title.text) ? gd.layout.title.text : '';
+        var originalTitle = '';
 
         var originalTicktext = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.ticktext) ? gd.layout.xaxis.ticktext.slice() : null;
         var originalTickvals = (gd.layout && gd.layout.xaxis && gd.layout.xaxis.tickvals) ? gd.layout.xaxis.tickvals.slice() : null;
@@ -516,17 +517,13 @@
           if (!gd) return;
           if (w < 640) {
             Plotly.relayout(gd, {
-              'title.text': insertLineBreak(originalTitle),
-              'title.x': 0.5,
-              'title.xanchor': 'center',
-              'title.y': 1.06,
-              'title.yanchor': 'top',
+              'title.text': '',
               'legend.orientation': 'h',
               'legend.x': 0.5,
               'legend.xanchor': 'center',
               'legend.y': -0.26,
               'legend.yanchor': 'top',
-              'margin.t': 100,
+              'margin.t': 60,
               'margin.b': 110
             });
             if (wrappedTicktext && baseCategories) {
@@ -539,17 +536,13 @@
             }
           } else {
             Plotly.relayout(gd, {
-              'title.text': originalTitle,
-              'title.x': 0.5,
-              'title.xanchor': 'center',
-              'title.y': 1.08,
-              'title.yanchor': 'top',
+              'title.text': '',
               'legend.orientation': 'v',
               'legend.x': 1.02,
               'legend.xanchor': 'left',
               'legend.y': 1.0,
               'legend.yanchor': 'top',
-              'margin.t': 120,
+              'margin.t': 80,
               'margin.b': 60
             });
             if (originalTicktext && originalTickvals) {
