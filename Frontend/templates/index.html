@@ -41,22 +41,38 @@
     </nav>
 
     <main>
-        <section class="imagem-cidade p-3">
-            <div class="container-foto">
-                <img src="{{ url_for('static', filename='images/cidade2.jpg') }}" alt="Foto Cidade">
-            </div>
-        </section>
+      <section class="imagem-cidade" style="padding: 0; margin: 0; width: 100%;">
+  
+  <div id="meuCarrossel" class="carousel slide carousel-fade" data-ride="carousel">
+    
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='images/1.jpg') }}" class="d-block w-100 carousel-img-fit" alt="Imagem 1">
+      </div>
+      
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/2.jpg') }}" class="d-block w-100 carousel-img-fit" alt="Imagem 2">
+      </div>
+      
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/3.jpg') }}" class="d-block w-100 carousel-img-fit" alt="Imagem 3">
+      </div>
 
-        <section class="introducao text-center " style="background-color:#152887;">
-            <h2 id="titulo-sumario">Como Explorar Nossos Gráficos?</h2>
-            <p class="mx-auto text-2xl max-w-[800px]">
-                Estes painéis oferecem uma visão geral dos dados, permitindo explorar informações de forma prática.
-                Para ver cada análise detalhada, basta clicar nos botões que abrem os gráficos em seus modais.
-                Utilize os filtros para ajustar período e categorias — as visualizações serão atualizadas
-                automaticamente
-                conforme suas escolhas.
-            </p>
-        </section>
+    </div>
+
+    <a class="carousel-control-prev" href="#meuCarrossel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    
+    <a class="carousel-control-next" href="#meuCarrossel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Próximo</span>
+    </a>
+
+  </div>
+</section>
 
         <!--Sumário-->
         <section class="sumario text-center mb-5">

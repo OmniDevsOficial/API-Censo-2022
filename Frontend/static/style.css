@@ -156,7 +156,17 @@ h1 {
     /*centraliza o bloco*/
     color: #ffffff;
 }
+.carousel-img-fit {
+    width: 100%;  
+    height: 700px;   
+    object-fit: cover;
+}
 
+@media (max-width: 568px) {
+    .carousel-img-fit {
+        height: 300px;
+    }
+}
 .sumario {
     display: flex;
     background-color: #152887;
