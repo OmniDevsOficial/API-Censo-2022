@@ -606,76 +606,10 @@ footer img:hover {
 }
 
 .descricao {
-    font-size: 0.9em;
-    /* Tamanho menor para o texto abaixo */
-    line-height: 1.5;
-    /* Altura da linha para legibilidade */
-    color: #555;
-    /* Cor do texto */
-    max-width: 800px;
-    /* Largura máxima do texto */
-    margin: 0 auto;
-    /* Centraliza o parágrafo */
-    padding: 0 20px;
-    /* Adiciona espaçamento lateral */
-}
-
-.custom-select {
-    /* ... aparência ... */
-    background-image: url("{{ url_for('static', filename='images/seta.svg') }}");
-    /* ... */
-}
-
-.button-colab {
-    background-color: #152887;
-    color: white;
-    padding: 14px 28px;
-    font-size: 18px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.button-colab:hover {
-    transform: translateY(-3px);
-    background-color: #0056b3;
-    text-decoration: none;
-    color: white;
-}
-
-.button-colab span {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    /* garante que texto e imagem não fiquem colados */
-}
-
-.button-colab span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-.button-colab :hover span {
-    padding-right: 0px;
-}
-
-.button-colab :hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
-.button-colab img {
-    width: 28px;
-    /* imagem proporcional ao tamanho do botão */
-    height: 24px;
-    object-fit: contain;
+    font-size: 0.9em; /* Tamanho menor para o texto abaixo */
+    line-height: 1.5; /* Altura da linha para legibilidade */
+    color: #555; /* Cor do texto */
+    max-width: 800px; /* Largura máxima do texto */
+    margin: 0 auto; /* Centraliza o parágrafo */
+    padding: 0 20px; /* Adiciona espaçamento lateral */
 }

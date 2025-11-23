@@ -84,31 +84,29 @@
                 </div>
             </section>
 
-            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle1"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalTitle1">Mais Informações</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-chart" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle1">Mais Informações</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="chart-container mb-3">
+                            <iframe id="chart3-modal" src=""></iframe>
                         </div>
-                        <div class="modal-body">
-                            <p>Este painel apresenta uma visão geral dos níveis de escolaridade dos participantes,
-                            permitindo filtrar e explorar os diferentes grupos conforme a necessidade.</p>
-                            <div class="chart-container mb-3">
-                                <iframe id="chart3-modal" src=""></iframe>
-                            </div>
-                            <p>Aqui é possível comparar diferentes categorias entre si. 
-                            As barras mais altas indicam maior representatividade dentro do intervalo filtrado.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        </div>
+                        <p>O gráfico ilustra a distribuição da população por bairros e regiões de São José dos
+                            Campos, oferecendo uma visão clara e detalhada sobre a demografia local.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
+        </div>
 
             <section id="longevidade" class="section-card mx-5">
                 <h2>Longevidade</h2>
@@ -239,6 +237,69 @@
                         { id: 'chart3', title: 'População por Região', tipo: 'populacao' },
                         { id: 'chart2', title: 'Pirâmide Etária 2022', tipo: 'piramide_2022' },
                         { id: 'chart4', title: 'Taxa de Crescimento', tipo: 'taxa_crescimento' }
+                    ]
+                },
+                'Norte': {
+                    name: 'Região Norte',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Norte', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Norte', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Sul': {
+                    name: 'Região Sul',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Sul', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Sul', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Leste': {
+                    name: 'Região Leste',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Leste', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Leste', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Oeste': {
+                    name: 'Região Oeste',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Oeste', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Oeste', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Centro': {
+                    name: 'Região Centro',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Centro', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Centro', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'Sudeste': {
+                    name: 'Região Sudeste',
+                    charts: [
+                        { id: 'chart1', title: 'População da Região Sudeste', tipo: 'populacao' },
+                        { id: 'chart2', title: 'População por Bairro - Sudeste', tipo: 'populacao_bairro' },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
+                    ]
+                },
+                'São Francisco Xavier': {
+                    name: 'São Francisco Xavier',
+                    charts: [
+                        { id: 'chart1', title: 'População - São Francisco Xavier', tipo: 'populacao_bairro' },
+                        { id: 'chart2', title: 'Gráfico 2', tipo: null },
+                        { id: 'chart3', title: 'Gráfico 3', tipo: null },
+                        { id: 'chart4', title: 'Gráfico 4', tipo: null }
                     ]
                 }
             };
