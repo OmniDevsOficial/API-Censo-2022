@@ -71,9 +71,9 @@ A introdução do desafio começa com o município de São José dos Campos (SJC
 
 | Sprint | Período | Status | Documentação | Vídeo | MVP
 | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
-| 🧣 Sprint 1 | 08/09 - 28/09 | ✅ Concluída | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main/Docs/Sprint-1"> Docs 1ª Sprint </a> | <a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"> Vídeo 1ª Sprint </a> | <a href=https://github.com/OmniDevsOficial/API-Censo-2022/blob/main/Docs/mvp/mvp.md>MVP 1</a>
-| 🧣 Sprint 2 | 06/10 - 26/10 | ✅ Concluída | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main/Docs/Sprint-2"> Docs 2ª Sprint </a> | <a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"> Vídeo 2ª Sprint </a> | <a href="">-</a>
-| 🧣 Sprint 3 | 03/11 - 23/11 | ✅ Concluída | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main/Docs/Sprint-3"> Docs 3ª Sprint </a> | <a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"> Vídeo 3ª Sprint </a> | <a href="">-</a>
+| 🧣 Sprint 1 | 08/09 - 28/09 | ✅ Concluída | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main/Docs/Sprint-1"> Docs 1ª Sprint </a> | <a href="https://youtu.be/z-fqyJakdu8"> Vídeo 1ª Sprint </a> | <a href=https://github.com/OmniDevsOficial/API-Censo-2022/blob/main/Docs/mvp/mvp.md>MVP 1</a>
+| 🧣 Sprint 2 | 06/10 - 26/10 | ✅ Concluída | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main/Docs/Sprint-2"> Docs 2ª Sprint </a> | <a href="https://www.youtube.com/watch?v=pBbaGBYsIaM"> Vídeo 2ª Sprint </a> | <a href="">-</a>
+| 🧣 Sprint 3 | 03/11 - 23/11 | ✅ Concluída | <a href="https://github.com/OmniDevsOficial/API-Censo-2022/tree/main/Docs/Sprint-3"> Docs 3ª Sprint </a> | <a href="https://youtu.be/UgazQdD-s0U"> Vídeo 3ª Sprint </a> | <a href="">-</a>
 
 ## 💻 Tecnologias Utilizadas
 
@@ -207,6 +207,7 @@ https://colab.research.google.com/github/OmniDevsOficial/API-Censo-2022/blob/mai
 | <img src="https://avatars.githubusercontent.com/u/225857087?v=4" width=50px alt="Foto da Kathelyn"/> | *Kathelyn Cauane* | Desenvolvedor | <a href="https://github.com/KathelynZanin"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://avatars.githubusercontent.com/u/189993239?v=4" width=50px  alt="Foto do Marcio"> | *Marcio Gustavo* | Desenvolvedor | <a href="https://github.com/Marcio-gustavoI"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/marciogustavo"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> | 
 | <img src="https://avatars.githubusercontent.com/u/225857870?v=4" width=50px alt="Foto do Matheus"> | *Matheus Bueno* | Desenvolvedor | <a href="https://github.com/Matheusxfc"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="not_found"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+
 
 
 
