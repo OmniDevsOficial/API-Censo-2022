@@ -23,7 +23,5 @@
 
 | Período | Status |
 | :---------: | :---------: | 
-06/10 - 26/10 | 🚩 Não iniciado |
+06/10 - 26/10 | ✅ Concluída |
 
-## 🎥 Link do Vídeo
-<a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a> 

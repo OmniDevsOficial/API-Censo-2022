@@ -11,8 +11,7 @@
 ## 📋 Backlog da Sprint
 
 | Rank | Prioridade | User Story | Estimativa | Sprint
-| :---------: | :---------: | :---------: | :---------: | :---------: |
-| 🎗  10 | Baixa | Como secretário do planejamento, quero visualizar e interagir com  um mapa geral da cidade onde posso adicionar ou retirar camadas de filtragem, para visualizar as informações de uma perspectiva mais dinâmica. | 13 | 3 |
+| :---------: | :---------: | :---------: | :---------: | :---------:
 | 🎗  11 | Baixa | Como secretário do planejamento, quero pesquisar gráficos por nome, para que possa encontrá-los sem muita navegação. | 8 | 3 |
 | 🎗  12 | Baixa | Como secretário do planejamento, quero controlar a exibição dos gráficos a partir de filtros, como Tema e Tipo, para restringir minhas análises. | 8 | 3 |
 
@@ -22,7 +21,8 @@
 
 | Período | Status |
 | :---------: | :---------: | 
-03/11 - 23/11 | 🚩 Não iniciado |
+03/11 - 23/11 | ✅ Concluída |
 
-## 🎥 Link do Vídeo
-<a href="https://www.youtube.com/playlist?list=PLDRfI7L8HBg-uzNv6VjUrOIHhPXAagBzy"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a> 
+## 🎨 Demonstração
+
+<div align="center"> <img src="PlanejaSJC-3.gif" width=100% alt="Entrega Sprint 3"/> </div>
