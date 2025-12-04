@@ -5,6 +5,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #f0f2f5;
     text-align: center;
