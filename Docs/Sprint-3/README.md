@@ -25,4 +25,4 @@
 
 ## 🎨 Demonstração
 
-<div align="center"> <img src="PlanejaSJC-3.gif" width=100% alt="Entrega Sprint 3"/> </div>
+<div align="center"><video src="PlanejaSJC-3.mp4" controls muted autoplay loop></video></div>

@@ -20,9 +20,9 @@
 ---
 
 ## 📌 Status do Projeto
-| Item                  | Situação/Link |
+| Item                  | Situação |
 |-----------------------|---------------|
-| 🚧 Projeto            | 🔛 Em andamento  |
+| 🚧 Projeto            | ✅ Concluído  |
 | 📂 Documentação       | 🔛 Em andamento  |
 
 ## 🚀 Descrição do Desafio

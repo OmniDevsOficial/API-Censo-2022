@@ -178,7 +178,7 @@ h1 {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 3vw;
     padding-bottom: 10px;
     font-size: 25px;
 }
@@ -186,10 +186,8 @@ h1 {
 .sumario nav a {
     width: fit-content;
     padding: 6px 10px;
-    /* border-right: 1px solid ; */
     border-bottom: 1px solid;
     font-weight: 500;
-    /*diz se o texto será 'fino' ou 'grosso', como se mexesse no negrito */
     color: #ffffff;
     text-decoration: none;
     border-radius: 6px;
@@ -203,12 +201,11 @@ h1 {
     background-color: #12193c;
     border-bottom: none;
     transform: translateY(-3px);
-    /* text-decoration: underline #ff0000; */
 }
 
 #titulo-sumario {
     font-weight: 500;
-    color: white
+    color: white;
 }
 
 h2,
@@ -262,7 +259,7 @@ section {
 /* --- 2. NAVBAR CUSTOMIZADA --- */
 .navbar-custom {
     background-color: #152887 !important;
-    padding: 0.9rem 4rem;
+    padding: 0.9rem 1rem;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: space-between;
@@ -326,15 +323,24 @@ section {
     opacity: 0;
     transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out;
     /* Animação suave */
+    border-radius: 7px;
 }
 
 #menuMobile.open {
     max-height: 300px;
     /* Altura suficiente para abrir */
     opacity: 1;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 10px;
+}
+
+#menuMobile a {
+    color: white !important;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Ícone do Menu */
@@ -496,18 +502,16 @@ section {
 }
 
 footer {
-    align-items: center;
+    /* Layout é controlado pelo Bootstrap no HTML agora */
     background-color: #152887;
     color: white;
-    display: flex;
+    /* font-size e font-weight podem ficar aqui ou no HTML */
     font-size: 100%;
     font-weight: bold;
-    justify-content: space-between;
     padding: 1.4%;
 }
 
 footer img {
-    /* filter: brightness(0) invert(1); */
     transition: transform 0.3s;
 }
 
@@ -675,32 +679,21 @@ footer img:hover {
     text-decoration: underline;
 }
 
-section.imagem-cidade {
-    display: flex;
-    justify-content: center;
-}
-
-#meuCarrossel {
-    width: 1190px;
-    height: 680px;
-    position: relative;
-    overflow: hidden;
-}
-
-#meuCarrossel .carousel-inner,
-#meuCarrossel .carousel-item {
-    width: 100%;
-    height: 100%;
-}
-
 .carousel-img-fit {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
+    height: 600px;
+    object-fit: cover;
+    margin: 5px 0 5px 0;
+    border-radius: 7px;
 }
 
+@media (max-width: 568px) {
+    .carousel-img-fit {
+        height: 300px;
+    }
+}
+
+/* Fade do carrossel */
 .carousel.carousel-fade .carousel-item {
     transition: opacity 1.2s ease-in-out;
     opacity: 0;
@@ -717,51 +710,19 @@ section.imagem-cidade {
     opacity: 0;
 }
 
+/* Setas do carrossel */
 .carousel-control-prev {
-    left: -20px;
+    left: 0;
 }
-
 .carousel-control-next {
-    right: -20px;
-}
-
-@media (orientation: landscape) {
-    #meuCarrossel {
-        width: 1190px;
-        height: 680px;
-    }
-
-    .carousel-control-prev {
-        left: -30px;
-    }
-
-    .carousel-control-next {
-        right: -30px;
-    }
+    right: 0;
 }
 
 @media (orientation: portrait) {
-    .imagem-cidade{
-        margin:0;
-    }
-
-    #meuCarrossel {
-        width: 100%;
-        max-width: 95%;
-        height: auto;
-        margin: 0;
-    }
-
-    #meuCarrossel .carousel-inner,
-    #meuCarrossel .carousel-item {
-        height: auto;
-    }
-
     .carousel-img-fit {
         width: 100%;
-        height: auto;
-        max-height: 75vh; /* impede cortes na vertical */
-        object-fit: contain;
+        height: 100%;
+        object-fit: fill; /* preenche totalmente também em celular */
     }
 
     /* Setas mais próximas para caber na tela do celular */
